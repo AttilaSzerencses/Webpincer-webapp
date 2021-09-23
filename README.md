@@ -145,7 +145,7 @@ A projekt a következő technológiákat/szoftvereket fogja használni a munka s
 ## 7. Jelentések
 
 ### 7.1. Munka menedzsment
-A munkát `Horváth-Czinber Bernadett` koordinálja. `Fő feladata, hogy folyamatosan egyeztessen a csapattagokkal az előrehaladásról és a fellépő problémákról, esetlegesen a megoldásban is segítséget nyújhat a projekt csúszásának elkerülése végett. További feladata a heti szinten tartandó csoportgyűlések időpontjának és helyszínének leszervezése, erről discordon illetve messengeren tájékoztatja a projektcsapatot.`
+`A munkát Horváth-Czinber Bernadett koordinálja.` `Fő feladata, hogy folyamatosan egyeztessen a csapattagokkal az előrehaladásról és a fellépő problémákról, esetlegesen a megoldásban is segítséget nyújhat a projekt csúszásának elkerülése végett. További feladata a heti szinten tartandó csoportgyűlések időpontjának és helyszínének leszervezése, erről discordon illetve messengeren tájékoztatja a projektcsapatot.`
 
 
 ### 7.2. Csoportgyűlések
