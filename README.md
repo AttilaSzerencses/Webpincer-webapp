@@ -157,8 +157,9 @@ A projekt a következő technológiákat/szoftvereket fogja használni a munka s
  - `Hely: SZTE Irinyi épület - Szeged, Tisza Lajos krt. 103`
  - `Résztvevők: Horváth-Czinger Bernadett, Martincsek Levente, Mitykó Norbert, Szerencsés Attila, Patai Zsolt, Fehér Erik, Simon Péter`
  - `Érintett témák: Ismerkedés, projekttéma kiválasztása. Felmerülő kérdések átbeszélése.`
- - 
- `2. megbeszélés:`
+ 
+
+`2. megbeszélés:`
  - `Időpont: 2021.09.23.`
  - `Hely: Discord`
  - `Résztvevők: Horváth-Czinger Bernadett, Martincsek Levente, Mitykó Norbert, Szerencsés Attila, Patai Zsolt, Fehér Erik, Simon Péter`
