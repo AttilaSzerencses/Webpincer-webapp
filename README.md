@@ -77,10 +77,14 @@ a pontok száma = fejenként a projektre kapható maxpont * tagok száma.
 ```
 
 ## 5. Szervezeti felépítés és felelősségmegosztás
-A projekt megrendelője `Márkus András`. A `Szállítmányozás` projektet a projektcsapat fogja végrehajtani, amely `jelenleg három fejlesztőből áll. A csapatban található tapasztalt és pályakezdő webprogramozó is, A tapasztalt projekttagok több éve dolgoznak az iparban, számos sikeres projektten vannak túl.`
- - `Teszt Elek (3 év tapasztalat)`
- - `Remek Elek (3 év tapasztalat)`
- - `Lev Elek (<1 év tapasztalatő)`
+A projekt megrendelője `Dr. Pflanzner Tamás`. A `Étel` projektet a projektcsapat fogja végrehajtani, amely `jelenleg hét fejlesztőből áll. A csapatban található tapasztaltabb és pályakezdő webprogramozó is. A tapasztaltabb projekttagok néhány projektben részt vettek már.`
+ - `Szerencsés Attila (<1 év tapasztalat)`
+ - `Patai Zsolt (<1 év tapasztalat)`
+ - `Martincsek Levente (<1 év tapasztalat)`
+ - `Fehér Erik (>1 év tapasztalatő)`
+ - `Horváth-Czinger Bernadett (<1 év tapasztalat)`
+ - `Mitykó Norbert (<1 év tapasztalat)`
+ - `Simon Péter (<1 év tapasztalat)`
 
 ```
 Itt lehet részletezni pl. a tagok szakmai tapasztalatait, vagy akár a releváns gyakorlati helyeket, munkahelyeket megemlíteni (4-6 mondatban).
@@ -91,10 +95,14 @@ A projekt a következő emberekből áll:
 
 |                                                                                                                   | Név             | E-mail cím (stud-os)       |
 |-------------------------------------------------------------------------------------------------------------------|-----------------|----------------------------|
-| Megrendelő                                                                                                        | `Márkus András` | `markusa@inf.u-szeged.hu`  |
-| Felelősségek: Projekt menedzser, `Adatbázis és adatkapcsolatok`, `A rendszer működési logikája`, `Prezentációk` | `Teszt Elek`    | `h123456@stud.u-szeged.hu` |
-| Felelősségek: `Felhasználói felületek`, `Dokumentáció`                                                            | `Remek Elek`    | `h654321@stud.u-szeged.hu` |
-| `Projekt tag`                                                                                                     | `Lev Elek`      | `h000000@stud.u-szeged.hu` |
+| Megrendelő                                                                                                        | `Dr. Pflanzner Tamás` | `markusa@inf.u-szeged.hu`  |
+| Felelősségek: Projekt menedzser, `Adatbázis és adatkapcsolatok`, `A rendszer működési logikája`, `Prezentációk` | `Horváth-Czinger Bernadett`    | `h046102@stud.u-szeged.hu` |
+| Felelősségek: `Felhasználói felületek`, `Dokumentáció`                                                            | `Szerencsés Attila`    | `h052093@stud.u-szeged.hu` |
+| `Projekt tag`                                                                                                     | `Fehér Erik`      | `h044630@stud.u-szeged.hu` |
+| `Projekt tag`                                                                                                     | `Simon Péter`      | `h051369@stud.u-szeged.hu` |
+| `Projekt tag`                                                                                                     | `Martincsek Levente`      | `h048695@stud.u-szeged.hu` |
+| `Projekt tag`                                                                                                     | `Mitykó Norbert`      | `h048949@stud.u-szeged.hu` |
+| `Projekt tag`                                                                                                     | `Patai Zsolt`      | `h050234@stud.u-szeged.hu` |
 
 ```
 Nem csak az adott egység felelősének feladata az adott részegység elkészítése, pl. a mérföldkövekhez tartozó prezentációt 
@@ -105,10 +113,14 @@ mindenki szerkesztheti, de elvárható, hogy a prezentációért felelős tag ad
 
 ### 6.1. Munkakörnyezet
 A projekt a következő munkaállomásokat fogja használni a munka során:
- - `Munkaállomások: 3 db PC Windows 10-es operációs rendszerrel`
- - `Dell Inspiron 5558 laptop (CPU: i5 5200U, RAM: 8 GB, GPU: Nvidia 920M)`
- - `Acer Aspire 573g laptop (CPU: i3 5005U, RAM: 4 GB, GPU: Nvidia 920M)`
- - `Asztali számítógép (CPU: i7 7700k, RAM: 16GB, GPU: Nvidia GTX1070)`
+ - `Munkaállomások: 7 db PC Windows 10-es operációs rendszerrel`
+ - `Asztali számítógép(PETI) (CPU: , RAM: GB, GPU:)`
+ - `Asztali számítógép (CPU: Amd Ryzen 3 3600, RAM: 8GB, GPU: Nvidia GTX 950)`
+ - `Asztali számítógép (CPU: Amd Ryzen 5 2400G, RAM: 8GB, GPU: Radeon Vega Graphics)`
+ - `Asztali számítógép (CPU: Amd Ryzen 3 3600, RAM: 16GB, GPU: MSI RX580 4GB)`
+ - `Asztali számítógép (CPU: Amd Ryzen 5 5600X, RAM: 32GB, GPU: Gigabyte RTX3070 TI)`
+ - `Notebook (CPU: i5-5300HQ, RAM: 8GB, GPU: NVIDIA GTX 1050TI)`
+ - `Asztali számítógép (CPU: i7 7700k, RAM: 8GB, GPU: MSI RX580 8GB)`
 
 A projekt a következő technológiákat/szoftvereket fogja használni a munka során: 
  - `Heroku platformszolgáltatás`
@@ -119,9 +131,6 @@ A projekt a következő technológiákat/szoftvereket fogja használni a munka s
  - `Eclipse IDE`
  - `Git verziókövető (GitLab)`
 
-```
-Milyen gépet használnak a projekttagok, milyen OS-t használnak, milyen szoftverkörnyezetben, stb.
-```
 
 ### 6.2. Rizikómenedzsment
 
@@ -129,49 +138,32 @@ Milyen gépet használnak a projekttagok, milyen OS-t használnak, milyen szoftv
 |---------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|--------|
 | `Betegség`                                  | `Súlyosságtól függően hátráltatja vagy bizonyos esetekben teljes mértékben korlátozza a munkavégzőt, így az egész projektre kihatással van. Megoldás: a feladatok átcsoportosítása`        | `nagy`       | `erős` |
 | `Kommunikációs fennakadás a csapattagokkal` | `A csapattagok között nem elégséges az információ áramlás, nem pontosan, esetleg késve vagy nem egyértelműen tájékoztatjuk egymást. Megoldás: még gyakoribb megbeszélések és ellenőrzések` | `kis`        | `erős` |
+| `Számítógépes/Hardveres problémák`          | `A csapat tagjainál esetlegesen fellépő hardveres problémák, amelyek kihatással lehetnek az adott csapattag munkájára. Amennyiben bármelyik tag számítógépe meghibásodna, megpróbálunk másik eszközt biztosítani, legrosszabb esetben átcsoportosítani a feladatokat.` | `kis`        | `erős` |
+| `Valamelyik csapattag elakadása`            | `Esetlegesen valamelyik csapattag elakad a kiosztott feladatjával. Ilyenkor megpróbálunk segíteni az adott csapattagnak, legvégső esetben átadjuk másnak az adott feladatot, és helyette valamilyen más feladatot kap.`        | `közepes`       | `erős` |
 
-```
-A rizikótényezők bemutatása, amely hátráltathatja a projekt befejezését. Minden rizikót érdemes megemlíteni, részletezve, hogy mit jelent, 
-milyen valószínűséggel következhet be (kis, közepes és nagy) és mekkora a várható hatása (gyenge, közepes és erős) 
-és hogy milyen tervvel készültök, amennyiben egy ilyen esemény bekövetkezik. Pl.: betegség, szoftver-hardver probléma, tag kiesése, stb. 
-```
 
 ## 7. Jelentések
 
 ### 7.1. Munka menedzsment
-A munkát `Teszt Elek` koordinálja. `Fő feladata, hogy folyamatosan egyeztessen a csapattagokkal az előrehaladásról és a fellépő problémákról, esetlegesen a megoldásban is segítséget nyújhat a projekt csúszásának elkerülése végett. További feladata a heti szinten tartandó csoportgyűlések időpontjának és helyszínének leszervezése, erről email-ben tájékoztatja a projektcsapatot.`
+A munkát `Horváth-Czinber Bernadett` koordinálja. `Fő feladata, hogy folyamatosan egyeztessen a csapattagokkal az előrehaladásról és a fellépő problémákról, esetlegesen a megoldásban is segítséget nyújhat a projekt csúszásának elkerülése végett. További feladata a heti szinten tartandó csoportgyűlések időpontjának és helyszínének leszervezése, erről discordon illetve messengeren tájékoztatja a projektcsapatot.`
 
-```
-Írd le, hogy ki menedzseli a munkát (tipikusan a projekt menedzser), mik a feladatai, és azokat hogyan hajtja végre.
-```
 
 ### 7.2. Csoportgyűlések
 
 `A projekt hetente ülésezik, hogy megvitassák az azt megelőző hét problémáit, illetve hogy megbeszéljék a következő hét feladatait. A megbeszélésről minden esetben memó készül.`
 
 `1. megbeszélés:`
- - `Időpont: 2021.09.15.`
+ - `Időpont: 2021.09.21.`
  - `Hely: SZTE Irinyi épület - Szeged, Tisza Lajos krt. 103`
- - `Résztvevők: Teszt Elek, Remek Elek, Lev Elek`
- - `Érintett témák: Ismerkedés, projekttéma kiválasztása`
+ - `Résztvevők: Horváth-Czinger Bernadett, Martincsek Levente, Mitykó Norbert, Szerencsés Attila, Patai Zsolt, Fehér Erik, Simon Péter`
+ - `Érintett témák: Ismerkedés, projekttéma kiválasztása. Felmerülő kérdések átbeszélése.`
+ - 
+ `2. megbeszélés:`
+ - `Időpont: 2021.09.23.`
+ - `Hely: Discord`
+ - `Résztvevők: Horváth-Czinger Bernadett, Martincsek Levente, Mitykó Norbert, Szerencsés Attila, Patai Zsolt, Fehér Erik, Simon Péter`
+ - `Érintett témák: Projekt terv áttekintése, átbeszélése, illetve kitöltése a megadott szempontok szerint.`
 
-`2. megbeszélés:`
- - `Időpont: 2021.09.22.`
- - `Hely: Pivovár - Szeged, Vitéz utca 26.`
- - `Résztvevők: Teszt Elek, Remek Elek, Lev Elek`
- - `Érintett témák: A projektben használt technológiák, a dokumentáció felépítése, szerepkörök kiosztása, dokumentáció kisebb részekre felosztása`
-
-`3. Megbeszélés:`
- - `Időpont: 2021.09.29.`
- - `Hely: TIK – Szeged, Ady tér 10.`
- - `Résztvevők: Teszt Elek, Remek Elek`
- - `Érintett témák: Funkcionális és nem funkcionális követelmények megbeszélése, UML és adatbázis tervek kiosztása`
-
-```
-A memókat ebben a dokumentumban kell vezetni a teljes projekt során, amely tartalmazza a következőket: 
-jelenlévők listája, megbeszélés helye és ideje, megbeszélt tevékenységek, felmerült kérdések és igények. 
-	Lényege, hogy betekintést kapjunk hogyan szerveződnek, zajlanak a csoportgyűlések.
-```
 
 ### 7.3. Minőségbiztosítás
 
@@ -184,7 +176,7 @@ Az alábbi lehetőségek vannak a szoftver megfelelő minőségének biztosítá
 
 ### 7.4. Átadás, eredmények elfogadása
 
-A projekt eredményeit `Márkus András` fogja elfogadni. A projektterven változásokat csak  `Márkus András` írásos kérés esetén `Márkus András`engedélyével lehet tenni. A projekt eredményesnek bizonyul, ha specifikáció helyes és határidőn belül készül el. Az esetleges késések pontlevonást eredményeznek.
+A projekt eredményeit `Dr. Pflanzner Tamás` fogja elfogadni. A projektterven változásokat csak  `Dr. Pflanzner Tamás` írásos kérés esetén `Dr. Pflanzner Tamás`engedélyével lehet tenni. A projekt eredményesnek bizonyul, ha specifikáció helyes és határidőn belül készül el. Az esetleges késések pontlevonást eredményeznek.
 Az elfogadás feltételeire és beadás formájára vonatkozó részletes leírás a következő honlapon olvasható: https://okt.sed.hu/rf1/
 
 ### 7.5. Státuszjelentés
@@ -195,7 +187,7 @@ Minden leadásnál a projektmenedzser jelentést tesz a projekt haladásáról, 
 
 ### 8.1. Tervezett szoftverfolyamat modell és architektúra
 
-`A szoftver fejlesztése során az agilis fejlesztési modellt alkalmazzuk. A fejlesztés során nagy hangsúlyt fektetünk a folyamatos kommunikcióra. A fejlesztés során a szoftver specifikációi rugalmasan vátozhatnak, és ezzel a módszertannal tudunk a leggyorsabban alkalmazkodni az új elvárásokhoz.`
+`A szoftver fejlesztése során az agilis fejlesztési modellt alkalmazzuk. A fejlesztés során nagy hangsúlyt fektetünk a folyamatos kommunikcióra. A fejlesztés során a szoftver specifikációi rugalmasan változhatnak, és ezzel a módszertannal tudunk a leggyorsabban alkalmazkodni az új elvárásokhoz.`
 
 `A szoftver MVC alapú REST webszolgáltatásként működik. A szerver és a kliens függetlenek, csupán API végpontok segítségével kommunikálnak.`
 
@@ -235,20 +227,20 @@ Részfeladatai a következők:
 
 #### 9.1.1. Projektterv kitöltése
 
-Felelős: `Mindenki`
+Felelős: `Szerencsés Attila`
 
 Tartam:  `4 nap`
 
-Erőforrásigény:  `1 személynap/fő`
+Erőforrásigény:  `2 személynap/fő`
 
 
 #### 9.1.2. Bemutató elkészítése
 
-Felelős: `Teszt Elek`
+Felelős: `Horváth-Czinger Bernadett`
 
-Tartam:  `2 nap`
+Tartam:  `4 nap`
 
-Erőforrásigény:  `1 személynap`
+Erőforrásigény:  `2 személynap`
 
 ```
 A mérföldkőhöz tartozó feladatok bemutatása PPT keretében, pl. téma, tervezett funkciók, tagok, Gantt diagram.`
