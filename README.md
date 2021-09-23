@@ -82,9 +82,7 @@ A projekt megrendelője `Dr. Pflanzner Tamás`. A `Étel` projektet a projektcsa
  - `Mitykó Norbert (<1 év tapasztalat)`
  - `Simon Péter (<1 év tapasztalat)`
 
-```
-Itt lehet részletezni pl. a tagok szakmai tapasztalatait, vagy akár a releváns gyakorlati helyeket, munkahelyeket megemlíteni (4-6 mondatban).
-```
+`A projekt tagok mindegyike vett már részt weblap készítés projektben, azomban egyikünk sem rendelkezik munkahelyi tapasztalattal. Minden tag kisebb projektekben vett részt, ahol rész feladatokat készítettek el az adott weboldallal kapcsolatban. Főként HTML, CSS, PHP ismeretekkel rendelkezünk. Néhány tag SQL tudással is rendelkezik.`
 
 ### 5.1 Projektcsapat
 A projekt a következő emberekből áll:
