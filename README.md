@@ -67,14 +67,10 @@ szintén 4-6 mondattal leírva.
 
 ## 4. Költség- és erőforrás-szükségletek
 
-Az erőforrásigényünk összesen kb. `22` személynap/fő.
+Az erőforrásigényünk összesen kb. `23` személynap/fő.
 
 A rendelkezésünkre áll összesen `7 * 70 = 490` pont.
 
-```
-Becsült sarokszámok, a rendelkezésre álló erőforrás fejenként általában 17-25 személynap, 
-a pontok száma = fejenként a projektre kapható maxpont * tagok száma.
-```
 
 ## 5. Szervezeti felépítés és felelősségmegosztás
 A projekt megrendelője `Dr. Pflanzner Tamás`. A `Étel` projektet a projektcsapat fogja végrehajtani, amely `jelenleg hét fejlesztőből áll. A csapatban található tapasztaltabb és pályakezdő webprogramozó is. A tapasztaltabb projekttagok néhány projektben részt vettek már.`
