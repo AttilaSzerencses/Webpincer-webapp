@@ -56,9 +56,6 @@ szintén 4-6 mondattal leírva.
  - `Regisztrációs űrlap, új megrendelők`
  - `Biztonsági mentés automatikus létrehozása`
  
-```
-Ide kerülnek a rendszerrel szemben támasztott funkcionális igények: azaz amit a rendszernek tudnia kell.
-```
 
 ### 3.3. Nem funkcionális követelmények
 
