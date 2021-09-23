@@ -1,18 +1,8 @@
-# `Szallítmányozás` Projektterv 2021
+# `Étel` Projektterv 2021
 
 ## 1. Összefoglaló 
 
-`A szállítmányozás lényege, hogy a küldemény a lehető legkisebb költséggel, legbiztonságosabban, a megfelelő időben optimálisan jusson el a rendeltetési helyre. Ez megköveteli az online is elérhető nyilvántartást, épp ezért ennek a projektnek a célja, hogy a szállítmányozással foglalkozó cégek számára egy webalkalmazást fejlesszünk. Az oldal lehetővé teszi tetszőleges árukészlet nyilvántartását, amelyek akár több raktárban, szétszorva vannak tárolva. Ezenkívül az árumozgatás online nyilvántartására is alkalmas lesz az elkészült weboldal. Mindezen funkciókat egy letisztult felületen keresztül tudja elérni a felhasználó.`
-
-```
-Ide írd le tömören (4-6 mondatban), hogy miről szól a projekt, amit a gyakorlatvezetőtől kaptatok. 
-Írd le, hogy mik a fő célok, miért van a weboldalra szükség. 
-A dokumentumban a pirossal illetve a blokkokkal kiemelt szövegeknek két jelentése van: 
-(a) minta/sablon szöveg, amit le kell cserélni, pl. gyakorlatvezető neve; 
-(b) segítő/magyarázó szöveg. 
-Az átadott dokumentumban nem szerepelhetnek se pirossal kiemelt, se blokkban szereplő részek! A
-feketével írt részek törlése tilos, azok közösek.
-```
+`A Webpincér célja, hogy minél olcsóbban és minél gyorsabban tudjon az ügyfél választani az általa kedvelt éttermek és ételek közül. Ehhez egy online webalkalmazást készítünk amelyben éttermek széles választéka elérhető. Rengeteg étel és ital közül választhatnak a megrendelők. A weboldal biztosítja a megfelelő tájékoztatást a megrendelők számára. Információt biztosít az étel árakkal kapcsolatban, és a különböző szállítási költségekkel is.`
 
 ## 2. Verziók
 
@@ -51,25 +41,19 @@ szintén 4-6 mondattal leírva.
 ```
 
 ### 3.1. Rendszerspecifikáció
-
-`A rendszernek képesnek kell lennie arra, hogy adott cég raktárait illetve a raktárak állapotát (telítettség, fizikai pozíció, speciális tulajdonság pl. veszélyes anyag tárolása) nyilvántartsa. Ezenkívül a szállítmányozó cég alkalmazásában álló sofőröket, illetve azok kamionjait is kezelnie kell. A kamionok aktuális és korábbi szállítmányait ki tudjuk listázni. Minden funkció a megfelelő felhasználói jogosultság mellett használható, annak függvényében írható, olvasható vagy nem megtekinthető az adat.`
-
-```
-Ide írd le részletesen, hogy mit fog tudni a rendszer (4-6 mondatban), amit a projekt keretében kerül megvalósításra. 
-Mik a megrendelő és a felhasználók igényei? Miért van szükség a projektre?
-```
+`A rendszernek képesnek kell lennie arra, hogy a megrendelők bejelentkezhessenek és válogatni tudjanak a különböző éttermek közül. Továbbá fontos feladata a rendszernek, hogy megfelelő tájékoztatást nyújtson az éttermek áraival, kínálataival, nyitvatartásával kapcsolatban is, nem elfelejtve a szállítási költségeket sem. A rendszernek kezelnie kell a leadott rendeléseket, azokat továbbítani a megfelelő étterem felé. Ezek mellett a rendeléseket továbbítani kell a futárok felé is. Minden funkció a megfelelő felhasználói jogosultság mellett használható, annak függvényében írható, olvasható vagy nem megtekinthető az adat.`
 
 ### 3.2. Funkcionális követelmények
 
- - `Felhasználói munkamenet megvalósítása több jogosultsági szinttel (admin, raktáros, sofőr)`
+ - `Felhasználói munkamenet megvalósítása több jogosultsági szinttel (admin, megrendelő, éttermek, futár)`
  - `Felhasználók kezelése (CRUD)`
- - `Raktárak kezelése (CRUD)`
- - `Árukészletek kezelése (CRUD)`
- - `Járművek kezelése (CRUD)`
- - `Fuvarok/szállítmányok kezelése (CRUD)`
- - `Email-es kiértesítés új szállítmány esetén az adott raktárosnak és sofőrnek`
- - `Fuvar útvonalának megjelenítése térképen a kezdő és a végponttal együtt`
- - `Kapcsolatfelvételi űrlap biztosítása új cégek számára`
+ - `Éttermek kezelése (CRUD)`
+ - `Futárok kezelése`
+ - `Megrendelések kezelése (CRUD)`
+ - `Szállítási díjak kezelése`
+ - `Email-es kiértesítés új megrendelések, illetve kedvezmények esetén az adott megrendelőnek.`
+ - `Megrendelések megjelenítése részletesen: Megrendelő adatai, Megrendelt ételek, Árak, Külön kérések kezelése`
+ - `Regisztrációs űrlap, új megrendelők`
  - `Biztonsági mentés automatikus létrehozása`
  
 ```
@@ -83,10 +67,6 @@ Ide kerülnek a rendszerrel szemben támasztott funkcionális igények: azaz ami
  - `Szenzitív adatokat biztonságosan tároljuk`
  - `A legfrissebb technológiákat használja a rendszer`
 
-```
-A rendszer nem funkcionális követelményei, pl.: milyen környezetben fusson, milyen teljesítményt kell produkálnia, 
-milyen megjelenéssel kell rendelkeznie.
-```
 
 ## 4. Költség- és erőforrás-szükségletek
 
