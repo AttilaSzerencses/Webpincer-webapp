@@ -285,7 +285,7 @@ Erőforrásigény:  `3 személynap`
 
 #### 9.2.5. Package diagram
 
-Felelős: `Teszt Elek`
+Felelős: `Martincsek Levente`
 
 Tartam:  `4 nap`
 
@@ -413,9 +413,9 @@ Tartam:  `4 nap`
 
 Erőforrásigény:  `2 személynap`
 
-#### 9.3.13.  `Járművek kezeléshez kapcsolódó GUI megvalósítása`
+#### 9.3.13.  `Ételek bemutatásához kapcsolódó GUI megvalósítása`
 
-Felelős: `Teszt Elek `
+Felelős: `Martincsek Levente `
 
 Tartam:  `5 nap`
 
@@ -453,15 +453,15 @@ Tartam:  `3 nap`
 
 Erőforrásigény:  `1 személynap`
 
-#### 9.3.18.  `Email-es kiértesítés új szállítmány esetén az adott raktárosnak és sofőrnek`
+#### 9.3.18.  `Email-es visszajelzés a rendelés sikerességéről`
 
-Felelős: `Lev Elek`
+Felelős: `Martincsek Levente`
 
 Tartam:  `5 nap`
 
 Erőforrásigény:  `2 személynap`
 
-#### 9.3.19.  `Fuvar útvonalának megjelenítése térképen a kezdő és a végponttal együtt`
+#### 9.3.19.  `Rendelés útvonalának megjelenítése térképen a kezdő és a végponttal együtt`
 
 Felelős: `Simon Péter`
 
@@ -469,9 +469,9 @@ Tartam:  `3 nap`
 
 Erőforrásigény:  `1 személynap`
 
-#### 9.3.20.  `Kapcsolatfelvételi űrlap biztosítása új cégek számára (üzleti logika és GUI)`
+#### 9.3.20.  `Kapcsolatok/Elérhetőségek GUI`
 
-Felelős: `Teszt Elek `
+Felelős: `Martincsek Levente`
 
 Tartam:  `4 nap`
 
@@ -515,7 +515,7 @@ Részfeladatai a következők:
 
 #### 9.4.1. Javított minőségű prototípus új funkciókkal
 
-Felelős: `Teszt Elek`
+Felelős: `Martincsek Levente`
 
 Tartam:  `5 nap`
 
@@ -523,7 +523,7 @@ Erőforrásigény:  `1 személynap`
 
 #### 9.4.2. Javított minőségű prototípus javított funkciókkal
 
-Felelős: `Lev Elek`
+Felelős: `Martincsek Levente`
 
 Tartam:  `5 nap`
 
