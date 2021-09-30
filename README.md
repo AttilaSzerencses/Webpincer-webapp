@@ -34,10 +34,7 @@ azaz nem feltétlen mindenki, aki módosította a dokumentumot pl. egy elírás 
 ## 3. A projekt bemutatása
 
 `Az alábbi projektterv egy ételrendelési projektet mutat be, amely 2021.09.20-tól 2021.11.27-ig tart. A projekt célja megfelelő felültet biztosítani egy ételrendelés online elvégzésére és az adatok nyilvántartására. Célunk egy minél gyorsabban és egyszerűbben használható, átláthó webalkalmazás létrehozása. Projektünkön 7 fejlesztő fog dolgozni, amit előre láthatólag öt alkalommal fogunk prezentálni a megrendelőnek.
-```
-A megvalósítás további általános leírása, pl. mennyi főből áll a csapat, mennyi átadandó lesz a megrendelőnek a félév során, 
-szintén 4-6 mondattal leírva.
-```
+
 
 ### 3.1. Rendszerspecifikáció
 `A rendszernek képesnek kell lennie arra, hogy a megrendelők bejelentkezhessenek és válogatni tudjanak a különböző éttermek közül. Továbbá fontos feladata a rendszernek, hogy megfelelő tájékoztatást nyújtson az éttermek áraival, kínálataival, nyitvatartásával kapcsolatban is, nem elfelejtve a szállítási költségeket sem. A rendszernek kezelnie kell a leadott rendeléseket, azokat továbbítani a megfelelő étterem felé. Ezek mellett a rendeléseket továbbítani kell a futárok felé is. Minden funkció a megfelelő felhasználói jogosultság mellett használható, annak függvényében írható, olvasható vagy nem megtekinthető az adat.`
@@ -95,11 +92,6 @@ A projekt a következő emberekből áll:
 | `Projekt tag`                                                                                                     | `Martincsek Levente`      | `h048695@stud.u-szeged.hu` |
 | `Projekt tag`                                                                                                     | `Mitykó Norbert`      | `h048949@stud.u-szeged.hu` |
 | `Projekt tag`                                                                                                     | `Patai Zsolt`      | `h050234@stud.u-szeged.hu` |
-
-```
-Nem csak az adott egység felelősének feladata az adott részegység elkészítése, pl. a mérföldkövekhez tartozó prezentációt 
-mindenki szerkesztheti, de elvárható, hogy a prezentációért felelős tag adja elő. 
-```
 
 ## 6. A munka feltételei
 
@@ -213,9 +205,6 @@ D - dokumentáció, P - prototípus
 
 A következőkben a tervezett feladatok részletes összefoglalása található.
 
-```
-Alapvetően egy feladatnak 1 felelőse lehet, de kivételt képez pl. a 9.1.1. részfeladat.`
-```
 
 ### 9.1. Projektterv (1. mérföldkő)
 
@@ -239,10 +228,6 @@ Felelős: `Horváth-Czinger Bernadett`
 Tartam:  `4 nap`
 
 Erőforrásigény:  `2 személynap`
-
-```
-A mérföldkőhöz tartozó feladatok bemutatása PPT keretében, pl. téma, tervezett funkciók, tagok, Gantt diagram.`
-```
 
 ### 9.2. UML és adatbázis tervek (2. mérföldkő)
 
@@ -466,10 +451,6 @@ Tartam:  `1 nap`
 
 Erőforrásigény:  `1 személynap`
 
-```
-A feladatokat a 3.2-es pont figyelembevételével érdemes meghatározni és lehető legrészletesebben definiálni a feladatokat és a felelőseit. 
-A bemutató során a prototípus aktuális állását kell prezentálni.
-```
 
 ### 9.4. Prototípus II. (4. mérföldkő)
 
@@ -566,10 +547,6 @@ Tartam:  `1 nap`
 
 Erőforrásigény:  `1 személynap`
 
-```
-Működő végleges program, a frissített tesztelési dokumentációval. A 3. mérföldkőhöz képest funkiconálisan többet kell tudnia az oldalnak.
-
-```
 ## 10. Részletes időbeosztás
 
 ![image](./MINTA-gantt-diagram.png)
