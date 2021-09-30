@@ -269,7 +269,7 @@ Erőforrásigény:  `2 személynap`
 
 #### 9.2.3. Sequence diagram
 
-Felelős: `Remek Elek`
+Felelős: `Patai Zsolt`
 
 Tartam:  `3 nap`
 
