@@ -378,7 +378,7 @@ Erőforrásigény:  `1 személynap`
 
 #### 9.3.9.  `Éttermek kezeléséhez tartozó üzleti logika (listázása, módosítása, létrehozása, törlése)`
 
-Felelős: `-`
+Felelős: `Patai Zsolt`
 
 Tartam:  `5 nap`
 
@@ -386,7 +386,7 @@ Erőforrásigény:  `2 személynap`
 
 #### 9.3.10.  `Éttermek kezeléshez kapcsolódó GUI megvalósítása`
 
-Felelős: `-`
+Felelős: `Patai Zsolt`
 
 Tartam:  `5 nap`
 
@@ -460,7 +460,7 @@ Erőforrásigény:  `1 személynap/fő`
 
 #### 9.3.19. Bemutató elkészítése 
 
-Felelős: `-`
+Felelős: `Patai Zsolt`
 
 Tartam:  `1 nap`
 
@@ -495,7 +495,7 @@ Erőforrásigény:  `2 személynap`
 
 #### 9.4.3. Javított minőségű prototípus a korábbi hiányzó funkciókkal
 
-Felelős: `-`
+Felelős: `Patai Zsolt`
 
 Tartam:  `5 nap`
 
