@@ -108,7 +108,7 @@ mindenki szerkesztheti, de elvárható, hogy a prezentációért felelős tag ad
 ### 6.1. Munkakörnyezet
 A projekt a következő munkaállomásokat fogja használni a munka során:
  - `Munkaállomások: 7 db PC Windows 10-es operációs rendszerrel`
- - `Asztali számítógép(PETI) (CPU: , RAM: GB, GPU:)`
+ - `Asztali számítógép (CPU: Intel(R) Core(TM) i7-9750H, RAM: 16GB, GPU: GTX 1650)`
  - `Asztali számítógép (CPU: Amd Ryzen 3 3600, RAM: 8GB, GPU: Nvidia GTX 950)`
  - `Asztali számítógép (CPU: Amd Ryzen 5 2400G, RAM: 8GB, GPU: Radeon Vega Graphics)`
  - `Asztali számítógép (CPU: Amd Ryzen 3 3600, RAM: 16GB, GPU: MSI RX580 4GB)`
