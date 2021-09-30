@@ -8,12 +8,12 @@
 
 | Verzió | Szerző(k)                | Dátum        | Státusz         | Megjegyzés                                                    |
 |--------|--------------------------|--------------|-----------------|---------------------------------------------------------------|
-| `0.1`  | `Teszt Elek`             | `2021-09-26` | `Tervezet`      | `Legelső verzió`                                              |
-| `0.2`  | `Remek Elek, Teszt Elek` | `2021-10-04` | `Előterjesztés` | `A projekt menedzsere jónak találta`                          |
-| `1.0`  | `Lev Elek`               | `2021-10-11` | `Elfogadott`    | `Apróbb átszervezések a kommentek alapján`                    |
-| `1.1`  | `Remek Elek`             | `2021-10-15` | `Tervezet`      | `Személyes felelősségek átszervezése, Gantt chart módosítása` |
-| `1.1`  | `Lev Elek`               | `2021-10-18` | `Előterjesztés` | `2. mérföldkő további módosításai`                            |
-| `2.1`  | `Remek Elek`             | `2021-10-25` | `Elfogadott`    | `Leírások pontosítása a megjegyzések alapján`                 |
+| `0.1`  | `Szerencsés Attila`             | `2021-09-26` | `Tervezet`      | `Legelső verzió`                                              |
+| `0.2`  | `Horváth-Czinger Bernadett, Martincsek Levente` | `2021-10-04` | `Előterjesztés` | `A projekt menedzsere jónak találta`                          |
+| `1.0`  | `Patai Zsolt`               | `2021-10-11` | `Elfogadott`    | `Apróbb átszervezések a kommentek alapján`                    |
+| `1.1`  | `Simon Péter, Fehér Erik`             | `2021-10-15` | `Tervezet`      | `Személyes felelősségek átszervezése, Gantt chart módosítása` |
+| `1.1`  | `Mitykó Norbert`               | `2021-10-18` | `Előterjesztés` | `2. mérföldkő további módosításai`                            |
+| `2.1`  | `Horváth-Czinger Bernadett, Fehér Erik`             | `2021-10-25` | `Elfogadott`    | `Leírások pontosítása a megjegyzések alapján`                 |
 
 
 Státusz osztályozás:
@@ -21,15 +21,6 @@ Státusz osztályozás:
  - Előterjesztés: a projekt menedzser bírálatával, a mérföldkő határidejekor
  - Elfogadott: a megrendelő által elfogadva, a prezentáció bemutatásakor
 
-```
-A leadott projekttervet véglegesnek kell tekinteni. 
-Mindazonáltal indokolt esetben ettől el lehet térni, amennyiben a gyakorlatvezető engedélyezi.
-A fő változtatásokat itt kell vezetni a projekt teljes ideje alatt (jelenlegi példánkban most lett vége a 2. mérföldkőnek). 
-Általánosságban elmondható, hogy az első 2 mérföldkő során gyakoribb a változtatás, így legalább 
-3 fő verziót érdemes megjelölni (Tervezet-Előterjesztés-Elfogadott).
-A verzió számozásának következetesnek kell lennie. A szerzőknél azoknak a nevét kell felsorolni, akik hozzájárultak a fő verzióhoz,
-azaz nem feltétlen mindenki, aki módosította a dokumentumot pl. egy elírás javításával. 
-```
 
 ## 3. A projekt bemutatása
 
@@ -177,9 +168,8 @@ Minden leadásnál a projektmenedzser jelentést tesz a projekt haladásáról, 
 
 ### 8.1. Tervezett szoftverfolyamat modell és architektúra
 
-`A szoftver fejlesztése során az agilis fejlesztési modellt alkalmazzuk. A fejlesztés során nagy hangsúlyt fektetünk a folyamatos kommunikcióra. A fejlesztés során a szoftver specifikációi rugalmasan változhatnak, és ezzel a módszertannal tudunk a leggyorsabban alkalmazkodni az új elvárásokhoz.`
+`Csapatun az agilis fejlesztési modellt választotta, ezzel a módszerrel sokkal rugalmassaban tudunk alkalmozkodni az új elvárásokhoz is. A fejlesztés során nagy hangsúlyt fektetünk a folyamatos kommunikcióra. Célunk, hogy a megrendelő elvárásait maximálisan teljesíteni tudjuk  A szoftvert Node-ban írtuk, a GUI felületet pedig HTML, CSS-ben valósítjuk meg.`
 
-`A szoftver MVC alapú REST webszolgáltatásként működik. A szerver és a kliens függetlenek, csupán API végpontok segítségével kommunikálnak.`
 
 ```
 Milyen szoftverfolyamat modellt követve állítja elő a csapat a specifikációnak megfelelő prototípusokat? Miért ezt választja? 
@@ -197,9 +187,6 @@ A főbb átadandók és határidők a projekt időtartama alatt a következők:
 |    P1+D3    |      Prototípus I. és bemutató      | `2021-11-08 ` |
 |    P2+D4    |      Prototípus II. és bemutató     | `2021-11-29 ` |
 
-```
-D - dokumentáció, P - prototípus
-```
 
 ## 9. Feladatlista
 
