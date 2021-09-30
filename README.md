@@ -47,9 +47,8 @@ szintén 4-6 mondattal leírva.
  - `Felhasználói munkamenet megvalósítása több jogosultsági szinttel (admin, megrendelő, éttermek, futár)`
  - `Felhasználók kezelése (CRUD)`
  - `Éttermek kezelése (CRUD)`
- - `Futárok kezelése`
+ - `Futárok kezelése` (Pl: `Szállítási díjak kezelése`)
  - `Megrendelések kezelése (CRUD)`
- - `Szállítási díjak kezelése`
  - `Email-es kiértesítés új megrendelések, illetve kedvezmények esetén az adott megrendelőnek.`
  - `Megrendelések megjelenítése részletesen: Megrendelő adatai, Megrendelt ételek, Árak, Külön kérések kezelése`
  - `Regisztrációs űrlap, új megrendelők`
@@ -293,7 +292,7 @@ Erőforrásigény:  `1 személynap`
 
 #### 9.2.6. Képernyőtervek
 
-Felelős: `Teszt Elek`
+Felelős: `Horváth-Czinger Bernadett`
 
 Tartam:  `3 nap`
 
@@ -307,17 +306,13 @@ Tartam:  `1 nap`
 
 Erőforrásigény:  `1 személynap`
 
-```
-A mérföldkőhöz tartozó feladatok bemutatása PPT keretében (elkészült diagramok és képernyőtervek)`
-```
-
 ### 9.3. Prototípus I. (3. mérföldkő)
 
 Ennek a feladatnak az a célja, hogy `egy működő prototípust hozzunk létre, ahol a vállalt funkcionális követelmények nagy része már prezentálható állapotban van.`
 
 Részfeladatai a következők:
 
-#### 9.3.1.  `Felhasználói munkamenet üzleti logikája több jogosultsági szinttel (admin, raktáros, sofőr)`
+#### 9.3.1.  `Felhasználói munkamenet üzleti logikája több jogosultsági szinttel (admin, felhasználó, futár)`
 
 Felelős: `Simon Péter`
 
@@ -327,7 +322,7 @@ Erőforrásigény:  `2 személynap`
 
 #### 9.3.2.  `Felhasználói munkamenethez kapcsolódó GUI megvalósítása`
 
-Felelős: `Remek Elek`
+Felelős: `Horváth-Czinger Bernadett`
 
 Tartam:  `4 nap`
 
@@ -351,13 +346,13 @@ Erőforrásigény:  `2 személynap`
 
 #### 9.3.5.  `Felhasználók kezeléséhez kapcsolódó GUI megvalósítása`
 
-Felelős: `Teszt Elek`
+Felelős: `Horváth-Czinger Bernadett`
 
 Tartam:  `3 nap`
 
 Erőforrásigény:  `1 személynap`
 
-#### 9.3.6.  `Raktárak kezeléshez tartozó üzleti logika (listázása, módosítása, létrehozása, törlése)`
+#### 9.3.6.  `Rendeléshez kezeléshez tartozó üzleti logika (listázása, módosítása, létrehozása, törlése)`
 
 Felelős: `Remek Elek`
 
@@ -365,15 +360,15 @@ Tartam:  `4 nap`
 
 Erőforrásigény:  `2 személynap`
 
-#### 9.3.7.  `Raktárak kezeléshez kapcsolódó GUI megvalósítása`
+#### 9.3.7.  `Rendeléshez kezeléshez kapcsolódó GUI megvalósítása`
 
-Felelős: `Remek Elek `
+Felelős: `Horváth-Czinger Bernadett`
 
 Tartam:  `4 nap`
 
 Erőforrásigény:  `2 személynap`
 
-#### 9.3.8.  `Raktárkezeléshez szükséges adatok létrehozása az adatbázisban`
+#### 9.3.8.  `Rendeléshez szükséges adatok létrehozása az adatbázisban`
 
 Felelős: `Lev Elek`
 
@@ -381,7 +376,7 @@ Tartam:  `3 nap`
 
 Erőforrásigény:  `1 személynap`
 
-#### 9.3.9.  `Árukészletek kezeléséhez tartozó üzleti logika (listázása, módosítása, létrehozása, törlése)`
+#### 9.3.9.  `Éttermek kezeléséhez tartozó üzleti logika (listázása, módosítása, létrehozása, törlése)`
 
 Felelős: `Lev Elek`
 
@@ -389,15 +384,15 @@ Tartam:  `5 nap`
 
 Erőforrásigény:  `2 személynap`
 
-#### 9.3.10.  `Árukészletek kezeléshez kapcsolódó GUI megvalósítása`
+#### 9.3.10.  `Éttermek kezeléshez kapcsolódó GUI megvalósítása`
 
-Felelős: `Lev Elek`
+Felelős: ``
 
 Tartam:  `5 nap`
 
 Erőforrásigény:  `2 személynap`
 
-#### 9.3.11.  `Árukészletek kezeléséhez szükséges adatok létrehozása az adatbázisban`
+#### 9.3.11.  `Éttermek kezeléséhez szükséges adatok létrehozása az adatbázisban`
 
 Felelős: `Lev Elek`
 
@@ -405,7 +400,7 @@ Tartam:  `3 nap`
 
 Erőforrásigény:  `1 személynap`
 
-#### 9.3.12.  `Járművek kezeléséhez kapcsolódó üzleti logika (listázása, módosítása, létrehozása, törlése)`
+#### 9.3.12.  `Futárszolgálat kezeléséhez kapcsolódó üzleti logika (listázása, módosítása, létrehozása, törlése)`
 
 Felelős: `Teszt Elek`
 
@@ -421,39 +416,8 @@ Tartam:  `5 nap`
 
 Erőforrásigény:  `3 személynap`
 
-#### 9.3.14.  `Járművek kezeléséhez szükséges adatok létrehozása az adatbázisban`
 
-Felelős: `Remek Elek `
-
-Tartam:  `3 nap`
-
-Erőforrásigény:  `1 személynap`
-
-#### 9.3.15.  `Fuvarok kezeléséhez tartozó üzleti logika (listázása, módosítása, létrehozása, törlése)`
-
-Felelős: `Remek Elek`
-
-Tartam:  `4 nap`
-
-Erőforrásigény:  `2 személynap`
-
-#### 9.3.16.  `Fuvarok kezeléshez kapcsolódó GUI megvalósítása`
-
-Felelős: `Remek Elek`
-
-Tartam:  `5 nap`
-
-Erőforrásigény:  `3 személynap`
-
-#### 9.3.17.  `Fuvarok kezeléséhez szükséges adatok létrehozása az adatbázisban`
-
-Felelős: `Simon Péter`
-
-Tartam:  `3 nap`
-
-Erőforrásigény:  `1 személynap`
-
-#### 9.3.18.  `Email-es visszajelzés a rendelés sikerességéről`
+#### 9.3.14.  `Email-es visszajelzés a rendelés sikerességéről`
 
 Felelős: `Martincsek Levente`
 
@@ -461,7 +425,7 @@ Tartam:  `5 nap`
 
 Erőforrásigény:  `2 személynap`
 
-#### 9.3.19.  `Rendelés útvonalának megjelenítése térképen a kezdő és a végponttal együtt`
+#### 9.3.15.  `Rendelés útvonalának megjelenítése térképen a kezdő és a végponttal együtt`
 
 Felelős: `Simon Péter`
 
@@ -469,7 +433,7 @@ Tartam:  `3 nap`
 
 Erőforrásigény:  `1 személynap`
 
-#### 9.3.20.  `Kapcsolatok/Elérhetőségek GUI`
+#### 9.3.16.  `Kapcsolatok/Elérhetőségek GUI`
 
 Felelős: `Martincsek Levente`
 
@@ -477,7 +441,7 @@ Tartam:  `4 nap`
 
 Erőforrásigény:  `2 személynap`
 
-#### 9.3.21.  `Biztonsági mentés automatikus létrehozása`
+#### 9.3.17.  `Biztonsági mentés automatikus létrehozása`
 
 Felelős: `Simon Péter`
 
@@ -485,7 +449,7 @@ Tartam:  `4 nap`
 
 Erőforrásigény:  `2 személynap`
 
-#### 9.3.22. Tesztelési dokumentum (TP, TC)
+#### 9.3.18. Tesztelési dokumentum (TP, TC)
 
 Felelős: `Mindenki`
 
@@ -494,7 +458,7 @@ Tartam:  `3 nap`
 Erőforrásigény:  `1 személynap/fő`
 
 
-#### 9.3.23. Bemutató elkészítése 
+#### 9.3.19. Bemutató elkészítése 
 
 Felelős: `Teszt Elek`
 
@@ -545,7 +509,7 @@ Tartam:  `1 nap`
 
 Erőforrásigény:  `0.3 személynap`
 
-#### 9.4.5. `Raktárak kezelésének tesztelése (TP, TC, TR)`
+#### 9.4.5. `Éttermek kezelésének tesztelése (TP, TC, TR)`
 
 Felelős: `Remek Elek`
 
@@ -553,7 +517,7 @@ Tartam:  `1 nap`
 
 Erőforrásigény:  `0.3 személynap`
 
-#### 9.4.6. `Árukészletek kezelésének tesztelése (TP, TC, TR)`
+#### 9.4.6. `Rendelés kezelésének tesztelése (TP, TC, TR)`
 
 Felelős: `Teszt Elek`
 
@@ -561,31 +525,16 @@ Tartam:  `1 nap`
 
 Erőforrásigény:  `0.3 személynap`
 
-#### 9.4.7. `Járművek kezelésének tesztelése (TP, TC, TR)`
 
-Felelős: `Remek Elek`
+#### 9.4.7. `Email-es funkciók tesztelése (TP, TC, TR)`
 
-Tartam:  `1 nap`
-
-Erőforrásigény:  `0.3 személynap`
-
-#### 9.4.8. `Fuvarok kezelésének tesztelése (TP, TC, TR)`
-
-Felelős: `Teszt Elek`
+Felelős: ``
 
 Tartam:  `1 nap`
 
 Erőforrásigény:  `0.3 személynap`
 
-#### 9.4.9. `Email-es funkciók tesztelése (TP, TC, TR)`
-
-Felelős: `Remek Elek`
-
-Tartam:  `1 nap`
-
-Erőforrásigény:  `0.3 személynap`
-
-#### 9.4.10. `Térképes funkciók tesztelése (TP, TC, TR)`
+#### 9.4.8. `Térképes funkciók tesztelése (TP, TC, TR)`
 
 Felelős: `Lev Elek`
 
@@ -593,7 +542,15 @@ Tartam:  `1 nap`
 
 Erőforrásigény:  `0.3 személynap`
 
-#### 9.4.11. `Kapcsolatfelvételi űrlap tesztelése (TP, TC, TR)`
+#### 9.4.9. `Regisztrációs űrlap tesztelése (TP, TC, TR)`
+
+Felelős: `Horváth-Czinger Bernadett `
+
+Tartam:  `1 nap`
+
+Erőforrásigény:  `0.3 személynap`
+
+#### 9.4.10. `Biztonsági mentés tesztelése (TP, TC, TR)`
 
 Felelős: `Lev Elek`
 
@@ -601,15 +558,7 @@ Tartam:  `1 nap`
 
 Erőforrásigény:  `0.3 személynap`
 
-#### 9.4.12. `Biztonsági mentés tesztelése (TP, TC, TR)`
-
-Felelős: `Lev Elek`
-
-Tartam:  `1 nap`
-
-Erőforrásigény:  `0.3 személynap`
-
-#### 9.4.13. Bemutató elkészítése 
+#### 9.4.11. Bemutató elkészítése 
 
 Felelős: `Teszt Elek`
 
