@@ -447,7 +447,7 @@ Erőforrásigény:  `3 személynap`
 
 #### 9.3.17.  `Fuvarok kezeléséhez szükséges adatok létrehozása az adatbázisban`
 
-Felelős: `Lev Elek`
+Felelős: `Simon Péter`
 
 Tartam:  `3 nap`
 
@@ -463,7 +463,7 @@ Erőforrásigény:  `2 személynap`
 
 #### 9.3.19.  `Fuvar útvonalának megjelenítése térképen a kezdő és a végponttal együtt`
 
-Felelős: `Lev Elek`
+Felelős: `Simon Péter`
 
 Tartam:  `3 nap`
 
@@ -479,7 +479,7 @@ Erőforrásigény:  `2 személynap`
 
 #### 9.3.21.  `Biztonsági mentés automatikus létrehozása`
 
-Felelős: `Teszt Elek `
+Felelős: `Simon Péter`
 
 Tartam:  `4 nap`
 
