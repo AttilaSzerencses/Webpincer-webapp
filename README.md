@@ -237,7 +237,7 @@ Részfeladatai a következők:
 
 #### 9.2.1. Use Case diagram
 
-Felelős: `Teszt Elek`
+Felelős: `Szerencsés Attila`
 
 Tartam:  `4 nap`
 
@@ -245,7 +245,7 @@ Erőforrásigény:  `1 személynap`
 
 #### 9.2.2. Class diagram
 
-Felelős: `Lev Elek`
+Felelős: `Mitykó Norbert`
 
 Tartam:  `4 nap`
 
@@ -285,7 +285,7 @@ Erőforrásigény:  `1 személynap`
 
 #### 9.2.7. Bemutató elkészítése
 
-Felelős: `Lev Elek`
+Felelős: `Szerencsés Attila`
 
 Tartam:  `1 nap`
 
@@ -339,7 +339,7 @@ Erőforrásigény:  `1 személynap`
 
 #### 9.3.6.  `Rendeléshez kezeléshez tartozó üzleti logika (listázása, módosítása, létrehozása, törlése)`
 
-Felelős: `Remek Elek`
+Felelős: `Mitykó Norbert`
 
 Tartam:  `4 nap`
 
@@ -355,7 +355,7 @@ Erőforrásigény:  `2 személynap`
 
 #### 9.3.8.  `Rendeléshez szükséges adatok létrehozása az adatbázisban`
 
-Felelős: `Lev Elek`
+Felelős: `Mitykó Norbert`
 
 Tartam:  `3 nap`
 
@@ -363,7 +363,7 @@ Erőforrásigény:  `1 személynap`
 
 #### 9.3.9.  `Éttermek kezeléséhez tartozó üzleti logika (listázása, módosítása, létrehozása, törlése)`
 
-Felelős: `Lev Elek`
+Felelős: `Patai Zsolt`
 
 Tartam:  `5 nap`
 
@@ -371,7 +371,7 @@ Erőforrásigény:  `2 személynap`
 
 #### 9.3.10.  `Éttermek kezeléshez kapcsolódó GUI megvalósítása`
 
-Felelős: ``
+Felelős: `Patai Zsolt`
 
 Tartam:  `5 nap`
 
@@ -379,7 +379,7 @@ Erőforrásigény:  `2 személynap`
 
 #### 9.3.11.  `Éttermek kezeléséhez szükséges adatok létrehozása az adatbázisban`
 
-Felelős: `Lev Elek`
+Felelős: `Szerencsés Attila`
 
 Tartam:  `3 nap`
 
@@ -387,7 +387,7 @@ Erőforrásigény:  `1 személynap`
 
 #### 9.3.12.  `Futárszolgálat kezeléséhez kapcsolódó üzleti logika (listázása, módosítása, létrehozása, törlése)`
 
-Felelős: `Teszt Elek`
+Felelős: `Szerencsés Attila`
 
 Tartam:  `4 nap`
 
@@ -445,7 +445,7 @@ Erőforrásigény:  `1 személynap/fő`
 
 #### 9.3.19. Bemutató elkészítése 
 
-Felelős: `Teszt Elek`
+Felelős: `Patai Zsolt`
 
 Tartam:  `1 nap`
 
@@ -476,7 +476,7 @@ Erőforrásigény:  `2 személynap`
 
 #### 9.4.3. Javított minőségű prototípus a korábbi hiányzó funkciókkal
 
-Felelős: `Remek Elek`
+Felelős: `Patai Zsolt`
 
 Tartam:  `5 nap`
 
@@ -484,7 +484,7 @@ Erőforrásigény:  `2 személynap`
 
 #### 9.4.4. `Felhasználói munkamenet tesztelése (TP, TC, TR)`
 
-Felelős: `Teszt Elek`
+Felelős: `Mitykó Norbert`
 
 Tartam:  `1 nap`
 
@@ -492,7 +492,7 @@ Erőforrásigény:  `0.3 személynap`
 
 #### 9.4.5. `Éttermek kezelésének tesztelése (TP, TC, TR)`
 
-Felelős: `Remek Elek`
+Felelős: `Patai Zsolt`
 
 Tartam:  `1 nap`
 
@@ -500,7 +500,7 @@ Erőforrásigény:  `0.3 személynap`
 
 #### 9.4.6. `Rendelés kezelésének tesztelése (TP, TC, TR)`
 
-Felelős: `Teszt Elek`
+Felelős: `Szerencsés Attila`
 
 Tartam:  `1 nap`
 
@@ -509,7 +509,7 @@ Erőforrásigény:  `0.3 személynap`
 
 #### 9.4.7. `Email-es funkciók tesztelése (TP, TC, TR)`
 
-Felelős: ``
+Felelős: `Mitykó Norbert`
 
 Tartam:  `1 nap`
 
@@ -517,7 +517,7 @@ Erőforrásigény:  `0.3 személynap`
 
 #### 9.4.8. `Térképes funkciók tesztelése (TP, TC, TR)`
 
-Felelős: `Lev Elek`
+Felelős: `Szerencsés Attila`
 
 Tartam:  `1 nap`
 
@@ -533,7 +533,7 @@ Erőforrásigény:  `0.3 személynap`
 
 #### 9.4.10. `Biztonsági mentés tesztelése (TP, TC, TR)`
 
-Felelős: `Lev Elek`
+Felelős: `Mitykó Norbert`
 
 Tartam:  `1 nap`
 
