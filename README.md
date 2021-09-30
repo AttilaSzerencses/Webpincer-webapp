@@ -33,8 +33,7 @@ azaz nem feltétlen mindenki, aki módosította a dokumentumot pl. egy elírás 
 
 ## 3. A projekt bemutatása
 
-`Ez a projektterv a Szallítmányozás projektet mutatja be, mely 2021-09-20-től 2021-11-27-ig tart. A projekt célja, hogy megfelelő felületet biztosítson a szállítmányozási feladatok online elvégézésére és az adatok nyilvántartására. Mindezért egy egyszerűen használható, átlátható és hatékonyan működő webalkalmazás fog felelni. A projekten három fő fejlesztő fog dolgozni, az elvégzett feladatokat pedig négy alkalommal fogjuk prezentálni a megrendelőnek. `
-
+`Az alábbi projektterv egy ételrendelési projektet mutat be, amely 2021.09.20-tól 2021.11.27-ig tart. A projekt célja megfelelő felültet biztosítani egy ételrendelés online elvégzésére és az adatok nyilvántartására. Célunk egy minél gyorsabban és egyszerűbben használható, átláthó webalkalmazás létrehozása. Projektünkön 7 fejlesztő fog dolgozni, amit előre láthatólag öt alkalommal fogunk prezentálni a megrendelőnek.
 ```
 A megvalósítás további általános leírása, pl. mennyi főből áll a csapat, mennyi átadandó lesz a megrendelőnek a félév során, 
 szintén 4-6 mondattal leírva.
