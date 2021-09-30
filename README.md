@@ -151,7 +151,6 @@ A projekt a következő technológiákat/szoftvereket fogja használni a munka s
  - `Résztvevők: Horváth-Czinger Bernadett, Martincsek Levente, Mitykó Norbert, Szerencsés Attila, Patai Zsolt, Fehér Erik, Simon Péter`
  - `Érintett témák: Ismerkedés, projekttéma kiválasztása. Felmerülő kérdések átbeszélése.`
  
-
 `2. megbeszélés:`
  - `Időpont: 2021.09.23.`
  - `Hely: Discord`
@@ -278,7 +277,7 @@ Erőforrásigény:  `1 személynap`
 
 #### 9.2.4. Egyed-kapcsolat diagram adatbázishoz
 
-Felelős: `Remek Ele`
+Felelős: `Simon Péter`
 
 Tartam:  `4 nap`
 
@@ -320,7 +319,7 @@ Részfeladatai a következők:
 
 #### 9.3.1.  `Felhasználói munkamenet üzleti logikája több jogosultsági szinttel (admin, raktáros, sofőr)`
 
-Felelős: `Teszt Elek`
+Felelős: `Simon Péter`
 
 Tartam:  `5 nap`
 
@@ -336,7 +335,7 @@ Erőforrásigény:  `2 személynap`
 
 #### 9.3.3.  `Felhasználói munkamenethez szükséges adatok létrehozása az adatbázisban`
 
-Felelős: `Lev Elek`
+Felelős: `Simon Péter`
 
 Tartam:  `3 nap`
 
@@ -344,7 +343,7 @@ Erőforrásigény:  `1 személynap`
 
 #### 9.3.4.  `Felhasználók kezeléséhez tartozó üzleti logika (listázása, módosítása, létrehozása, törlése)`
 
-Felelős: `Teszt Elek `
+Felelős: `Simon Péter`
 
 Tartam:  `4 nap`
 
