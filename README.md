@@ -168,13 +168,8 @@ Minden leadásnál a projektmenedzser jelentést tesz a projekt haladásáról, 
 
 ### 8.1. Tervezett szoftverfolyamat modell és architektúra
 
-`Csapatun az agilis fejlesztési modellt választotta, ezzel a módszerrel sokkal rugalmassaban tudunk alkalmozkodni az új elvárásokhoz is. A fejlesztés során nagy hangsúlyt fektetünk a folyamatos kommunikcióra. Célunk, hogy a megrendelő elvárásait maximálisan teljesíteni tudjuk  A szoftvert Node-ban írtuk, a GUI felületet pedig HTML, CSS-ben valósítjuk meg.`
+`Csapatun az agilis fejlesztési modellt választotta, ezzel a módszerrel sokkal rugalmassaban tudunk alkalmozkodni az új elvárásokhoz is. A fejlesztés során nagy hangsúlyt fektetünk a folyamatos kommunikcióra. Célunk, hogy a megrendelő elvárásait maximálisan teljesíteni tudjuk.  A szoftvert Node-ban írtuk, a GUI felületet pedig HTML, CSS-ben valósítjuk meg.`
 
-
-```
-Milyen szoftverfolyamat modellt követve állítja elő a csapat a specifikációnak megfelelő prototípusokat? Miért ezt választja? 
-A csapat milyen architektúrát választ a projekt megvalósításához? Milyen rétegek (logikai, adat, GUI) lesznek?`
-```
 
 ### 8.2. Átadandók és határidők
 A főbb átadandók és határidők a projekt időtartama alatt a következők:
