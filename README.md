@@ -260,7 +260,7 @@ Erőforrásigény:  `1 személynap`
 
 #### 9.2.2. Class diagram
 
-Felelős: `Lev Elek`
+Felelős: `Mitykó Norbert`
 
 Tartam:  `4 nap`
 
@@ -354,7 +354,7 @@ Erőforrásigény:  `1 személynap`
 
 #### 9.3.6.  `Rendeléshez kezeléshez tartozó üzleti logika (listázása, módosítása, létrehozása, törlése)`
 
-Felelős: `Remek Elek`
+Felelős: `Mitykó Norbert`
 
 Tartam:  `4 nap`
 
@@ -370,7 +370,7 @@ Erőforrásigény:  `2 személynap`
 
 #### 9.3.8.  `Rendeléshez szükséges adatok létrehozása az adatbázisban`
 
-Felelős: `Lev Elek`
+Felelős: `Mitykó Norbert`
 
 Tartam:  `3 nap`
 
@@ -503,7 +503,7 @@ Erőforrásigény:  `2 személynap`
 
 #### 9.4.4. `Felhasználói munkamenet tesztelése (TP, TC, TR)`
 
-Felelős: `Teszt Elek`
+Felelős: `Mitykó Norbert`
 
 Tartam:  `1 nap`
 
@@ -511,7 +511,7 @@ Erőforrásigény:  `0.3 személynap`
 
 #### 9.4.5. `Éttermek kezelésének tesztelése (TP, TC, TR)`
 
-Felelős: `Remek Elek`
+Felelős: `Patai Zsolt`
 
 Tartam:  `1 nap`
 
@@ -528,7 +528,7 @@ Erőforrásigény:  `0.3 személynap`
 
 #### 9.4.7. `Email-es funkciók tesztelése (TP, TC, TR)`
 
-Felelős: ``
+Felelős: `Mitykó Norbert`
 
 Tartam:  `1 nap`
 
@@ -552,7 +552,7 @@ Erőforrásigény:  `0.3 személynap`
 
 #### 9.4.10. `Biztonsági mentés tesztelése (TP, TC, TR)`
 
-Felelős: `Lev Elek`
+Felelős: `Mitykó Norbert`
 
 Tartam:  `1 nap`
 
