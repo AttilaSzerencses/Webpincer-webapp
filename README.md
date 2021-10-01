@@ -219,7 +219,7 @@ Részfeladatai a következők:
 
 #### 9.2.1. Use Case diagram
 
-Felelős: `Szerencsés Attila`
+Felelős: `Fehér Erik`
 
 Tartam:  `4 nap`
 
@@ -281,7 +281,7 @@ Részfeladatai a következők:
 
 #### 9.3.1.  `Felhasználói munkamenet üzleti logikája több jogosultsági szinttel (admin, felhasználó, futár)`
 
-Felelős: `Simon Péter`
+Felelős: `Fehér Erik`
 
 Tartam:  `5 nap`
 
@@ -345,7 +345,7 @@ Erőforrásigény:  `1 személynap`
 
 #### 9.3.9.  `Éttermek kezeléséhez tartozó üzleti logika (listázása, módosítása, létrehozása, törlése)`
 
-Felelős: `Patai Zsolt`
+Felelős: `Fehér Erik`
 
 Tartam:  `5 nap`
 
@@ -386,7 +386,7 @@ Erőforrásigény:  `3 személynap`
 
 #### 9.3.14.  `Email-es visszajelzés a rendelés sikerességéről`
 
-Felelős: `Martincsek Levente`
+Felelős: `Fehér Erik`
 
 Tartam:  `5 nap`
 
@@ -466,7 +466,7 @@ Erőforrásigény:  `2 személynap`
 
 #### 9.4.4. `Felhasználói munkamenet tesztelése (TP, TC, TR)`
 
-Felelős: `Mitykó Norbert`
+Felelős: `Fehér Erik`
 
 Tartam:  `1 nap`
 
@@ -507,7 +507,7 @@ Erőforrásigény:  `0.3 személynap`
 
 #### 9.4.9. `Regisztrációs űrlap tesztelése (TP, TC, TR)`
 
-Felelős: `Horváth-Czinger Bernadett `
+Felelős: `Fehér Erik`
 
 Tartam:  `1 nap`
 
