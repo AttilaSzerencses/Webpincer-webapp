@@ -163,6 +163,12 @@ A projekt a következő technológiákat/szoftvereket fogja használni a munka s
  - `Résztvevők: Horváth-Czinger Bernadett, Martincsek Levente, Mitykó Norbert, Szerencsés Attila, Patai Zsolt, Fehér Erik, Simon Péter`
  - `Érintettek témák: Feladatok kiosztása, Projekt terv kitöltésének befejezése`
 
+`4. megbeszélés:`
+ - `Időpont: 2021.10.03.`
+ - `Hely: Discord`
+ - `Résztvevők: Horváth-Czinger Bernadett, Martincsek Levente, Mitykó Norbert, Szerencsés Attila, Patai Zsolt, Fehér Erik, Simon Péter`
+ - `Érintettek témák: Utóbbi simítások a projekttervben, Gantt chart elkészítése`
+
 
 ### 7.3. Minőségbiztosítás
 
