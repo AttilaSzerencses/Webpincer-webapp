@@ -538,8 +538,6 @@ Erőforrásigény:  `2 személynap`
 
 ![image](./gantt-diagram.png)
 
-`Benn van a kép a fő mappában`
-
 ## 11. Projekt költségvetés
 
 ```
