@@ -536,7 +536,7 @@ Erőforrásigény:  `2 személynap`
 
 ## 10. Részletes időbeosztás
 
-![image](./Gant.PNG)
+![image](![image](./gantt-diagram.png))
 
 `Benn van a kép a fő mappában`
 
@@ -582,12 +582,12 @@ Az egyes leadások alkalmával rögzített erőforrásigényt, az elvállalt fel
 |                     Név                       | 1. leadás - Projektterv | 2. leadás - UML és adatbázis | 3. leadás - Prototípus I. | 4. leadás - Prototípus II. | Összesen |
 |:---------------------------------------------:|:----------------------:|:--------------------------:|:-----------------------:|:------------------------:|:---------:|
 |        Maximálisan választható pontszám %-ban |         10% (7)        |            30% (21)        |          50% (35)       |          30% (21)        | 100% (70) |
-|              `Horváth-Czinger Bernadett`      |           `7`          |             `21`            |           `16`          |            `4`           |    `70`   |
-|              `Fehér Erik`                     |           `7`          |             `21`            |           `13`          |            `4`           |    `70`   |
-|              `Szerencsés Attila`              |           `7`          |             `21`            |           `12`          |            `4`           |    `70`   |
-|              `Simon Péter`                    |           `7`          |             `21`            |           `12`          |            `4`           |    `70`   |
-|              `Mitykó Norbert`                 |           `7`          |             `21`            |           `12`          |            `4`           |    `70`   |
-|              `Martincsek Levente`             |           `7`          |             `21`            |           `12`          |            `4`           |    `70`   |
-|              `Patai Zsolt`                    |           `7`          |             `21`            |           `12`          |            `4`           |    `70`   |
+|              `Horváth-Czinger Bernadett`      |           `7`          |             `21`            |           `27`          |            `12`           |    `70`   |
+|              `Fehér Erik`                     |           `7`          |             `21`            |           `27`          |            `15`           |    `70`   |
+|              `Szerencsés Attila`              |           `7`          |             `21`            |           `21`          |            `21`           |    `70`   |
+|              `Simon Péter`                    |           `7`          |             `21`            |           `35`          |            `7`           |    `70`   |
+|              `Mitykó Norbert`                 |           `7`          |             `21`            |           `21`          |            `21`           |    `70`   |
+|              `Martincsek Levente`             |           `7`          |             `21`            |           `21`          |            `21`           |    `70`   |
+|              `Patai Zsolt`                    |           `7`          |             `21`            |           `21`          |            `21`           |    `70`   |
 
 Szeged, `2021-10-25`.
