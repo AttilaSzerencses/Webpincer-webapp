@@ -76,13 +76,13 @@ A projekt a következő emberekből áll:
 |                                                                                                                   | Név             | E-mail cím (stud-os)       |
 |-------------------------------------------------------------------------------------------------------------------|-----------------|----------------------------|
 | Megrendelő                                                                                                        | `Dr. Pflanzner Tamás` | `markusa@inf.u-szeged.hu`  |
-| Felelősségek: Projekt menedzser, `Adatbázis és adatkapcsolatok`, `A rendszer működési logikája`, `Prezentációk` | `Horváth-Czinger Bernadett`    | `h046102@stud.u-szeged.hu` |
+| Felelősségek: Projekt menedzser, `Felhasználói felületek`, `Prezentációk`                                         | `Horváth-Czinger Bernadett`    | `h046102@stud.u-szeged.hu` |
 | Felelősségek: `Felhasználói felületek`, `Dokumentáció`                                                            | `Szerencsés Attila`    | `h052093@stud.u-szeged.hu` |
-| `Projekt tag`                                                                                                     | `Fehér Erik`      | `h044630@stud.u-szeged.hu` |
-| `Projekt tag`                                                                                                     | `Simon Péter`      | `h051369@stud.u-szeged.hu` |
-| `Projekt tag`                                                                                                     | `Martincsek Levente`      | `h048695@stud.u-szeged.hu` |
-| `Projekt tag`                                                                                                     | `Mitykó Norbert`      | `h048949@stud.u-szeged.hu` |
-| `Projekt tag`                                                                                                     | `Patai Zsolt`      | `h050234@stud.u-szeged.hu` |
+| Felelősségek: `A rendszer működési logikája`,                                                                     | `Fehér Erik`      | `h044630@stud.u-szeged.hu` |
+| Felelősségek: `Felhasználói munkamenet`,                                                                           | `Simon Péter`      | `h051369@stud.u-szeged.hu` |
+| Felelősségek: `Felhasználói felületek`,                                                                              | `Martincsek Levente`      | `h048695@stud.u-szeged.hu` |
+| Felelősségek: `Folyamatok működése`,                                                                                                   | `Mitykó Norbert`      | `h048949@stud.u-szeged.hu` |
+| Felelősségek:                                                                                                     | `Patai Zsolt`      | `h050234@stud.u-szeged.hu` |
 
 ## 6. A munka feltételei
 
@@ -115,7 +115,6 @@ A projekt a következő technológiákat/szoftvereket fogja használni a munka s
 | `Kommunikációs fennakadás a csapattagokkal` | `A csapattagok között nem elégséges az információ áramlás, nem pontosan, esetleg késve vagy nem egyértelműen tájékoztatjuk egymást. Megoldás: még gyakoribb megbeszélések és ellenőrzések` | `kis`        | `erős` |
 | `Számítógépes/Hardveres problémák`          | `A csapat tagjainál esetlegesen fellépő hardveres problémák, amelyek kihatással lehetnek az adott csapattag munkájára. Amennyiben bármelyik tag számítógépe meghibásodna, megpróbálunk másik eszközt biztosítani, legrosszabb esetben átcsoportosítani a feladatokat.` | `kis`        | `erős` |
 | `Valamelyik csapattag elakadása`            | `Esetlegesen valamelyik csapattag elakad a kiosztott feladatjával. Ilyenkor megpróbálunk segíteni az adott csapattagnak, legvégső esetben átadjuk másnak az adott feladatot, és helyette valamilyen más feladatot kap.`        | `közepes`       | `erős` |
-
 
 ## 7. Jelentések
 
@@ -202,7 +201,7 @@ Részfeladatai a következők:
 
 #### 9.1.1. Projektterv kitöltése
 
-Felelős: `Szerencsés Attila`
+Felelős: `Mindenki`
 
 Tartam:  `4 nap`
 
@@ -211,7 +210,7 @@ Erőforrásigény:  `2 személynap/fő`
 
 #### 9.1.2. Bemutató elkészítése
 
-Felelős: `Horváth-Czinger Bernadett`
+Felelős: `Mindenki`
 
 Tartam:  `4 nap`
 
@@ -529,11 +528,11 @@ Erőforrásigény:  `0.3 személynap`
 
 #### 9.4.11. Bemutató elkészítése 
 
-Felelős: `Teszt Elek`
+Felelős: `Mindenki`
 
 Tartam:  `1 nap`
 
-Erőforrásigény:  `1 személynap`
+Erőforrásigény:  `2 személynap`
 
 ## 10. Részletes időbeosztás
 
