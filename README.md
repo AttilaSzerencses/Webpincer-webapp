@@ -214,7 +214,7 @@ Felelős: `Mindenki`
 
 Tartam:  `4 nap`
 
-Erőforrásigény:  `2 személynap`
+Erőforrásigény:  `1 személynap/fő`
 
 ### 9.2. UML és adatbázis tervek (2. mérföldkő)
 
@@ -252,7 +252,7 @@ Felelős: `Simon Péter`
 
 Tartam:  `4 nap`
 
-Erőforrásigény:  `3 személynap`
+Erőforrásigény:  `1 személynap`
 
 #### 9.2.5. Package diagram
 
@@ -554,26 +554,39 @@ Az egyes leadások alkalmával rögzített erőforrásigényt, az elvállalt fel
 
 |                     Név                    | 1. leadás - Projektterv | 2. leadás - UML és adatbázis | 3. leadás - Prototípus I. | 4. leadás - Prototípus II. | Összesen |
 |:------------------------------------------:|:----------------------:|:--------------------------:|:-----------------------:|:------------------------:|:---------:|
-|                     `Teszt Elek`           |           `2`          |             `3`            |           `16`          |            `4`           |    `25`   |
-|                     `Remek Elek`           |           `1`          |             `4`            |           `13`          |            `4`           |    `22`   |
-|                     `Lev Elek`             |           `1`          |             `3`            |           `12`          |            `4`           |    `20`   |
+|                 `Horváth-Czinger Bernadett`|           `3`          |             `3`            |           `16`          |            `4`           |    `25`   |
+|                 `Fehér Erik`               |           `3`          |             `3`            |           `13`          |            `4`           |    `22`   |
+|                 `Szerencsés Attila`        |           `3`          |             `3`            |           `12`          |            `4`           |    `20`   |
+|                 `Simon Péter`              |           `3`          |             `3`            |           `12`          |            `4`           |    `20`   |
+|                 `Mitykó Norbert`           |           `3`          |             `3`            |           `12`          |            `4`           |    `20`   |
+|                 `Martincsek Levente`       |           `3`          |             `3`            |           `12`          |            `4`           |    `20`   |
+|                 `Patai Zsolt`              |           `3`          |             `3`            |           `12`          |            `4`           |    `20`   |
+
 
 
 ### 11.2. Részletes feladatszámok
 
 |                     Név                    | 1. leadás - Projektterv | 2. leadás - UML és adatbázis | 3. leadás - Prototípus I. | 4. leadás - Prototípus II. | Összesen |
 |:------------------------------------------:|:----------------------:|:--------------------------:|:-----------------------:|:------------------------:|:---------:|
-|                     `Teszt Elek`           |           `2`          |             `3`            |           `9`           |            `6`           |    `20`   |
-|                     `Remek Elek`           |           `1`          |             `2`            |           `7`           |            `5`           |    `15`   |
-|                     `Lev Elek`             |           `1`          |             `2`            |           `8`           |            `5`           |    `16`   |
+|                 `Horváth-Czinger Bernadett`|           `3`          |             `3`            |           `16`          |            `4`           |    `25`   |
+|                 `Fehér Erik`               |           `3`          |             `3`            |           `13`          |            `4`           |    `22`   |
+|                 `Szerencsés Attila`        |           `3`          |             `3`            |           `12`          |            `4`           |    `20`   |
+|                 `Simon Péter`              |           `3`          |             `3`            |           `12`          |            `4`           |    `20`   |
+|                 `Mitykó Norbert`           |           `3`          |             `3`            |           `12`          |            `4`           |    `20`   |
+|                 `Martincsek Levente`       |           `3`          |             `3`            |           `12`          |            `4`           |    `20`   |
+|                 `Patai Zsolt`              |           `3`          |             `3`            |           `12`          |            `4`           |    `20`   |
 
 ### 11.3. Részletes költségvetés
 
 |                     Név                       | 1. leadás - Projektterv | 2. leadás - UML és adatbázis | 3. leadás - Prototípus I. | 4. leadás - Prototípus II. | Összesen |
 |:---------------------------------------------:|:----------------------:|:--------------------------:|:-----------------------:|:------------------------:|:---------:|
 |        Maximálisan választható pontszám %-ban |         10% (7)        |            30% (21)        |          50% (35)       |          30% (21)        | 100% (70) |
-|                     `Teszt Elek`              |           `7`          |             `13`           |          `35`           |            `15`          |    `70`   |
-|                     `Remek Elek`              |           `4`          |             `21`           |          `30`           |            `15`          |    `70`   |
-|                     `Lev Elek`                |           `4`          |             `21`           |          `30`           |            `15`          |    `70`   |
+|                 `Horváth-Czinger Bernadett`|           `3`          |             `3`            |           `16`          |            `4`           |    `25`   |
+|                 `Fehér Erik`               |           `3`          |             `3`            |           `13`          |            `4`           |    `22`   |
+|                 `Szerencsés Attila`        |           `3`          |             `3`            |           `12`          |            `4`           |    `20`   |
+|                 `Simon Péter`              |           `3`          |             `3`            |           `12`          |            `4`           |    `20`   |
+|                 `Mitykó Norbert`           |           `3`          |             `3`            |           `12`          |            `4`           |    `20`   |
+|                 `Martincsek Levente`       |           `3`          |             `3`            |           `12`          |            `4`           |    `20`   |
+|                 `Patai Zsolt`              |           `3`          |             `3`            |           `12`          |            `4`           |    `20`   |
 
 Szeged, `2021-10-25`.
