@@ -512,7 +512,7 @@ Erőforrásigény:  `0.3 személynap`
 
 #### 9.4.9. `Regisztrációs űrlap tesztelése (TP, TC, TR)`
 
-Felelős: `Fehér Erik`
+Felelős: `Horváth-Czinger Bernadett`
 
 Tartam:  `1 nap`
 
@@ -555,39 +555,39 @@ Az egyes leadások alkalmával rögzített erőforrásigényt, az elvállalt fel
 
 |                     Név                    | 1. leadás - Projektterv | 2. leadás - UML és adatbázis | 3. leadás - Prototípus I. | 4. leadás - Prototípus II. | Összesen |
 |:------------------------------------------:|:----------------------:|:--------------------------:|:----------------------:|:------------------------:|:---------:|
-|                 `Horváth-Czinger Bernadett`|           `3`          |             `1`            |           `5`          |            `1`           |    `10`   |
-|                 `Fehér Erik`               |           `3`          |             `1`            |           `6`          |            `2.3`         |    `12.3` |
-|                 `Szerencsés Attila`        |           `3`          |             `1`            |           `4`          |            `1.6`         |    `9.6`  |
-|                 `Simon Péter`              |           `3`          |             `1`            |           `6`          |            `1`           |    `11`   |
-|                 `Mitykó Norbert`           |           `3`          |             `2`            |           `3`          |            `1.6`         |    `9.6`  |
-|                 `Martincsek Levente`       |           `3`          |             `1`            |           `4`          |            `4`           |    `12`   |
-|                 `Patai Zsolt`              |           `3`          |             `1`            |           `3`          |            `3.3`         |    `10.3` |
+|            `Horváth-Czinger Bernadett`     |           `3`          |             `1`            |           `5`          |            `1`           |    `10.3`   |
+|            `Fehér Erik`                    |           `3`          |             `1`            |           `6`          |            `2.3`         |    `12` |
+|            `Szerencsés Attila`             |           `3`          |             `1`            |           `4`          |            `1.6`         |    `9.6`  |
+|            `Simon Péter`                   |           `3`          |             `1`            |           `6`          |            `1`           |    `11`   |
+|            `Mitykó Norbert`                |           `3`          |             `2`            |           `3`          |            `1.6`         |    `9.6`  |
+|            `Martincsek Levente`            |           `3`          |             `1`            |           `4`          |            `4`           |    `12`   |
+|            `Patai Zsolt`                   |           `3`          |             `1`            |           `3`          |            `3.3`         |    `10.3` |
 
 
 
 ### 11.2. Részletes feladatszámok
 
-|                     Név                    | 1. leadás - Projektterv | 2. leadás - UML és adatbázis | 3. leadás - Prototípus I. | 4. leadás - Prototípus II. | Összesen |
-|:------------------------------------------:|:----------------------:|:--------------------------:|:-----------------------:|:------------------------:|:---------:|
-|                 `Horváth-Czinger Bernadett`|           `3`          |             `3`            |           `16`          |            `4`           |    `25`   |
-|                 `Fehér Erik`               |           `3`          |             `3`            |           `13`          |            `4`           |    `22`   |
-|                 `Szerencsés Attila`        |           `3`          |             `3`            |           `12`          |            `4`           |    `20`   |
-|                 `Simon Péter`              |           `3`          |             `3`            |           `12`          |            `4`           |    `20`   |
-|                 `Mitykó Norbert`           |           `3`          |             `3`            |           `12`          |            `4`           |    `20`   |
-|                 `Martincsek Levente`       |           `3`          |             `3`            |           `12`          |            `4`           |    `20`   |
-|                 `Patai Zsolt`              |           `3`          |             `3`            |           `12`          |            `4`           |    `20`   |
+|                     Név                    | 1. leadás - Projektterv | 2. leadás - UML és adatbázis | 3. leadás - Prototípus I. | 4. leadás - Prototípus II. | Feladatok száma |
+|:---------------------------:|:----------------:|:-------:|:------------------------------------------:|:-------------------------:|:---:|
+| `Horváth-Czinger Bernadett` |  `9.1.1 ; 9.1.2` | `9.2.6` | `9.3.2 ; 9.3.5 ; 9.3.7 ; 9.3.18`           | `9.4.9 ; 9.4.11`          | `9` |
+| `Fehér Erik`                |  `9.1.1 ; 9.1.2` | `9.2.1` | `9.3.1 ; 9.3.9 ; 9.3.14 ; 9.3.18`          | `9.4.4 ; 9.4.11`          | `9` |
+| `Szerencsés Attila`         |  `9.1.1 ; 9.1.2` | `9.2.7` | `9.3.11 ; 9.3.12 ; 9.3.18`                 | `9.4.6 ; 9.4.8 ; 9.4.11`  | `9` |
+| `Simon Péter`               |  `9.1.1 ; 9.1.2` | `9.2.4` | `9.3.3 ; 9.3.4 ; 9.3.15 ; 9.3.17 ; 9.3.18` | `9.4.11`                  | `9` |
+| `Mitykó Norbert`            |  `9.1.1 ; 9.1.2` | `9.2.2` | `9.3.6 ; 9.3.8 ; 9.3.18`                   | `9.4.7 ; 9.4.10 ; 9.4.11` | `9` |
+| `Martincsek Levente`        |  `9.1.1 ; 9.1.2` | `9.2.5` | `9.3.13 ; 9.3.16 ; 9.3.18`                 | `9.4.1 ; 9.4.2 ; 9.4.11`  | `9` |
+| `Patai Zsolt`               |  `9.1.1 ; 9.1.2` | `9.2.3` | `9.3.10 ; 9.3.18 ; 9.3.19`                 | `9.4.3 ; 9.4.5 ; 9.4.11`  | `9` |
 
 ### 11.3. Részletes költségvetés
 
 |                     Név                       | 1. leadás - Projektterv | 2. leadás - UML és adatbázis | 3. leadás - Prototípus I. | 4. leadás - Prototípus II. | Összesen |
 |:---------------------------------------------:|:----------------------:|:--------------------------:|:-----------------------:|:------------------------:|:---------:|
 |        Maximálisan választható pontszám %-ban |         10% (7)        |            30% (21)        |          50% (35)       |          30% (21)        | 100% (70) |
-|                 `Horváth-Czinger Bernadett`   |           `3`          |             `3`            |           `16`          |            `4`           |    `25`   |
-|                 `Fehér Erik`                  |           `3`          |             `3`            |           `13`          |            `4`           |    `22`   |
-|                 `Szerencsés Attila`           |           `3`          |             `3`            |           `12`          |            `4`           |    `20`   |
-|                 `Simon Péter`                 |           `3`          |             `3`            |           `12`          |            `4`           |    `20`   |
-|                 `Mitykó Norbert`              |           `3`          |             `3`            |           `12`          |            `4`           |    `20`   |
-|                 `Martincsek Levente`          |           `3`          |             `3`            |           `12`          |            `4`           |    `20`   |
-|                 `Patai Zsolt`                 |           `3`          |             `3`            |           `12`          |            `4`           |    `20`   |
+|              `Horváth-Czinger Bernadett`      |           `7`          |             `21`            |           `16`          |            `4`           |    `70`   |
+|              `Fehér Erik`                     |           `7`          |             `21`            |           `13`          |            `4`           |    `70`   |
+|              `Szerencsés Attila`              |           `7`          |             `21`            |           `12`          |            `4`           |    `70`   |
+|              `Simon Péter`                    |           `7`          |             `21`            |           `12`          |            `4`           |    `70`   |
+|              `Mitykó Norbert`                 |           `7`          |             `21`            |           `12`          |            `4`           |    `70`   |
+|              `Martincsek Levente`             |           `7`          |             `21`            |           `12`          |            `4`           |    `70`   |
+|              `Patai Zsolt`                    |           `7`          |             `21`            |           `12`          |            `4`           |    `70`   |
 
 Szeged, `2021-10-25`.
