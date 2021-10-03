@@ -491,7 +491,7 @@ Felelős: `Szerencsés Attila`
 
 Tartam:  `1 nap`
 
-Erőforrásigény:  `0.3 személynap`
+Erőforrásigény:  `1.3 személynap`
 
 
 #### 9.4.7. `Email-es funkciók tesztelése (TP, TC, TR)`
@@ -538,29 +538,30 @@ Erőforrásigény:  `2 személynap`
 
 ![image](./Gant.PNG)
 
-```
-Ide kell berakni a Gantt diagramot, amely a 9. fejezetben található részfeladatokat tartalmazza felelős/tartam bontásban.
-```
+`Benn van a kép a fő mappában`
 
 ## 11. Projekt költségvetés
 
 ```
 Az egyes leadások alkalmával rögzített erőforrásigényt, az elvállalt feladatok számát 
 és az adott mérföldkőben végzett munkáért szerezhető pontszámot kell beírni minden emberre külön-külön.
+
 ```
+
+`Leadás még nem volt.`
 
 ### 11.1. Részletes erőforrásigény (személynap)
 
 
 |                     Név                    | 1. leadás - Projektterv | 2. leadás - UML és adatbázis | 3. leadás - Prototípus I. | 4. leadás - Prototípus II. | Összesen |
-|:------------------------------------------:|:----------------------:|:--------------------------:|:-----------------------:|:------------------------:|:---------:|
-|                 `Horváth-Czinger Bernadett`|           `3`          |             `3`            |           `16`          |            `4`           |    `25`   |
-|                 `Fehér Erik`               |           `3`          |             `3`            |           `13`          |            `4`           |    `22`   |
-|                 `Szerencsés Attila`        |           `3`          |             `3`            |           `12`          |            `4`           |    `20`   |
-|                 `Simon Péter`              |           `3`          |             `3`            |           `12`          |            `4`           |    `20`   |
-|                 `Mitykó Norbert`           |           `3`          |             `3`            |           `12`          |            `4`           |    `20`   |
-|                 `Martincsek Levente`       |           `3`          |             `3`            |           `12`          |            `4`           |    `20`   |
-|                 `Patai Zsolt`              |           `3`          |             `3`            |           `12`          |            `4`           |    `20`   |
+|:------------------------------------------:|:----------------------:|:--------------------------:|:----------------------:|:------------------------:|:---------:|
+|                 `Horváth-Czinger Bernadett`|           `3`          |             `1`            |           `5`          |            `1`           |    `10`   |
+|                 `Fehér Erik`               |           `3`          |             `1`            |           `6`          |            `2.3`         |    `12.3` |
+|                 `Szerencsés Attila`        |           `3`          |             `1`            |           `4`          |            `1.6`         |    `9.6`  |
+|                 `Simon Péter`              |           `3`          |             `1`            |           `6`          |            `1`           |    `11`   |
+|                 `Mitykó Norbert`           |           `3`          |             `2`            |           `3`          |            `1.6`         |    `9.6`  |
+|                 `Martincsek Levente`       |           `3`          |             `1`            |           `4`          |            `4`           |    `12`   |
+|                 `Patai Zsolt`              |           `3`          |             `1`            |           `3`          |            `3.3`         |    `10.3` |
 
 
 
