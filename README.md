@@ -581,12 +581,12 @@ Az egyes leadások alkalmával rögzített erőforrásigényt, az elvállalt fel
 |                     Név                       | 1. leadás - Projektterv | 2. leadás - UML és adatbázis | 3. leadás - Prototípus I. | 4. leadás - Prototípus II. | Összesen |
 |:---------------------------------------------:|:----------------------:|:--------------------------:|:-----------------------:|:------------------------:|:---------:|
 |        Maximálisan választható pontszám %-ban |         10% (7)        |            30% (21)        |          50% (35)       |          30% (21)        | 100% (70) |
-|                 `Horváth-Czinger Bernadett`|           `3`          |             `3`            |           `16`          |            `4`           |    `25`   |
-|                 `Fehér Erik`               |           `3`          |             `3`            |           `13`          |            `4`           |    `22`   |
-|                 `Szerencsés Attila`        |           `3`          |             `3`            |           `12`          |            `4`           |    `20`   |
-|                 `Simon Péter`              |           `3`          |             `3`            |           `12`          |            `4`           |    `20`   |
-|                 `Mitykó Norbert`           |           `3`          |             `3`            |           `12`          |            `4`           |    `20`   |
-|                 `Martincsek Levente`       |           `3`          |             `3`            |           `12`          |            `4`           |    `20`   |
-|                 `Patai Zsolt`              |           `3`          |             `3`            |           `12`          |            `4`           |    `20`   |
+|                 `Horváth-Czinger Bernadett`   |           `3`          |             `3`            |           `16`          |            `4`           |    `25`   |
+|                 `Fehér Erik`                  |           `3`          |             `3`            |           `13`          |            `4`           |    `22`   |
+|                 `Szerencsés Attila`           |           `3`          |             `3`            |           `12`          |            `4`           |    `20`   |
+|                 `Simon Péter`                 |           `3`          |             `3`            |           `12`          |            `4`           |    `20`   |
+|                 `Mitykó Norbert`              |           `3`          |             `3`            |           `12`          |            `4`           |    `20`   |
+|                 `Martincsek Levente`          |           `3`          |             `3`            |           `12`          |            `4`           |    `20`   |
+|                 `Patai Zsolt`                 |           `3`          |             `3`            |           `12`          |            `4`           |    `20`   |
 
 Szeged, `2021-10-25`.
