@@ -536,7 +536,7 @@ Erőforrásigény:  `2 személynap`
 
 ## 10. Részletes időbeosztás
 
-![image](![image](./gantt-diagram.png))
+![image](./gantt-diagram.png)
 
 `Benn van a kép a fő mappában`
 
