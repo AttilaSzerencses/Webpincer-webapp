@@ -21,10 +21,6 @@ Státusz osztályozás:
  - Előterjesztés: a projekt menedzser bírálatával, a mérföldkő határidejekor
  - Elfogadott: a megrendelő által elfogadva, a prezentáció bemutatásakor
 
-<<<<<<< HEAD
-```
-=======
->>>>>>> d424ac67b4ec07260e89c891627919ee7c7ac875
 
 ## 3. A projekt bemutatása
 
