@@ -32,14 +32,41 @@ A rendszernek képesnek kell lennie arra, hogy a megrendelők bejelentkezhessene
 
 ### 3.2. Funkcionális követelmények
 
- - Felhasználói munkamenet megvalósítása több jogosultsági szinttel (admin, megrendelő, éttermek, futár)
- - Felhasználók kezelése (CRUD)
- - Éttermek kezelése (CRUD)
- - Futárok kezelése (Pl: Szállítási díjak kezelése)
- - Megrendelések kezelése (CRUD)
+ - Felhasználói munkamenet megvalósítása több jogosultsági szinttel (admin, megrendelő, éttermek, futár), 
+	- Felhasználói funkciók korlátozása bizonyos jogusoltsági szintekhez.
+ - Felhasználók kezelése: 
+	- Admin: 
+		- Fellépő problémák kezelése(pl. fizetés)
+		- Adatok szerkesztése/pontosítása(pl: étterem, árak) 
+		- Felhasználok módosítása(Törlés, Jogosultság módosítás, legyen az étterem/futár/felhasználó)
+	- Étterem:
+		- Megrendelt ételek elérése
+		- Határidők módosítása
+		- Nyitvatartási idő, akciók megjelenítése/módosítása.
+	- Felhasználó
+		- Éttermek, ételek, kuponok elérése
+		- Rendelés leadása
+		- Fizetés, díjazási információk elérése(árak, szállítási díj)
+		- Kiszállítással kapcsolatos információk elérése
+	- Futár:
+		- Éttermek címének, adatainak elérése
+		- Felhasználói információk elérése(cím, telefonszám, megjegyzés)
+		- Értesítések küldése
+ - Megrendelések kezelése(App feladatai)
+	- Megrendelések továbbítás az éttermek felé
+	- Elkészült megrendelések továbbítása a futárok felé
+	- Saját kérések továbbítása étterem/futár felé
  - Email-es kiértesítés új megrendelések, illetve kedvezmények esetén az adott megrendelőnek.
- - Megrendelések megjelenítése részletesen: Megrendelő adatai, Megrendelt ételek, Árak, Külön kérések kezelése
- - Regisztrációs űrlap, új megrendelők
+	- Szezonális kuponok kiküldése
+	- Jelenlegi akciókról tájékoztatás küldés.
+ - Regisztrációs űrlap elkészítése
+	- Lehetőség van regisztráció nélküli rendelésre is, azonban regisztráció esetén eltárolódnak az adatok.
+	- Megfelelő adatok eltárolása a megrendelőröl.
+ - Login űrlap elkészítése
+	- Különböző felhasználoknak szóló login oldalak elkészítése.
+ - Értékelés
+	- Étel megérkezése után automatikus üzenet küldés a megrendelő felé, hogy értékelje az ételt, kiszállítást.
+	- Éttermek értékelésének összesítése, megjelenítése
  - Biztonsági mentés automatikus létrehozása
  
 
@@ -567,13 +594,13 @@ Leadás még nem volt.
 
 |                     Név                    | 1. leadás - Projektterv | 2. leadás - UML és adatbázis | 3. leadás - Prototípus I. | 4. leadás - Prototípus II. | Feladatok száma |
 |:---------------------------:|:----------------:|:-------:|:------------------------------------------:|:-------------------------:|:---:|
-| Horváth-Czinger Bernadett |  9.1.1 ; 9.1.2 | 9.2.6 | 9.3.2 ; 9.3.5 ; 9.3.7 ; 9.3.18           | 9.4.9 ; 9.4.11          | 9 |
-| Fehér Erik                |  9.1.1 ; 9.1.2 | 9.2.1 | 9.3.1 ; 9.3.9 ; 9.3.14 ; 9.3.18          | 9.4.4 ; 9.4.11          | 9 |
-| Szerencsés Attila         |  9.1.1 ; 9.1.2 | 9.2.7 | 9.3.11 ; 9.3.12 ; 9.3.18                 | 9.4.6 ; 9.4.8 ; 9.4.11  | 9 |
-| Simon Péter               |  9.1.1 ; 9.1.2 | 9.2.4 | 9.3.3 ; 9.3.4 ; 9.3.15 ; 9.3.17 ; 9.3.18 | 9.4.11                  | 9 |
-| Mitykó Norbert            |  9.1.1 ; 9.1.2 | 9.2.2 | 9.3.6 ; 9.3.8 ; 9.3.18                   | 9.4.7 ; 9.4.10 ; 9.4.11 | 9 |
-| Martincsek Levente        |  9.1.1 ; 9.1.2 | 9.2.5 | 9.3.13 ; 9.3.16 ; 9.3.18                 | 9.4.1 ; 9.4.2 ; 9.4.11  | 9 |
-| Patai Zsolt               |  9.1.1 ; 9.1.2 | 9.2.3 | 9.3.10 ; 9.3.18 ; 9.3.19                 | 9.4.3 ; 9.4.5 ; 9.4.11  | 9 |
+| Horváth-Czinger Bernadett |  2 | 1 | 4 | 2 | 9 |
+| Fehér Erik                |  2 | 1 | 4 | 2 | 9 |
+| Szerencsés Attila         |  2 | 1 | 3 | 3 | 9 |
+| Simon Péter               |  2 | 1 | 5 | 1 | 9 |
+| Mitykó Norbert            |  2 | 1 | 3 | 3 | 9 |
+| Martincsek Levente        |  2 | 1 | 3 | 3 | 9 |
+| Patai Zsolt               |  2 | 1 | 3 | 3 | 9 |
 
 ### 11.3. Részletes költségvetés
 
@@ -583,7 +610,7 @@ Leadás még nem volt.
 |              Horváth-Czinger Bernadett      |           7          |             21            |           27          |            12           |    70   |
 |              Fehér Erik                     |           7          |             21            |           27          |            15           |    70   |
 |              Szerencsés Attila              |           7          |             21            |           21          |            21           |    70   |
-|              Simon Péter                    |           7          |             21            |           35          |            7           |    70   |
+|              Simon Péter                    |           7          |             21            |           35          |            7            |    70   |
 |              Mitykó Norbert                 |           7          |             21            |           21          |            21           |    70   |
 |              Martincsek Levente             |           7          |             21            |           21          |            21           |    70   |
 |              Patai Zsolt                    |           7          |             21            |           21          |            21           |    70   |
