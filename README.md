@@ -177,6 +177,12 @@ A projekt hetente ülésezik, hogy megvitassák az azt megelőző hét problém�
  - Résztvevők: Horváth-Czinger Bernadett, Martincsek Levente, Mitykó Norbert, Szerencsés Attila, Patai Zsolt, Fehér Erik, Simon Péter
  - Érintettek témák: Utóbbi simítások a projekttervben, Gantt chart elkészítése
 
+5. megbeszélés:
+- Időpont: 2021.10.18.
+- Hely: Discord
+- Résztvevők: Horváth-Czinger Bernadett, Martincsek Levente, Mitykó Norbert, Szerencsés Attila, Patai Zsolt, Fehér Erik, Simon Péter
+- Érintettek témák: Diagramok elkészítése, hibák javítása Readme fájlban, funkcionális követelmények részletezése, bővítése
+
 
 ### 7.3. Minőségbiztosítás
 
