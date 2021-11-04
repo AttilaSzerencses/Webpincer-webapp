@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Node.js example</title>
+  <link href="/css/style.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>   
+
+
+</head>
+
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+      <div class="container">
+        <div class="navbar-collapse collapse">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="/">Kezdőlap</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <body>
+    <div>
+      <h2>Current Dogs</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% for (const dog of dogs) { %>
+                <tr>
+                  <td><%= dog.id %></td>
+                  <td><%= dog.name %></td>
+                  <td><%= dog.age %></td>
+                  <td><a  href="/edit/<%= dog.id %>">Update</a></td>
+                  <td><button data-toggle="modal" data-target="#modal-toTrash<%= dog.id %>" class="btn-sm btn-dark details">Delete
+                    <span class="glyphicon glyphicon-trash" data-toggle="tooltip"
+                      data-placement="top" title="Sent to Trash Box"></span></button>
+                  </td>
+                  <div class="modal modal-toTrash" id="modal-toTrash<%= dog.id %>">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal"
+                            aria-hidden="true">×
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <p class="error-text"><strong>Confirmation</strong></p>
+                        </div>
+                        <div class="modal-footer">
+                          <button class="btn-sm btn-dark details" data-dismiss="modal" aria-hidden="true">
+                          Cancel
+                          </button>
+                          <form action="/delete/<%= dog.id %>" method="post">
+                            <button class="btn-sm btn-dark details" value="delete">Yes</button></a>
+                         </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+  
+                </tr>
+              <% } %>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <h2>Add A Dog</h2>
+
+      <form action="/add" method="post">
+        <div class="form-horizontal">
+      
+          <label>Name:
+            <input type="text" name="name" id="name"></input>
+            </label>
+            <label>Age:
+            <input type="text" name="age" id="age"></input>
+            </label>
+            <input type="submit" value="Submit" class="btn-sm btn-dark details"></input>
+
+        </div>
+      </form>
+
+    </div>
+  </body>
+
+
+</html>
