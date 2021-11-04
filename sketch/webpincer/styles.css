@@ -12,12 +12,22 @@ p {
 h1{
 	color: #e47c4c;
 	font-weight: bold;
-	 margin-left: 5%;
+	
 }
 h2{
 	color: #e47c4c;
 	font-weight: bold;
 	margin-left: 10%;
+}
+h3{
+    color: #f89f38;
+    font-weight: bold;
+    margin-left: 10%;
+}
+h4{
+    color: #f89f38;
+    font-weight: bold;
+
 }
 .icon{
 	width: 20%;
@@ -52,12 +62,51 @@ html,body {
     margin-right: auto;
 }
 .loginalap{
+    border-style: outset;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.box{
+	color: #e47c4c;
+	border-style: outset;
+	width: 30%;
+	margin-left: auto;
+    margin-right: auto;
+	font-weight: bold;
+	text-align: center;
+}
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit],button {
+  width: 50%;
+  background-color: #e4935a;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+ 
+  font-size: 100%;
+}
+button:hover,input[type=submit]:hover {
+  background-color: #e47c4c;
+}
+.logintable{
 	color: #e47c4c;
 	margin-left: auto;
     margin-right: auto;
 	font-weight: bold;
 	text-align: center;
 	width: 80%;
-	font-size: 250%;
-	
 }
