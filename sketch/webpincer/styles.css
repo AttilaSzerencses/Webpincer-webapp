@@ -14,6 +14,11 @@ h1{
 	font-weight: bold;
 	 margin-left: 5%;
 }
+h2{
+	color: #e47c4c;
+	font-weight: bold;
+	margin-left: 10%;
+}
 .icon{
 	width: 20%;
 }
@@ -33,5 +38,26 @@ html,body {
 	font-weight: bold;
 	margin-left: auto;
   margin-right: auto;
+	
+}
+.center {
+  margin: auto;
+  width: 50%;
+  text-align:center;
+  padding: 10px;
+}
+.ajanlat{
+	display: block;
+	margin-left: auto;
+    margin-right: auto;
+}
+.loginalap{
+	color: #e47c4c;
+	margin-left: auto;
+    margin-right: auto;
+	font-weight: bold;
+	text-align: center;
+	width: 80%;
+	font-size: 250%;
 	
 }
