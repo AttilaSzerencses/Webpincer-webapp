@@ -33,6 +33,13 @@ class RestaurantDAO {
         return;        
     };
 
+	async deleteUIDRestaurant(id){
+        await db.query(`DELETE FROM RESTAURANTS WHERE u_id=$1`,[parseInt(id)])
+        .catch(console.log);
+        return;        
+    };
+
+	
 };
 
 module.exports = RestaurantDAO;

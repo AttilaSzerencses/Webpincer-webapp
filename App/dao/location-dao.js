@@ -3,8 +3,8 @@ const db = require('../config/db');
 class LocationDAO {
 
     async getLocations(){
-        let results = await db.query(`SELECT * FROM LOCATIONS`).
-        catch(console.log);
+        let results = await db.query(`SELECT * FROM LOCATIONS`)
+		.catch(console.log);
         return results.rows;
     };
 
@@ -15,7 +15,7 @@ class LocationDAO {
     };
 
     async createLocation(uid, postcode, cityname, street, streetnumber, other){
-        await db.query("INSERT INTO LOCATIONS(u_id, postcode, cityname, street, streetnumber, other) VALUES ($1,$2,$3,$4,$5,$6)",[uid, postcode, cityname, street, streetnumber, other])
+        await db.query("INSERT INTO LOCATIONS(u_id, postcode, cityname, street, streetnumber, other) VALUES ($1,$2,$3,$4,$5,$6)",[uid, parseInt(postcode), cityname, street, parseInt(streetnumber), other])
         .catch(console.log);
         return;        
     };
@@ -29,6 +29,12 @@ class LocationDAO {
 
     async deleteLocation(id){
         await db.query(`DELETE FROM LOCATIONS WHERE id=$1`,[parseInt(id)])
+        .catch(console.log);
+        return;        
+    };
+	
+    async deleteUIDLocation(id){
+        await db.query(`DELETE FROM LOCATIONS WHERE u_id=$1`,[parseInt(id)])
         .catch(console.log);
         return;        
     };

@@ -33,6 +33,13 @@ class FoodDAO {
         return;        
     };
 
+    async deleteUIDFood(id){
+        await db.query(`DELETE FROM FOODS WHERE u_id=$1`,[parseInt(id)])
+        .catch(console.log);
+        return;        
+    };
+
+
 };
 
 module.exports = FoodDAO;

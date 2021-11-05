@@ -19,7 +19,7 @@
         <div class="navbar-collapse collapse">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link text-dark" href="/">Home</a>
+              <a class="nav-link text-dark" href="/user">Home</a>
             </li>
           </ul>
         </div>
@@ -29,7 +29,7 @@
 
   <body>
     <div>
-      <h2>Current Users</h2>
+      <h2>Current Dogs</h2>
       <table>
         <thead>
           <tr>
@@ -107,98 +107,6 @@
           </label>
             <label>Cardnumber:
             <input type="text" name="cardnumber" id="cardnumber"></input>
-            </label>
-
-            <input type="submit" value="Submit" class="btn-sm btn-dark details"></input>
-
-        </div>
-      </form>
-
-    </div>
-	<--u_id,postcode,cityname,street,streetnumber,other-->
-	<div>
-      <h2>Current Locations</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>u_id</th>
-            <th>postcode</th>
-            <th>cityname</th>
-            <th>street</th>
-            <th>streetnumber</th>
-            <th>other</th>
-          </tr>
-        </thead>
-        <tbody>
-            <%for (const location of locations) { %>
-                <tr>
-                  <td><%= location.id %></td>
-                  <td><%= location.u_id %></td>
-                  <td><%= location.postcode %></td>
-                  <td><%= location.cityname %></td>
-                  <td><%= location.street %></td>
-                  <td><%= location.steetnumber %></td>
-                  <td><%= location.other %></td>
-                  <td><a  href="/editlocation/<%= location.id %>">Update</a></td>
-                  <td><button data-toggle="modal" data-target="#modal-toTrash<%= location.id %>" class="btn-sm btn-dark details">Delete
-                    <span class="glyphicon glyphicon-trash" data-toggle="tooltip"
-                      data-placement="top" title="Sent to Trash Box"></span></button>
-                  </td>
-                  <div class="modal modal-toTrash" id="modal-toTrash<%= location.id %>">
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal"
-                            aria-hidden="true">×
-                          </button>
-                        </div>
-                        <div class="modal-body">
-                          <p class="error-text"><strong>Confirmation</strong></p>
-                        </div>
-                        <div class="modal-footer">
-                          <button class="btn-sm btn-dark details" data-dismiss="modal" aria-hidden="true">
-                          Cancel
-                          </button>
-                          <form action="/deletelocation/<%= location.id %>" method="post">
-                            <button class="btn-sm btn-dark details" value="delete">Yes</button></a>
-                         </form>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-  
-                </tr>
-              <% } %>
-        </tbody>
-      </table>
-    </div>
-    <div>
-	
-	<--u_id,postcode,cityname,street,streetnumber,other-->
-      <h2>Add An user</h2>
-
-      <form action="/addlocation" method="post">
-        <div class="form-horizontal">
-
-
-          <label>UID:
-            <input type="text" name="u_id" id="u_id"></input>
-          </label>
-          <label>Postcode:
-            <input type="text" name="postcode" id="postcode"></input>
-          </label>
-          <label>Cityname:
-            <input type="text" name="cityname" id="cityname"></input>
-          </label>
-          <label>Street:
-            <input type="text" name="street" id="street"></input>
-          </label>
-          <label>St. number:
-            <input type="text" name="streetnumber" id="streetnumber"></input>
-          </label>
-            <label>Other:
-            <input type="text" name="other" id="other"></input>
             </label>
 
             <input type="submit" value="Submit" class="btn-sm btn-dark details"></input>

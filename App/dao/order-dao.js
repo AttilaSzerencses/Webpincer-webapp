@@ -30,7 +30,19 @@ class OrderDAO {
     async deleteOrder(id){
         await db.query(`DELETE FROM ORDERS WHERE id=$1`,[parseInt(id)])
         .catch(console.log);
-        return;        
+        return;
+    };
+	
+	async deleteUIDOrder(id){
+        await db.query(`DELETE FROM ORDERS WHERE u_id=$1`,[parseInt(id)])
+        .catch(console.log);
+        return;
+    };
+	
+	async deleteFIDOrder(id){
+        await db.query(`DELETE FROM ORDERS WHERE fid=$1`,[parseInt(id)])
+        .catch(console.log);
+        return;
     };
 
 };
