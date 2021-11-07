@@ -77,7 +77,7 @@ html,body {
 	font-weight: bold;
 	text-align: center;
 }
-input[type=text], select {
+input[type=text],input[type=number],input[type=password], select {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -109,4 +109,19 @@ button:hover,input[type=submit]:hover {
 	font-weight: bold;
 	text-align: center;
 	width: 80%;
+}
+#postcode{
+	width:30%;
+}
+#cityname{
+	width:70%;
+}
+#streetname{
+	width:50%;
+}
+#streetnumber{
+	width:20%;
+}
+#other{
+	width:30%;
 }
