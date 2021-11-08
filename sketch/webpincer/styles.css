@@ -197,3 +197,41 @@ body{
     margin-left: auto;
     margin-right: auto;
 }
+
+.restaurant_cards {
+
+    margin: 30px auto;
+    max-width: 1500px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    font-family: sans-serif;
+}
+
+.restaurant_card{
+    box-shadow: 0 0 3px rgba(0,0,0,0.1);
+}
+
+.card__image{
+    width: 100%;
+    display: block;
+}
+
+.card__content{
+    line-height: 1.5;
+    font-size: 0.9em;
+    padding: 15px;
+    background: white;
+}
+
+
+
+.card__info{
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8em;
+    background-color: #D3D3D3;
+    border-bottom: 2px solid #cccccc;
+}
