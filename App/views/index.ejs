@@ -115,7 +115,7 @@
       </form>
 
     </div>
-	<--u_id,postcode,cityname,street,streetnumber,other-->
+	<!--u_id,postcode,cityname,street,streetnumber,other-->
 	<div>
       <h2>Current Locations</h2>
       <table>
@@ -138,7 +138,7 @@
                   <td><%= location.postcode %></td>
                   <td><%= location.cityname %></td>
                   <td><%= location.street %></td>
-                  <td><%= location.steetnumber %></td>
+                  <td><%= location.streetnumber%></td>
                   <td><%= location.other %></td>
                   <td><a  href="/editlocation/<%= location.id %>">Update</a></td>
                   <td><button data-toggle="modal" data-target="#modal-toTrash<%= location.id %>" class="btn-sm btn-dark details">Delete
@@ -175,7 +175,7 @@
     </div>
     <div>
 	
-	<--u_id,postcode,cityname,street,streetnumber,other-->
+	<!--u_id,postcode,cityname,street,streetnumber,other-->
       <h2>Add An user</h2>
 
       <form action="/addlocation" method="post">
@@ -207,6 +207,267 @@
       </form>
 
     </div>
+
+  <!-- ---------------------------------------------------------------------------------- -->
+
+    <!--u_id,opens, closes, cprice, restaurantpic-->
+    <div>
+      <h2>Current Restaurants</h2>
+      <table>
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>u_id</th>
+          <th>opens</th>
+          <th>closes</th>
+          <th>cprice</th>
+          <th>restaurantpic</th>
+        </tr>
+        </thead>
+        <tbody>
+        <%for (const restaurant of restaurants) { %>
+          <tr>
+            <td><%= restaurant.id %></td>
+            <td><%= restaurant.u_id %></td>
+            <td><%= restaurant.opens %></td>
+            <td><%= restaurant.closes %></td>
+            <td><%= restaurant.cprice %></td>
+            <td><%= restaurant.restaurantpic %></td>
+            <td><a  href="/editlocation/<%= restaurant.id %>">Update</a></td>
+            <td><button data-toggle="modal" data-target="#modal-toTrash<%= restaurant.id %>" class="btn-sm btn-dark details">Delete
+                <span class="glyphicon glyphicon-trash" data-toggle="tooltip"
+                      data-placement="top" title="Sent to Trash Box"></span></button>
+            </td>
+            <div class="modal modal-toTrash" id="modal-toTrash<%= restaurant.id %>">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-hidden="true">×
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <p class="error-text"><strong>Confirmation</strong></p>
+                  </div>
+                  <div class="modal-footer">
+                    <button class="btn-sm btn-dark details" data-dismiss="modal" aria-hidden="true">
+                      Cancel
+                    </button>
+                    <form action="/deletelocation/<%= restaurant.id %>" method="post">
+                      <button class="btn-sm btn-dark details" value="delete">Yes</button></a>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </tr>
+        <% } %>
+        </tbody>
+      </table>
+    </div>
+    <div>
+
+      <!--u_id,opens, closes, cprice, restaurantpic-->
+      <h2>Add A Restaurant</h2>
+
+      <form action="/addrestaurant" method="post">
+        <div class="form-horizontal">
+
+
+          <label>UID:
+            <input type="text" name="u_id" id="u_id"></input>
+          </label>
+          <label>Opens:
+            <input type="text" name="opens" id="opens"></input>
+          </label>
+          <label>Closes:
+            <input type="text" name="closes" id="closes"></input>
+          </label>
+          <label>Cprice:
+            <input type="text" name="cprice" id="cprice"></input>
+          </label>
+          <label>Restaurantpic:
+            <input type="text" name="restaurantpic" id="restaurantpic"></input>
+          </label>
+
+          <input type="submit" value="Submit" class="btn-sm btn-dark details"></input>
+
+        </div>
+      </form>
+
+    </div>
+
+    <!-- ---------------------------------------------------------------------------------- -->
+
+    <!--u_id,foodname, price, foodpic-->
+    <div>
+      <h2>Current Foods</h2>
+      <table>
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>u_id</th>
+          <th>foodname</th>
+          <th>price</th>
+          <th>foodpic</th>
+        </tr>
+        </thead>
+        <tbody>
+        <%for (const food of foods) { %>
+          <tr>
+            <td><%= food.id %></td>
+            <td><%= food.u_id %></td>
+            <td><%= food.foodname %></td>
+            <td><%= food.price %></td>
+            <td><%= food.foodpic %></td>
+            <td><a  href="/editlocation/<%= food.id %>">Update</a></td>
+            <td><button data-toggle="modal" data-target="#modal-toTrash<%= food.id %>" class="btn-sm btn-dark details">Delete
+                <span class="glyphicon glyphicon-trash" data-toggle="tooltip"
+                      data-placement="top" title="Sent to Trash Box"></span></button>
+            </td>
+            <div class="modal modal-toTrash" id="modal-toTrash<%= food.id %>">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-hidden="true">×
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <p class="error-text"><strong>Confirmation</strong></p>
+                  </div>
+                  <div class="modal-footer">
+                    <button class="btn-sm btn-dark details" data-dismiss="modal" aria-hidden="true">
+                      Cancel
+                    </button>
+                    <form action="/deletelocation/<%= food.id %>" method="post">
+                      <button class="btn-sm btn-dark details" value="delete">Yes</button></a>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </tr>
+        <% } %>
+        </tbody>
+      </table>
+    </div>
+    <div>
+
+      <!--u_id,foodname, price, foodpic-->
+      <h2>Add A Food</h2>
+
+      <form action="/addfood" method="post">
+        <div class="form-horizontal">
+
+
+          <label>UID:
+            <input type="text" name="u_id" id="u_id"></input>
+          </label>
+          <label>Foodname:
+            <input type="text" name="foodname" id="foodname"></input>
+          </label>
+          <label>Price:
+            <input type="text" name="price" id="price"></input>
+          </label>
+          <label>Foodpic:
+            <input type="text" name="foodpic" id="foodpic"></input>
+          </label>
+
+          <input type="submit" value="Submit" class="btn-sm btn-dark details"></input>
+
+        </div>
+      </form>
+
+    </div>
+
+
+    <!-- ---------------------------------------------------------------------------------- -->
+
+    <!--u_id,fid, ordertime, sumprice-->
+    <div>
+      <h2>Current Orders</h2>
+      <table>
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>u_id</th>
+          <th>fid</th>
+          <th>ordertime</th>
+          <th>sumprice</th>
+        </tr>
+        </thead>
+        <tbody>
+        <%for (const order of orders) { %>
+          <tr>
+            <td><%= order.id %></td>
+            <td><%= order.u_id %></td>
+            <td><%= order.ordertime %></td>
+            <td><%= order.sumprice %></td>
+            <td><a  href="/editlocation/<%= order.id %>">Update</a></td>
+            <td><button data-toggle="modal" data-target="#modal-toTrash<%= order.id %>" class="btn-sm btn-dark details">Delete
+                <span class="glyphicon glyphicon-trash" data-toggle="tooltip"
+                      data-placement="top" title="Sent to Trash Box"></span></button>
+            </td>
+            <div class="modal modal-toTrash" id="modal-toTrash<%= order.id %>">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-hidden="true">×
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <p class="error-text"><strong>Confirmation</strong></p>
+                  </div>
+                  <div class="modal-footer">
+                    <button class="btn-sm btn-dark details" data-dismiss="modal" aria-hidden="true">
+                      Cancel
+                    </button>
+                    <form action="/deletelocation/<%= order.id %>" method="post">
+                      <button class="btn-sm btn-dark details" value="delete">Yes</button></a>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </tr>
+        <% } %>
+        </tbody>
+      </table>
+    </div>
+    <div>
+
+      <!--u_id,fid, ordertime, sumprice-->
+      <h2>Add An Order</h2>
+
+      <form action="/addorder" method="post">
+        <div class="form-horizontal">
+
+
+          <label>UID:
+            <input type="text" name="u_id" id="u_id"></input>
+          </label>
+          <label>FID:
+            <input type="text" name="fid" id="fid"></input>
+          </label>
+          <label>Ordertime:
+            <input type="text" name="ordertime" id="ordertime"></input>
+          </label>
+          <label>Sumprice:
+            <input type="text" name="sumprice" id="sumprice"></input>
+          </label>
+
+          <input type="submit" value="Submit" class="btn-sm btn-dark details"></input>
+
+        </div>
+      </form>
+
+    </div>
+
   </body>
 
 
