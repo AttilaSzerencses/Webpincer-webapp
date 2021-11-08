@@ -131,9 +131,13 @@ button:hover,input[type=submit]:hover {
     margin-right: auto;
     font-weight: bold;
     text-align: center;
-    background: rgb(217, 102, 53);
-    color:white;
+    color:rgb(217, 102, 53);
     font-weight: bold;
+    font-size:200%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+
 }
 .bigprofilkep{
     width:250px;
