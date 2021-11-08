@@ -70,6 +70,6 @@ INSERT INTO RESTAURANTS(u_id,opens,closes,cprice,restaurantpic) VALUES ('3','7:0
 INSERT INTO FOODS(u_id,foodname,price,foodpic) VALUES ('3','Hamburger','1500','hambi.png');
 INSERT INTO FOODS(u_id,foodname,price,foodpic) VALUES ('3','Pizza','1800','pizza.png');
 INSERT INTO FOODS(u_id,foodname,price,foodpic) VALUES ('3','Hotdog','600','hotdog.png');
-INSERT INTO ORDERS(u_id,fid,ordertime,sumprice) VALUES ('3','2','660','2000');
+INSERT INTO ORDERS(u_id,fid,ordertime,sumprice) VALUES ('3','1','660','2000');
 
 
