@@ -125,3 +125,17 @@ button:hover,input[type=submit]:hover {
 #other{
 	width:30%;
 }
+.bigpage{
+    width:80%;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+    text-align: center;
+    background: rgb(217, 102, 53);
+    color:white;
+    font-weight: bold;
+}
+.bigprofilkep{
+    width:250px;
+    float: left;
+}
