@@ -14,14 +14,14 @@ class LocationDAO {
         return result.rows[0];
     };
 
-    async createLocation(uid, postcode, cityname, street, streetnumber, other){
-        await db.query("INSERT INTO LOCATIONS(u_id, postcode, cityname, street, streetnumber, other) VALUES ($1,$2,$3,$4,$5,$6)",[uid, parseInt(postcode), cityname, street, parseInt(streetnumber), other])
+    async createLocation(uid, postcode, city, street, streetnumber, other){
+        await db.query("INSERT INTO LOCATIONS(u_id, postcode, city, street, streetnumber, other) VALUES ($1,$2,$3,$4,$5,$6)",[uid, parseInt(postcode), city, street, parseInt(streetnumber), other])
         .catch(console.log);
         return;        
     };
 
-    async updateLocation(id, uid, postcode, cityname, street, streetnumber, other){
-        await db.query(`UPDATE LOCATIONS SET u_id = $1, postcode = $2, cityname=$3, street=$4, streetnumber=$5, other=$6  WHERE id = $7`,[parseInt(uid), parseInt(postcode), cityname, street, parseInt(streetnumber), other ,parseInt(id)])
+    async updateLocation(id, uid, postcode, city, street, streetnumber, other){
+        await db.query(`UPDATE LOCATIONS SET u_id = $1, postcode = $2, city=$3, street=$4, streetnumber=$5, other=$6  WHERE id = $7`,[parseInt(uid), parseInt(postcode), city, street, parseInt(streetnumber), other ,parseInt(id)])
         .catch(console.log);
 
         return;

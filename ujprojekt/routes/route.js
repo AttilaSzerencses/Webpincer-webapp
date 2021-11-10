@@ -43,8 +43,7 @@ router.get("/login", checkAuthenticated, (req, res) => {
 });
 
 router.get("/dashboard", checkNotAuthenticated, async (req, res) => {
-	console.log(passport.session());
-	res.render("dashboard", {user: await new DAOuser().getOneUser(passport.session().id)});
+	res.render("dashboard", {user: req.user.name});
 });
 
 router.get("/kereses", (req,res) => {
@@ -112,7 +111,19 @@ router.post('/register', async (req,res)=> {
 						message: "Ezzel az email-el már regisztráltak!"
 					});
 				} else {
-					pool.query(
+					new DAOuser().createUser(name,email,hashedPassword,phone);
+					/*pool.query(
+						`SELECT * FROM USERS WHERE email = $1`,[email],(err, results) =>{
+							new DAOlocation().createLocation(results.rows[0].id,postcode,city,street,streetnumber,other);
+						}
+					)*/
+					const user = new DAOuser().getUserByEmail(email);
+					console.log(user);
+					//new DAOlocation().createLocation(user.id,postcode,city,street,streetnumber,other);
+					req.flash("success_msg", "Sikeres regisztráció! Jelentkezz be!");
+					res.redirect("/login");
+
+					/*pool.query(
 						`INSERT INTO USERS (permission, name, email, password, phone, postcode, city, street, streetnumber, other)
                 VALUES ('u',$1, $2, $3, $4, $5, $6, $7, $8, $9)
                 RETURNING id, password`,
@@ -125,7 +136,7 @@ router.post('/register', async (req,res)=> {
 							req.flash("success_msg", "Sikeres regisztráció! Jelentkezz be!");
 							res.redirect("/login");
 						}
-					);
+					); */
 				}
 			}
 		);
