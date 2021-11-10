@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+
+
+<img class="mainlogo" src="Kepek/logooo.png" alt="webpincer" width="20%" >
+<table class="menu" align="center">
+    <tbody>
+    <tr>
+        <td><a href="/"><img class="icon" src="Kepek/home.png" alt="Home"></a></td>
+        <td><a href="/kereses"><img class="icon" src="Kepek/search.png" alt="search"></a></td>
+        <td><a href="/cart"><img class="icon" src="Kepek/kosar.png" alt="kosar"></a></td>
+        <td><a href="/regorlog"><img class="icon" src="Kepek/profile.png" alt="profile"></a></td>
+    </tr>
+    <tr>
+        <td>Kezdőlap</td>
+        <td>Éttermek</td>
+        <td>Kosár</td>
+        <td>Profil</td>
+    </tr>
+    </tbody>
+</table>
+<form action="/login" method="post">
+    <div class="box">
+        <h1>Bejelentkezés</h1>
+        <ul>
+        <% if(messages.success_msg) {%>
+            <li><%= messages.success_msg %></li>
+            <% } %>
+        </ul>
+        <ul>
+            <% if (messages.error) { %>
+                <li><%= messages.error %></li>
+            <% } %>
+        </ul>
+            <table class="logintable">
+                <tbody>
+                <tr>
+                    <td><input type="email" id="email" name="email" placeholder="E-mail cím" required></td>
+                </tr>
+                <tr>
+                    <td><input type="password" id="password" name="password" placeholder="Jelszó" required></td>
+                </tr>
+                <tr>
+                    <td><button type="submit">Bejelentkezés</button><br></td>
+                </tr>
+                <tr>
+                    <td><a href="/register">Nincs még fiókod? Regisztrálj!</a> </td>
+                </tr>
+                <tr>
+                    <td> </td>
+                </tr>
+                </tbody>
+            </table>
+    </div>
+</form>
+
+
+
+<footer>
+    <hr>
+    <p></p>
+    <p></p>
+    <table class="menu" align="center">
+        <tbody>
+        <tr>
+            <td ><a href="/kapcsolatok" style="color:white"> Kapcsolatok </a></td>
+            <td ><a href="/aszf" style="color:white">  ÁSZF</a></td>
+        </tr>
+        </tbody>
+
+    </table>
+    <p></p>
+    <p></p>
+    <hr>
+</footer>
+
+</body>
+</html>
