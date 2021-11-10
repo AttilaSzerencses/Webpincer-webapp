@@ -93,55 +93,26 @@ router.post('/register', async (req,res)=> {
 
 	if (errors.length > 0) {
 		res.render("register", { errors, name, email, password, phone, postcode, city, street, streetnumber, other });
-	} else {
+	} 
+	
+	
+	
+	else {
 		let hashedPassword = await bcrypt.hash(password, 10);
-		//console.log(hashedPassword);
-		pool.query(
-			`SELECT * FROM USERS
-        WHERE email = $1`,
-			[email],
-			(err, results) => {
-				if (err) {
-					console.log(err);
-				}
-				console.log(results.rows);
-
-				if (results.rows.length > 0) {
-					return res.render("register", {
-						message: "Ezzel az email-el már regisztráltak!"
-					});
-				} else {
-					new DAOuser().createUser(name,email,hashedPassword,phone);
-					/*pool.query(
-						`SELECT * FROM USERS WHERE email = $1`,[email],(err, results) =>{
-							new DAOlocation().createLocation(results.rows[0].id,postcode,city,street,streetnumber,other);
-						}
-					)*/
-					const user = new DAOuser().getUserByEmail(email);
-					console.log(user);
-					//new DAOlocation().createLocation(user.id,postcode,city,street,streetnumber,other);
-					req.flash("success_msg", "Sikeres regisztráció! Jelentkezz be!");
-					res.redirect("/login");
-
-					/*pool.query(
-						`INSERT INTO USERS (permission, name, email, password, phone, postcode, city, street, streetnumber, other)
-                VALUES ('u',$1, $2, $3, $4, $5, $6, $7, $8, $9)
-                RETURNING id, password`,
-						[name, email, hashedPassword, phone, postcode, city, street, streetnumber, other],
-						(err, results) => {
-							if (err) {
-								throw err;
-							}
-							console.log(results.rows);
-							req.flash("success_msg", "Sikeres regisztráció! Jelentkezz be!");
-							res.redirect("/login");
-						}
-					); */
-				}
+		let user=await new DAOuser().getUserByEmail(email);
+		if(user.rows.length!==0){
+				return res.render("register", {
+					message: "Ezzel az email-el már regisztráltak!"
+				});
 			}
-		);
+		else {
+			await new DAOuser().createUser(name,email,hashedPassword,phone);
+			user = await new DAOuser().getUserByEmail(email);
+			new DAOlocation().createLocation(user.rows[0].id,postcode,city,street,streetnumber,other);
+			req.flash("success_msg", "Sikeres regisztráció! Jelentkezz be!");
+			res.redirect("/login");
+		}
 	}
-
 });
 
 router.post(

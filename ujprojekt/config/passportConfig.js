@@ -1,41 +1,32 @@
 const LocalStrategy = require("passport-local").Strategy;
 const  pool  = require("../config/dbConfig");
 const bcrypt = require("bcrypt");
+const DAOuser = require('../dao/user-dao');
 
 function initialize(passport) {
     console.log("Initialized");
 
-    const authenticateUser = (email, password, done) => {
-        console.log(email, password);
-        pool.query(
-            `SELECT * FROM USERS WHERE email = $1`,
-            [email],
-            (err, results) => {
-                if (err) {
-                    throw err;
-                }
-                console.log(results.rows);
-
-                if (results.rows.length > 0) {
-                    const user = results.rows[0];
-
-                    bcrypt.compare(password, user.password, (err, isMatch) => {
-                        if (err) {
-                            console.log(err);
-                        }
-                        if (isMatch) {
-                            return done(null, user);
-                        } else {
-                            return done(null, false, { message: "Helytelen jelszó!" });
-                        }
-                    });
+    const authenticateUser = async (email, password, done) => {
+		let user=await new DAOuser().getUserByEmail(email);
+		if(user.rows[0].length!==0){
+			user=user.rows[0];
+			bcrypt.compare(password, user.password, (err, isMatch) => {
+				if (err) {
+                    console.log(err);
+				}
+                if (isMatch) {
+                    return done(null, user);
                 } else {
-                    return done(null, false, {
-                        message: "Nem létezik felhasználó ezzel az email-el."
-                    });
+                    return done(null, false, { message: "Helytelen jelszó!" });
                 }
-            }
-        );
+            });
+					
+		}
+		else {
+            return done(null, false, {
+                message: "Nem létezik felhasználó ezzel az email-el."
+             });
+		}
     };
 
     passport.use(
@@ -46,15 +37,12 @@ function initialize(passport) {
     );
     passport.serializeUser((user, done) => done(null, user.id));
 
-    passport.deserializeUser((id, done) => {
-        pool.query(`SELECT * FROM USERS WHERE id = $1`, [id], (err, results) => {
-            if (err) {
-                return done(err);
-            }
-            console.log(`ID is ${results.rows[0].id}`);
-            return done(null, results.rows[0]);
-        });
+    passport.deserializeUser(async (id, done) => {
+		let user= await new DAOuser().getOneUser(id);
+		console.log(`ID is ${user.id}`);
+		return done(null, user);
     });
+
 }
 
 module.exports = initialize;
