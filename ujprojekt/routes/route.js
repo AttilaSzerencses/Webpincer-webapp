@@ -12,7 +12,7 @@ const DAOrestaurant = require('../dao/restaurants-dao');
 const DAOfood = require('../dao/food-dao');
 const DAOlocation = require('../dao/location-dao');
 const DAOorder = require('../dao/order-dao');
-const email = require('email');
+const email = require('./email');
 
 
 router.get("/", (req, res) => {
@@ -48,10 +48,6 @@ router.post("/order",checkNotAuthenticated,async(req,res)=>{
 router.post("/ordered",checkNotAuthenticated,async(req,res)=>{
 	let food=await new DAOfood().getOneFood(req.body.fid);
 	let restaurant=await new DAOrestaurant().getRestaurantByUID(food.u_id);
-	console.log(typeof req.user.id+" "+req.user.id);
-	console.log(typeof food.id+" "+food.id);
-	console.log(typeof restaurant.cprice+" "+restaurant.cprice);
-	console.log(typeof food.price+" "+food.price);
 	await new DAOorder().createOrder(parseInt(req.user.id),parseInt(food.id),60,parseInt(restaurant.cprice)+parseInt(food.price));
 	//TODO
 	res.render('index',{message:"A rendelés megtörtént"});

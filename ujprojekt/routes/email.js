@@ -7,12 +7,12 @@ const transporter = nodemailer.createTransport({
     pass: 'Na11rancs!'
   }
 });
-function sendMailOrder(sendTo) {
+function sendMailOrder(sendTo,data) {
 	let mailOptions = {
 	from: 'webpincer@gmail.com',
 	to: sendTo,
 	subject: 'Rendelés a Webpincértől',
-	text: 'A rendelésed sikeresen megtörtént: '
+	text: 'A rendelésed sikeresen megtörtént a Webpincér felüleletén '
 };
 
 transporter.sendMail(mailOptions, function(error, info){
