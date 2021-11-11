@@ -1,24 +1,25 @@
-var nodemailer = require('nodemailer');
+const nodemailer = require('nodemailer');
 
-var transporter = nodemailer.createTransport({
+const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: 'webpincer@gmail.com',
     pass: 'Na11rancs!'
   }
 });
-
-var mailOptions = {
-  from: 'webpincer@gmail.com',
-  to: 'webpincer@gmail.com',
-  subject: 'Szia Atko',
-  text: 'Szeretlek'
+function sendMailOrder(sendTo,data) {
+	let mailOptions = {
+	from: 'webpincer@gmail.com',
+	to: sendTo,
+	subject: 'Rendelés a Webpincértől',
+	text: 'A rendelésed sikeresen megtörtént a Webpincér felüleletén '
 };
 
 transporter.sendMail(mailOptions, function(error, info){
-  if (error) {
-    console.log(error);
-  } else {
-    console.log('Email sent: ' + info.response);
-  }
-})
+	if (error) {
+		console.log(error);
+	} else {
+		console.log('Email sent: ' + info.response);
+		}
+	});
+}

@@ -12,6 +12,7 @@ const DAOrestaurant = require('../dao/restaurants-dao');
 const DAOfood = require('../dao/food-dao');
 const DAOlocation = require('../dao/location-dao');
 const DAOorder = require('../dao/order-dao');
+const email = require('./email');
 
 
 router.get("/", (req, res) => {
@@ -19,10 +20,13 @@ router.get("/", (req, res) => {
 });
 
 router.get("/restaurant", checkNotAuthenticated ,async(req,res)=>{
-	let foods = await new DAOfood().getAllFoodFromRestaurant(10);
+	let foods = await new DAOfood().getAllFoodFromRestaurant(req.body.id);
+	let user = await new DAOuser().getOneUser(foods[0].u_id);
+	let restaurant = await new DAOrestaurant().getOneRestaurant(foods[0].u_id);
 	console.log(foods);
 	res.render("restaurant",{
-		foods:foods
+		foods:foods,
+		user:user
 	});
 });
 
@@ -44,10 +48,6 @@ router.post("/order",checkNotAuthenticated,async(req,res)=>{
 router.post("/ordered",checkNotAuthenticated,async(req,res)=>{
 	let food=await new DAOfood().getOneFood(req.body.fid);
 	let restaurant=await new DAOrestaurant().getRestaurantByUID(food.u_id);
-	console.log(typeof req.user.id+" "+req.user.id);
-	console.log(typeof food.id+" "+food.id);
-	console.log(typeof restaurant.cprice+" "+restaurant.cprice);
-	console.log(typeof food.price+" "+food.price);
 	await new DAOorder().createOrder(parseInt(req.user.id),parseInt(food.id),60,parseInt(restaurant.cprice)+parseInt(food.price));
 	//TODO
 	res.render('index',{message:"A rendelés megtörtént"});
@@ -101,7 +101,7 @@ router.get("/kereses", async (req,res) => {
 	for(const restaurant of restaurants){
 		locations.push(await new DAOlocation().getLocationByUID(restaurant.u_id));
 	}
-	res.render("kereses",
+	res.render('kereses',
 	{
 	users:users,
 	restaurants:restaurants,
@@ -251,14 +251,13 @@ router.get("/editlocation/:id",checkNotAuthenticated,checkIfAdmin, async (req, r
   
 router.post("/updatelocation/:id",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
     let id = req.params.id;
-    let {u_id} = req.body;
 	let {postcode} = req.body;
 	let {city} = req.body;
 	let {street} = req.body;
 	let {streetnumber} = req.body;
 	let {phone} = req.body;
 	let {other} = req.body;
-    await new DAOlocation().updateLocation(id,u_id,postcode,city,street,streetnumber,other);
+    await new DAOlocation().updateLocation(id,postcode,city,street,streetnumber,other);
     res.redirect("/admin");
 });
   
@@ -288,12 +287,11 @@ router.get("/editrestaurant/:id",checkNotAuthenticated,checkIfAdmin, async (req,
   
 router.post("/updaterestaurant/:id",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
     let id = req.params.id;
-    let {u_id} = req.body;
 	let {opens} = req.body;
 	let {closes} = req.body;
 	let {cprice} = req.body;
 	let {restaurantpic} = req.body;
-    await new DAOrestaurant().updateRestaurant(id,u_id,opens,closes,cprice,restaurantpic);
+    await new DAOrestaurant().updateRestaurant(id,opens,closes,cprice,restaurantpic);
     res.redirect("/admin");
 });
   
@@ -327,7 +325,7 @@ router.post("/updatefood/:id",checkNotAuthenticated,checkIfAdmin, async (req, re
 	let {foodname} = req.body;
 	let {price} = req.body;
 	let {foodpic} = req.body;
-    await new DAOfood().updateFood(id,u_id,foodname,price,foodpic);
+    await new DAOfood().updateFood(id,foodname,price,foodpic);
     res.redirect("/admin");
 });
   
@@ -357,11 +355,9 @@ router.get("/editorder/:id",checkNotAuthenticated,checkIfAdmin, async (req, res)
   
 router.post("/updateorder/:id",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
     let id = req.params.id;
-    let {u_id} = req.body;
-	let {fid} = req.body;
 	let {ordertime} = req.body;
 	let {sumprice} = req.body;
-    await new DAOorder().updateOrder(id,u_id,fid,ordertime,sumprice);
+    await new DAOorder().updateOrder(id,ordertime,sumprice);
     res.redirect("/admin");
 });
   
