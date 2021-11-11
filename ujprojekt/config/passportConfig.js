@@ -8,7 +8,7 @@ function initialize(passport) {
 
     const authenticateUser = async (email, password, done) => {
 		let user=await new DAOuser().getUserByEmail(email);
-		if(user.rows[0].length!==0){
+		if(user.rows.length!==0){
 			user=user.rows[0];
 			bcrypt.compare(password, user.password, (err, isMatch) => {
 				if (err) {

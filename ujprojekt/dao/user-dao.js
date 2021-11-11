@@ -5,7 +5,6 @@ class UserDAO {
     async getUsers(){
         let results = await db.query(`SELECT * FROM USERS`).
         catch(console.log);
-        console.log(results);
         return results.rows;
     };
 
@@ -37,16 +36,6 @@ class UserDAO {
         await db.query(`DELETE FROM USERS WHERE id=$1`,[parseInt(id)])
         .catch(console.log);
         return;        
-    };
-
-    async loginUser(email,password) {
-      let results = await db.query('SELECT * FROM USERS WHERE email = $1, password = $2', [email, password])
-          .catch(console.log);
-      if (results.rowCount == 0){
-          return null;
-      } else{
-          return results.rows[0];
-      }
     };
 
 };

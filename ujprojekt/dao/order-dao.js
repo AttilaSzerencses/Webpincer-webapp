@@ -14,14 +14,14 @@ class OrderDAO {
         return result.rows[0];
     };
 
-    async createOrder(uid, fid, ordertime, sumprice){
-        await db.query("INSERT INTO ORDERS(u_id, fid, ordertime, sumprice) VALUES ($1,$2,$3,$4)",[parseInt(uid), parseInt(fid), parseInt(ordertime), parseInt(sumprice)])
+    async createOrder(uid, fid, cartid, ordertime, sumprice){
+        await db.query("INSERT INTO ORDERS(u_id, fid, cartid, ordertime, sumprice) VALUES ($1,$2,$3,$4,$5)",[parseInt(uid), parseInt(fid), cartid, parseInt(ordertime), parseInt(sumprice)])
         .catch(console.log);
         return;        
     };
 
     async updateOrder(id ,uid, fid, ordertime, sumprice){
-        await db.query(`UPDATE ORDERS SET u_id = $1, fid= $2, ordertime= $3, sumprice= $4 WHERE id = $5`,[parseInt(uid), parseInt(fid), parseInt(ordertime), parseInt(sumprice), parseInt(id)])
+        await db.query(`UPDATE ORDERS SET u_id = $1, fid= $2, cartid=$3, ordertime= $4, sumprice= $5 WHERE id = $6`,[parseInt(uid), parseInt(fid),cartid, parseInt(ordertime), parseInt(sumprice), parseInt(id)])
         .catch(console.log);
 
         return;
@@ -41,6 +41,12 @@ class OrderDAO {
 	
 	async deleteFIDOrder(id){
         await db.query(`DELETE FROM ORDERS WHERE fid=$1`,[parseInt(id)])
+        .catch(console.log);
+        return;
+    };
+	
+	async deleteOrderByCartId(cartid){
+        await db.query(`DELETE FROM ORDERS WHERE cartid=$1`,[parseInt(cartid)])
         .catch(console.log);
         return;
     };

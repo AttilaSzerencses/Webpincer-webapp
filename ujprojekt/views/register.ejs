@@ -30,9 +30,13 @@
             <tr>
                 <td><h1>Regisztráció<h2></td>
                 <ul>
-                    <% if(typeof errors != 'undefined') { %> <% errors.forEach(error=>{ %>
-                    <li><%= errors.message %></li>
-                    <% }) %> <% } %>
+                    <% if(typeof errors != "undefined"){ 
+					for(let i=0;i<errors.length;i++){
+					%>
+                    <li><%= errors[i].message %></li>
+					<%}
+					}
+					%> 
                 </ul>
             </tr>
             <tr>

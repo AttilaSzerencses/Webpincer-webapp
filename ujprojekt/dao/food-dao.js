@@ -13,7 +13,13 @@ class FoodDAO {
         .catch(console.log);
         return result.rows[0];
     };
-
+	
+	async getAllFoodFromRestaurant(id){
+        let result = await db.query('SELECT * FROM FOODS WHERE u_id = $1',[id])
+        .catch(console.log);
+        return result;
+    };
+	
     async createFood(uid, foodname, price, foodpic){
         await db.query("INSERT INTO FOODS(u_id, foodname, price, foodpic) VALUES ($1,$2,$3,$4)",[uid, foodname, price, foodpic])
         .catch(console.log);

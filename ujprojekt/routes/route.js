@@ -12,10 +12,21 @@ const DAOrestaurant = require('../dao/restaurants-dao');
 const DAOfood = require('../dao/food-dao');
 const DAOlocation = require('../dao/location-dao');
 const DAOorder = require('../dao/order-dao');
+const DAOcart=require('../dao/cart-dao');
 
 
 router.get("/", (req, res) => {
 	res.render("index");
+});
+
+router.get("/gomb",(req,res)=>{
+	let foods = await new DAOfood().getAllFoodFromRestaurant(req.user.id);
+	res.render("gomb");
+});
+
+router.post("/toCart",(req,res)=>{
+	console.log("oof");
+	res.end()
 });
 
 router.get("/admin", async (req, res) => {
@@ -25,7 +36,7 @@ router.get("/admin", async (req, res) => {
 	let orders = await new DAOorder().getOrders();
 	let foods = await new DAOfood().getFoods();
 
-	return res.render('index',
+	return res.render('admin',
 		{ 	users : users,
 			locations : locations,
 			restaurants : restaurants,
@@ -43,7 +54,8 @@ router.get("/login", checkAuthenticated, (req, res) => {
 });
 
 router.get("/dashboard", checkNotAuthenticated, async (req, res) => {
-	res.render("dashboard", {user: req.user.name});
+	res.render("dashboard", 
+	{user: req.user.name});
 });
 
 router.get("/kereses", (req,res) => {
@@ -174,6 +186,7 @@ router.post("/deleteuser/:id", async (req, res) => {
 	await new DAOfood().deleteUIDFood(id);
     await new DAOlocation().deleteUIDLocation(id);
 	await new DAOrestaurant().deleteUIDRestaurant(id);
+	await new DAOcart().deleteUIDCart(id);
     await new DAOuser().deleteUser(id);
     res.redirect("/");
   });
@@ -282,6 +295,7 @@ router.post("/updatefood/:id", async (req, res) => {
 router.post("/deletefood/:id", async (req, res) => {
     let id = req.params.id;
 	await new DAOorder.deleteFIDOrder(id);
+	await new DAOcart.deleteFIDCart(id);
     await new DAOfood().deleteFood(id);
     res.redirect("/");
   });
