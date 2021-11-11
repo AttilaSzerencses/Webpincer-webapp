@@ -7,19 +7,24 @@ const transporter = nodemailer.createTransport({
     pass: 'Na11rancs!'
   }
 });
-function sendMailOrder(sendTo,data) {
-	let mailOptions = {
-	from: 'webpincer@gmail.com',
-	to: sendTo,
-	subject: 'Rendelés a Webpincértől',
-	text: 'A rendelésed sikeresen megtörtént a Webpincér felüleletén '
-};
 
-transporter.sendMail(mailOptions, function(error, info){
-	if (error) {
-		console.log(error);
-	} else {
-		console.log('Email sent: ' + info.response);
+class Email{
+	async sendMailOrder(sendTo,data) {
+		let mailOptions = {
+		from: 'webpincer@gmail.com',
+		to: sendTo,
+		subject: 'Rendelés a Webpincértől',
+		text: 'A rendelésed sikeresen megtörtént a Webpincér felüleletén. Az étel neve: '+data.name+' | A rendelés ára: '+data.price
+	};
+
+	transporter.sendMail(mailOptions, function(error, info){
+		if (error) {
+			console.log(error);
+		} 
+		else {
+			console.log('Email sent: ' + info.response);
 		}
 	});
-}
+	}
+
+}module.exports = Email;

@@ -20,7 +20,8 @@ router.get("/", (req, res) => {
 });
 
 router.get("/restaurant", checkNotAuthenticated ,async(req,res)=>{
-	let foods = await new DAOfood().getAllFoodFromRestaurant(req.body.id);
+	let foods = await new DAOfood().getAllFoodFromRestaurant(10);
+	console.log(foods);
 	let user = await new DAOuser().getOneUser(foods[0].u_id);
 	let restaurant = await new DAOrestaurant().getOneRestaurant(foods[0].u_id);
 	console.log(foods);
@@ -49,7 +50,12 @@ router.post("/ordered",checkNotAuthenticated,async(req,res)=>{
 	let food=await new DAOfood().getOneFood(req.body.fid);
 	let restaurant=await new DAOrestaurant().getRestaurantByUID(food.u_id);
 	await new DAOorder().createOrder(parseInt(req.user.id),parseInt(food.id),60,parseInt(restaurant.cprice)+parseInt(food.price));
+	let data={
+		name: food.foodname,
+		price: parseInt(restaurant.cprice)+parseInt(food.price)
+	}
 	//TODO
+	await new email().sendMailOrder(req.user.email,data);
 	res.render('index',{message:"A rendelés megtörtént"});
 });
 
