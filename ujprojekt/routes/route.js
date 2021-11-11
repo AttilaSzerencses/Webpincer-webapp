@@ -19,23 +19,35 @@ router.get("/", (req, res) => {
 	res.render("index");
 });
 
-router.get("/gomb",(req,res)=>{
+router.get("/gomb", checkNotAuthenticated ,async(req,res)=>{
 	let foods = await new DAOfood().getAllFoodFromRestaurant(req.user.id);
 	res.render("gomb");
 });
 
 router.post("/toCart",(req,res)=>{
-	console.log("oof");
-	res.end()
+	console.log(req);
+	res.render("gomb");
 });
 
-router.get("/admin", async (req, res) => {
+router.get("/admin",checkNotAuthenticated, async (req, res) => {
+	
+	if(req.user.permission!=='a'){
+		res.send("Error 404");
+	}
+	
 	let users = await new DAOuser().getUsers();
 	let locations = await new DAOlocation().getLocations();
 	let restaurants = await new DAOrestaurant().getRestaurants();
 	let orders = await new DAOorder().getOrders();
 	let foods = await new DAOfood().getFoods();
-
+	let carts = await new DAOcart().getCarts();
+	console.log(users)
+	console.log(locations)
+	console.log(restaurants)
+	console.log(orders)
+	console.log(foods)
+	console.log(carts)
+	
 	return res.render('admin',
 		{ 	users : users,
 			locations : locations,
@@ -147,7 +159,7 @@ function checkNotAuthenticated(req, res, next) {
 	if (req.isAuthenticated()) {
 		return next();
 	}
-	res.redirect("/login");
+	res.render("login",{message: 'Mielőtt megtennéd, jelentkezz be!'});
 }
 
 
@@ -155,28 +167,28 @@ function checkNotAuthenticated(req, res, next) {
   
 router.post("/adduser", async (req, res) => {
 	let {password} = req.body;
+	let hashedPassword = await bcrypt.hash(password, 10);
 	let {email} = req.body;
 	let {name} = req.body;
 	let {phone} = req.body;
-	await new DAOuser().createUser(password, email, name,phone);
-	return res.redirect('/')
+	await new DAOuser().createUser(hashedPassword, email, name,phone);
+	return res.redirect('/admin')
 });
   
 router.get("/edituser/:id", async (req, res) => {
     let id = req.params.id;
-    let user = await new DAO().getOneUser(id);
+    let user = await new DAOuser().getOneUser(id);
     res.render("update-user", { model: user });
   });
   
 router.post("/updateuser/:id", async (req, res) => {
     let id = req.params.id;
     let {permission} = req.body;
-	let {pw} = req.body;
 	let {email} = req.body;
 	let {name} = req.body;
 	let {phone} = req.body;
-    await new DAOuser().updateUser(id, permission, pw, email, name,phone);
-    res.redirect("/");
+    await new DAOuser().updateUser(id, name, email, permission, phone);
+    res.redirect("/admin");
 });
   
 router.post("/deleteuser/:id", async (req, res) => {
@@ -188,7 +200,7 @@ router.post("/deleteuser/:id", async (req, res) => {
 	await new DAOrestaurant().deleteUIDRestaurant(id);
 	await new DAOcart().deleteUIDCart(id);
     await new DAOuser().deleteUser(id);
-    res.redirect("/");
+    res.redirect("/admin");
   });
 
 //LOCATION

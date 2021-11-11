@@ -10,7 +10,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>   
 
-
+<style>
+th,td{
+	border: 1px solid;
+}
+</style>
 </head>
 
 <header>
@@ -34,16 +38,18 @@
         <thead>
           <tr>
             <th>ID</th>
-            <th>password</th>
-            <th>email</th>
-            <th>phone</th>
+            <th>Permission</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
           </tr>
         </thead>
         <tbody>
             <%for (const user of users) { %>
                 <tr>
                   <td><%= user.id %></td>
-                  <td><%= user.password %></td>
+                  <td><%= user.permission %></td>
+                  <td><%= user.name %></td>
                   <td><%= user.email %></td>
                   <td><%= user.phone %></td>
                   <td><a  href="/edituser/<%= user.id %>">Update</a></td>

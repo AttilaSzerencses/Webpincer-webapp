@@ -14,14 +14,14 @@ class UserDAO {
         return result.rows[0];
     };
 
-    async createUser(name, email, pw, phone){
+    async createUser(pw, email, name, phone){
         await db.query("INSERT INTO USERS(permission,password,email,name,phone) VALUES ('u',$1,$2,$3,$4)",[pw, email, name, phone])
         .catch(console.log);
         return;        
     };
 
-    async updateUsers(id, name, email, pw, phone){
-        await db.query(`UPDATE USERS SET password = $1, email=$2, name=$3, phone=$4 WHERE id = $5`,[ pw, email, name ,phone, parseInt(id)])
+    async updateUser(id, name, email, permission, phone){
+        await db.query(`UPDATE USERS SET permission=$1, email=$2, name=$3, phone=$4 WHERE id = $5`,[ permission ,email, name ,phone, parseInt(id)])
         .catch(console.log);
         return;
     };
