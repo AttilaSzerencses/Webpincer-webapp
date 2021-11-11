@@ -60,11 +60,6 @@ router.get("/admin",checkNotAuthenticated, checkIfAdmin, async (req, res) => {
 	let restaurants = await new DAOrestaurant().getRestaurants();
 	let orders = await new DAOorder().getOrders();
 	let foods = await new DAOfood().getFoods();
-	console.log(users)
-	console.log(locations)
-	console.log(restaurants)
-	console.log(orders)
-	console.log(foods)
 	
 	return res.render('admin',
 		{ 	users : users,
@@ -88,9 +83,32 @@ router.get("/dashboard", checkNotAuthenticated, async (req, res) => {
 	{user: req.user.name});
 });
 
-router.get("/kereses", (req,res) => {
-	res.render("kereses");
+router.get("/kereses", async (req,res) => {
+	let users=await new DAOuser().getUsersByPermission("u");
+	
+	let restaurants=await new DAOrestaurant().getRestaurants();
+	
+	
+	restaurants.sort((a,b)=>{
+		if(a.id>b.id){
+			return -1;
+		}
+		else{
+			return 1;
+		}
+	})
+	let locations=[];
+	for(const restaurant of restaurants){
+		locations.push(await new DAOlocation().getLocationByUID(restaurant.u_id));
+	}
+	res.render("kereses",
+	{
+	users:users,
+	restaurants:restaurants,
+	locations:locations
+	});
 });
+
 
 router.get("/kapcsolatok", (req,res) => {
 	res.render("kapcsolatok");

@@ -13,6 +13,12 @@ class UserDAO {
         .catch(console.log);
         return result.rows[0];
     };
+	
+	async getUsersByPermission(permission){
+		let result = await db.query('SELECT * FROM USERS WHERE permission= $1',[permission])
+        .catch(console.log);
+        return result.rows;
+	}
 
     async createUser(pw, email, name, phone){
         await db.query("INSERT INTO USERS(permission,password,email,name,phone) VALUES ('u',$1,$2,$3,$4)",[pw, email, name, phone])
