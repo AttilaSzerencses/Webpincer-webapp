@@ -39,6 +39,21 @@ h4{
   margin-right: auto;
   width: 100%;
 }
+footer {
+    text-align: center;
+    color: white !important;
+    background-color: #e47c4c;
+    padding-bottom: 30px;
+}
+.tablebg {
+    width:100%;
+    min-width: 260px;
+    min-height:200px;
+    text-align: center;
+    background-image:url('/pix/samples/bg1.gif');
+    border:1px solid black;
+}
+
 html,body {
     margin:0;
     padding:0;
@@ -100,6 +115,7 @@ input[type=submit],button {
  
   font-size: 100%;
 }
+
 button:hover,input[type=submit]:hover {
   background-color: #e47c4c;
 }

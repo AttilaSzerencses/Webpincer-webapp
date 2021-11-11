@@ -1,11 +1,12 @@
 const express = require("express");
 const router = express.Router();
+const passport = require('passport');
 const DAOuser = require('../dao/user-dao');
 const DAOrestaurant = require('../dao/restaurants-dao');
 const DAOfood = require('../dao/food-dao');
 const DAOlocation = require('../dao/location-dao');
 const DAOorder = require('../dao/order-dao');
-
+const temp= require('../index')
 
 router.get("/", async (req, res) => {
     let users = await new DAOuser().getUsers();
@@ -204,8 +205,26 @@ router.post("/updateorder/:id", async (req, res) => {
   
 router.post("/deleteorder/:id", async (req, res) => {
     let id = req.params.id;
-    await  new DAOorder().deleteOrder(id);
+    await new DAOorder().deleteOrder(id);
     res.redirect("/");
   });
+
+router.get("/login", async(req,res) =>{
+	res.render('login.ejs');
+});
+
+router.get("/register", async(req,res) =>{
+	res.render('register.ejs');
+});
+
+console.log(passport);
+router.post('/login', temp.checkNotAuthenticated, passport.authenticate('local', {
+  successRedirect: '/',
+  failureRedirect: '/login',
+  failureFlash: true,
+}));
+
+//Functions
+
 
 module.exports = router;
