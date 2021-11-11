@@ -13,6 +13,12 @@ class RestaurantDAO {
         .catch(console.log);
         return result.rows[0];
     };
+	
+	async getRestaurantByUID(id){
+        let result = await db.query('SELECT * FROM RESTAURANTS WHERE u_id = $1',[id])
+        .catch(console.log);
+        return result.rows[0];
+    };
 
     async createRestaurant(uid, opens, closes, cprice, restaurantpic){
         await db.query("INSERT INTO RESTAURANTS(u_id, opens, closes, cprice, restaurantpic) VALUES ($1,$2,$3,$4,$5)",[uid, opens, closes, cprice, restaurantpic])

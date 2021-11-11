@@ -17,7 +17,7 @@ class FoodDAO {
 	async getAllFoodFromRestaurant(id){
         let result = await db.query('SELECT * FROM FOODS WHERE u_id = $1',[id])
         .catch(console.log);
-        return result;
+        return result.rows;
     };
 	
     async createFood(uid, foodname, price, foodpic){

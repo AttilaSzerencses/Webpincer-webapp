@@ -25,9 +25,15 @@
     </tbody>
 </table>
 
-<form action="/toCart" method="post">
-<input type="hidden" name="Krumplisteszta" value="1">
-<input type="submit" value="Kosárba">
+Megrendeled?<br>
+Honnan: <%=restaurantUser.name %><br>
+Location: <%=location.city%> <%=location.street%> <%=location.streetnumber%><br>
+Termék: <%=order.name%><br>
+Ár: <%=order.price+restaurant.cprice%><br>
+
+<form action="/ordered" method="post">
+<input type="hidden" value='<%=order.id%>' name='fid'>
+<input type="submit" value='Megrendelem'>
 </form>
 
 <footer>

@@ -12,29 +12,45 @@ const DAOrestaurant = require('../dao/restaurants-dao');
 const DAOfood = require('../dao/food-dao');
 const DAOlocation = require('../dao/location-dao');
 const DAOorder = require('../dao/order-dao');
-const DAOcart=require('../dao/cart-dao');
 
 
 router.get("/", (req, res) => {
 	res.render("index");
 });
 
-router.get("/gomb", checkNotAuthenticated ,async(req,res)=>{
-	let foods = await new DAOfood().getAllFoodFromRestaurant(req.user.id);
-	res.render("gomb");
+router.get("/restaurant", checkNotAuthenticated ,async(req,res)=>{
+	let foods = await new DAOfood().getAllFoodFromRestaurant(10);
+	console.log(foods);
+	res.render("restaurant",{
+		foods:foods
+	});
 });
 
-router.post("/toCart",(req,res)=>{
-	console.log(req);
-	res.render("gomb");
+router.post("/order",checkNotAuthenticated,async(req,res)=>{
+	let order=await new DAOfood().getOneFood(req.body.ham);
+	console.log(req.body.ham);
+	console.log(order);
+	let restaurantUser=await new DAOuser().getOneUser(order.u_id);
+	let location=await new DAOlocation().getLocationByUID(order.u_id);
+	let restaurant=await new DAOrestaurant().getRestaurantByUID(order.u_id);
+	res.render("order",{
+		order:order,
+		restaurant:restaurant,
+		location:location,
+		restaurantUser:restaurantUser
+	});
 });
 
-router.get("/admin",checkNotAuthenticated, async (req, res) => {
-	
-	if(req.user.permission!=='a'){
-		res.send("Error 404");
-	}
-	
+router.post("/ordered",checkNotAuthenticated,async(req,res)=>{
+	let food=await new DAOfood().getOneFood(req.body.fid);
+	let restaurant=await new DAOrestaurant().getRestaurantByUID(food.u_id);
+	console.log(parseInt(restaurant.cprice)+parseInt(food.price));
+	await new DAOorder().createOrder(parseInt(req.user.id),parseInt(food.fid),60,parseInt(restaurant.cprice)+parseInt(food.price));
+	//TODO
+});
+
+
+router.get("/admin",checkNotAuthenticated, checkIfAdmin, async (req, res) => {
 	let users = await new DAOuser().getUsers();
 	let locations = await new DAOlocation().getLocations();
 	let restaurants = await new DAOrestaurant().getRestaurants();
@@ -89,9 +105,11 @@ router.get("/regorlog", checkAuthenticated, (req,res) => {
 router.get("/kapcsolatok", (req,res) => {
 	res.render("regorlog");
 });
+
 router.get("/kapcsolatok", (req,res) => {
 	res.render("kapcsolatok");
 });
+
 router.get("/aszf", (req,res) => {
 	res.render("aszf");
 });
@@ -99,7 +117,7 @@ router.get("/aszf", (req,res) => {
 router.get("/logout", (req,res)=>{
 	req.logOut();
 	req.flash("success_msg","Sikeresen kijelentkeztél!");
-	res.redirect("/login");
+	res.redirect("/");
 })
 
 router.post('/register', async (req,res)=> {
@@ -139,9 +157,7 @@ router.post('/register', async (req,res)=> {
 	}
 });
 
-router.post(
-	"/login",
-	passport.authenticate("local", {
+router.post("/login",passport.authenticate("local", {
 		successRedirect: "/dashboard",
 		failureRedirect: "/login",
 		failureFlash: true
@@ -153,6 +169,13 @@ function checkAuthenticated(req, res, next) {
 		return res.redirect("/dashboard");
 	}
 	next();
+}
+
+function checkIfAdmin(req,res,next){
+	if(req.user.permission!=='a'){
+		return res.send("Not an admin");
+	}
+	return next();
 }
 
 function checkNotAuthenticated(req, res, next) {

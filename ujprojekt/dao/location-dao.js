@@ -13,6 +13,12 @@ class LocationDAO {
         .catch(console.log);
         return result.rows[0];
     };
+	
+	async getLocationByUID(id){
+        let result = await db.query('SELECT * FROM LOCATIONS WHERE u_id = $1',[id])
+        .catch(console.log);
+        return result.rows[0];
+    };
 
     async createLocation(uid, postcode, city, street, streetnumber, other){
         await db.query("INSERT INTO LOCATIONS(u_id, postcode, city, street, streetnumber, other) VALUES ($1,$2,$3,$4,$5,$6)",[uid, parseInt(postcode), city, street, parseInt(streetnumber), other])
