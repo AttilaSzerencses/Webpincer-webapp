@@ -26,8 +26,8 @@ class RestaurantDAO {
         return;        
     };
 
-    async updateRestaurant(id, uid, opens, closes, cprice, restaurantpic){
-        await db.query(`UPDATE RESTAURANTS SET u_id = $1, opens = $2, closes= $3, cprice=$4, restaurantpic= $5  WHERE id = $6`,[parseInt(uid), opens, closes, parseInt(cprice), restaurantpic,parseInt(id)])
+    async updateRestaurant(id, opens, closes, cprice, restaurantpic){
+        await db.query(`UPDATE RESTAURANTS SET opens = $1, closes= $2, cprice=$3, restaurantpic= $4  WHERE id = $5`,[opens, closes, parseInt(cprice), restaurantpic,parseInt(id)])
         .catch(console.log);
 
         return;

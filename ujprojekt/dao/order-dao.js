@@ -20,8 +20,8 @@ class OrderDAO {
         return;        
     };
 
-    async updateOrder(id ,uid, fid, ordertime, sumprice){
-        await db.query(`UPDATE ORDERS SET u_id = $1, fid= $2, ordertime= $3, sumprice= $4 WHERE id = $5`,[parseInt(uid), parseInt(fid), parseInt(ordertime), parseInt(sumprice), parseInt(id)])
+    async updateOrder(id ,ordertime, sumprice){
+        await db.query(`UPDATE ORDERS SET ordertime= $1, sumprice= $2 WHERE id = $3`,[parseInt(ordertime), parseInt(sumprice), parseInt(id)])
         .catch(console.log);
 
         return;
