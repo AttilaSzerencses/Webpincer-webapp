@@ -44,9 +44,13 @@ router.post("/order",checkNotAuthenticated,async(req,res)=>{
 router.post("/ordered",checkNotAuthenticated,async(req,res)=>{
 	let food=await new DAOfood().getOneFood(req.body.fid);
 	let restaurant=await new DAOrestaurant().getRestaurantByUID(food.u_id);
-	console.log(parseInt(restaurant.cprice)+parseInt(food.price));
-	await new DAOorder().createOrder(parseInt(req.user.id),parseInt(food.fid),60,parseInt(restaurant.cprice)+parseInt(food.price));
+	console.log(typeof req.user.id+" "+req.user.id);
+	console.log(typeof food.id+" "+food.id);
+	console.log(typeof restaurant.cprice+" "+restaurant.cprice);
+	console.log(typeof food.price+" "+food.price);
+	await new DAOorder().createOrder(parseInt(req.user.id),parseInt(food.id),60,parseInt(restaurant.cprice)+parseInt(food.price));
 	//TODO
+	res.render('index');
 });
 
 
@@ -56,13 +60,11 @@ router.get("/admin",checkNotAuthenticated, checkIfAdmin, async (req, res) => {
 	let restaurants = await new DAOrestaurant().getRestaurants();
 	let orders = await new DAOorder().getOrders();
 	let foods = await new DAOfood().getFoods();
-	let carts = await new DAOcart().getCarts();
 	console.log(users)
 	console.log(locations)
 	console.log(restaurants)
 	console.log(orders)
 	console.log(foods)
-	console.log(carts)
 	
 	return res.render('admin',
 		{ 	users : users,
@@ -148,7 +150,7 @@ router.post('/register', async (req,res)=> {
 				});
 			}
 		else {
-			await new DAOuser().createUser(name,email,hashedPassword,phone);
+			await new DAOuser().createUser(hashedPassword,email,name,phone);
 			user = await new DAOuser().getUserByEmail(email);
 			new DAOlocation().createLocation(user.rows[0].id,postcode,city,street,streetnumber,other);
 			req.flash("success_msg", "Sikeres regisztráció! Jelentkezz be!");
@@ -221,7 +223,6 @@ router.post("/deleteuser/:id", async (req, res) => {
 	await new DAOfood().deleteUIDFood(id);
     await new DAOlocation().deleteUIDLocation(id);
 	await new DAOrestaurant().deleteUIDRestaurant(id);
-	await new DAOcart().deleteUIDCart(id);
     await new DAOuser().deleteUser(id);
     res.redirect("/admin");
   });
@@ -330,7 +331,6 @@ router.post("/updatefood/:id", async (req, res) => {
 router.post("/deletefood/:id", async (req, res) => {
     let id = req.params.id;
 	await new DAOorder.deleteFIDOrder(id);
-	await new DAOcart.deleteFIDCart(id);
     await new DAOfood().deleteFood(id);
     res.redirect("/");
   });
