@@ -29,13 +29,37 @@
         </ul>
     </div>
 </nav>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+
 <% 
 for(const food of foods){%>
-	<form action="/order" method="post">
-	<input type="hidden" name="ham" value="<%=food.id%>">
-	<input type="submit" value="Rendeles">
-	</form>
+    <div class="col">
+    <div class="card">
+        <img src="" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"><%=food.foodname%></h5>
+                <p class="card-text"><%=food.price%></p>
+                <form action="/order" method="post">
+                    <input type="hidden" name="ham" value="<%=food.id%>">
+                    <input type="submit" value="Rendeles">
+                </form>
+            </div>
+        </div>
+    </div>
 <%}%>
+
+</div>
+
+
+
+
+
+
+
+
+
+
 
 
 <footer>
