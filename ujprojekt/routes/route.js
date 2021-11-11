@@ -12,6 +12,7 @@ const DAOrestaurant = require('../dao/restaurants-dao');
 const DAOfood = require('../dao/food-dao');
 const DAOlocation = require('../dao/location-dao');
 const DAOorder = require('../dao/order-dao');
+const email = require('email');
 
 
 router.get("/", (req, res) => {
@@ -19,10 +20,13 @@ router.get("/", (req, res) => {
 });
 
 router.get("/restaurant", checkNotAuthenticated ,async(req,res)=>{
-	let foods = await new DAOfood().getAllFoodFromRestaurant(10);
+	let foods = await new DAOfood().getAllFoodFromRestaurant(req.body.id);
+	let user = await new DAOuser().getOneUser(foods[0].u_id);
+	let restaurant = await new DAOrestaurant().getOneRestaurant(foods[0].u_id);
 	console.log(foods);
 	res.render("restaurant",{
-		foods:foods
+		foods:foods,
+		user:user
 	});
 });
 
@@ -84,7 +88,7 @@ router.get("/dashboard", checkNotAuthenticated, async (req, res) => {
 });
 
 router.get("/kereses", async (req,res) => {
-	let users=await new DAOuser().getUsersByPermission("u");
+	let users=await new DAOuser().getUsersByPermission("r");
 	
 	let restaurants=await new DAOrestaurant().getRestaurants();
 	
@@ -101,7 +105,7 @@ router.get("/kereses", async (req,res) => {
 	for(const restaurant of restaurants){
 		locations.push(await new DAOlocation().getLocationByUID(restaurant.u_id));
 	}
-	res.render("kereses",
+	res.render('kereses',
 	{
 	users:users,
 	restaurants:restaurants,
