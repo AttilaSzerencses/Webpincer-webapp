@@ -26,8 +26,8 @@ class FoodDAO {
         return;        
     };
 
-    async updateFood(id ,uid, foodname, price, foodpic){
-        await db.query(`UPDATE FOODS SET u_id = $1, foodname= $2, price= $3, foodpic= $4 WHERE id = $5`,[uid, foodname, price, foodpic, parseInt(id)])
+    async updateFood(id ,foodname, price, foodpic){
+        await db.query(`UPDATE FOODS SET foodname= $1, price= $2, foodpic= $3 WHERE id = $4`,[foodname, price, foodpic, parseInt(id)])
         .catch(console.log);
 
         return;

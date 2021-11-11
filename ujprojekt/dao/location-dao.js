@@ -26,8 +26,8 @@ class LocationDAO {
         return;        
     };
 
-    async updateLocation(id, uid, postcode, city, street, streetnumber, other){
-        await db.query(`UPDATE LOCATIONS SET u_id = $1, postcode = $2, city=$3, street=$4, streetnumber=$5, other=$6  WHERE id = $7`,[parseInt(uid), parseInt(postcode), city, street, parseInt(streetnumber), other ,parseInt(id)])
+    async updateLocation(id, postcode, city, street, streetnumber, other){
+        await db.query(`UPDATE LOCATIONS SET postcode = $1, city=$2, street=$3, streetnumber=$4, other=$5  WHERE id = $6`,[parseInt(postcode), city, street, parseInt(streetnumber), other ,parseInt(id)])
         .catch(console.log);
 
         return;
