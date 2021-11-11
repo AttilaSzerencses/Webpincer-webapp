@@ -84,7 +84,7 @@ router.get("/dashboard", checkNotAuthenticated, async (req, res) => {
 });
 
 router.get("/kereses", async (req,res) => {
-	let users=await new DAOuser().getUsersByPermission("u");
+	let users=await new DAOuser().getUsersByPermission("r");
 	
 	let restaurants=await new DAOrestaurant().getRestaurants();
 	

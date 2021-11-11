@@ -11,6 +11,8 @@
 </head>
 <body>
 
+
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light" >
 
     <div class="container-fluid justify-content-center">
@@ -28,63 +30,36 @@
         </ul>
     </div>
 </nav>
-<div class="box">
-    <h1>Keresés</h1>
-    <table class="logintable">
 
-        <tbody>
-        <tr>
-            <td><input type="text" id="etterem" name="etterem" placeholder="Adj meg egy éttermet..."></td>
-        </tr>
-        <tr>
-            <td><button type="submit">Keresés</button><br></td>
-        </tr>
-        </tbody>
-    </table>
+<div class="text-center">
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-warning">Kínai</button>
+        <button type="button" class="btn btn-warning">Édesség</button>
+        <button type="button" class="btn btn-warning">Pizza</button>
+    </div>
 </div>
 
-<div class="restaurant_cards">
-    <div class="restaurant_card">
-        <img src="Kepek/Solid_black.png" class="card__image">
-        <div class="card__content">
-            <h2 class="center">Étterem neve</h2>
+
+
+<div class="row row-cols-1 row-cols-md-2 d-flex justify-content-center">
+<%
+    for(let i=0;i<users.length;i++){%>
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="..." class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title"> <%=users[i].name%></h5>
+                    <p class="card-text">Nyitvatartás: <%=restaurants[i].opens%> - <%=restaurants[i].closes%></p>
+                    <small class="text-muted">Szállítási költség: <%=restaurants[i].cprice%> ft</small>
+                    <a class="btn btn-warning" href="/restaurant" role="button">Megnéz</a>
+                </div>
+            </div>
         </div>
-        <div class="card__info">
-            <div>Nyitvatartás</div>
-            <div>Szállítási díj:</div>
-
-        </div>
-
-    </div>
-
-    <div class="restaurant_card">
-        <img src="Kepek/Solid_black.png" class="card__image">
-        <div class="card__content">
-            <h2 class="center">Étterem neve</h2>
-        </div>
-        <div class="card__info">
-            <div>Nyitvatartás:</div>
-            <div>Szállítási díj:</div>
-
-        </div>
-
-    </div>
-
-    <div class="restaurant_card">
-        <img src="Kepek/Solid_black.png" class="card__image">
-        <div class="card__content">
-            <h2 class="center">Étterem neve</h2>
-        </div>
-        <div class="card__info">
-            <div>Nyitvatartás:</div>
-            <div>Szállítási díj:</div>
-
-        </div>
-
-    </div>
-
-
+    <%}%>
 </div>
+
 <footer>
     <hr>
     <p></p>

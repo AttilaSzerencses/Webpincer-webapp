@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bad53bbb-d6ee-4e52-9565-7e2a34de4081" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/ujprojekt/public/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/ujprojekt/public/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ujprojekt/views/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/ujprojekt/views/index.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ujprojekt/views/kereses.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/ujprojekt/views/kereses.ejs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="20egysYQFi4UN7DxzWsc8RqcxnD" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../WebstormProjects/Js/hf8" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\horva\2021_IB153I-13_Etel\sketch\webpincer" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bad53bbb-d6ee-4e52-9565-7e2a34de4081" name="Default Changelist" comment="" />
+      <created>1636410724854</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1636410724854</updated>
+      <workItem from="1636410726096" duration="3254000" />
+      <workItem from="1636415659896" duration="575000" />
+      <workItem from="1636455310197" duration="97000" />
+      <workItem from="1636494276041" duration="36000" />
+      <workItem from="1636497437085" duration="597000" />
+      <workItem from="1636536057215" duration="626000" />
+      <workItem from="1636653809802" duration="14000" />
+      <workItem from="1636653857649" duration="17364000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>
