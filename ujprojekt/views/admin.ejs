@@ -123,7 +123,7 @@ th,td{
             <th>ID</th>
             <th>u_id</th>
             <th>postcode</th>
-            <th>cityname</th>
+            <th>city</th>
             <th>street</th>
             <th>streetnumber</th>
             <th>other</th>
@@ -135,7 +135,7 @@ th,td{
                   <td><%= location.id %></td>
                   <td><%= location.u_id %></td>
                   <td><%= location.postcode %></td>
-                  <td><%= location.cityname %></td>
+                  <td><%= location.city %></td>
                   <td><%= location.street %></td>
                   <td><%= location.streetnumber%></td>
                   <td><%= location.other %></td>
@@ -175,7 +175,7 @@ th,td{
     <div>
 	
 	<!--u_id,postcode,cityname,street,streetnumber,other-->
-      <h2>Add An user</h2>
+      <h2>Add A Location</h2>
 
       <form action="/addlocation" method="post">
         <div class="form-horizontal">
@@ -188,7 +188,7 @@ th,td{
             <input type="text" name="postcode" id="postcode"></input>
           </label>
           <label>Cityname:
-            <input type="text" name="cityname" id="cityname"></input>
+            <input type="text" name="city" id="city"></input>
           </label>
           <label>Street:
             <input type="text" name="street" id="street"></input>
@@ -232,7 +232,7 @@ th,td{
             <td><%= restaurant.closes %></td>
             <td><%= restaurant.cprice %></td>
             <td><%= restaurant.restaurantpic %></td>
-            <td><a  href="/editlocation/<%= restaurant.id %>">Update</a></td>
+            <td><a  href="/editrestaurant/<%= restaurant.id %>">Update</a></td>
             <td><button data-toggle="modal" data-target="#modal-toTrash<%= restaurant.id %>" class="btn-sm btn-dark details">Delete
                 <span class="glyphicon glyphicon-trash" data-toggle="tooltip"
                       data-placement="top" title="Sent to Trash Box"></span></button>
@@ -252,7 +252,7 @@ th,td{
                     <button class="btn-sm btn-dark details" data-dismiss="modal" aria-hidden="true">
                       Cancel
                     </button>
-                    <form action="/deletelocation/<%= restaurant.id %>" method="post">
+                    <form action="/deleterestaurant/<%= restaurant.id %>" method="post">
                       <button class="btn-sm btn-dark details" value="delete">Yes</button></a>
                     </form>
                   </div>
@@ -320,7 +320,7 @@ th,td{
             <td><%= food.foodname %></td>
             <td><%= food.price %></td>
             <td><%= food.foodpic %></td>
-            <td><a  href="/editlocation/<%= food.id %>">Update</a></td>
+            <td><a  href="/editfood/<%= food.id %>">Update</a></td>
             <td><button data-toggle="modal" data-target="#modal-toTrash<%= food.id %>" class="btn-sm btn-dark details">Delete
                 <span class="glyphicon glyphicon-trash" data-toggle="tooltip"
                       data-placement="top" title="Sent to Trash Box"></span></button>
@@ -340,7 +340,7 @@ th,td{
                     <button class="btn-sm btn-dark details" data-dismiss="modal" aria-hidden="true">
                       Cancel
                     </button>
-                    <form action="/deletelocation/<%= food.id %>" method="post">
+                    <form action="/deletefood/<%= food.id %>" method="post">
                       <button class="btn-sm btn-dark details" value="delete">Yes</button></a>
                     </form>
                   </div>
@@ -403,9 +403,10 @@ th,td{
           <tr>
             <td><%= order.id %></td>
             <td><%= order.u_id %></td>
+            <td><%= order.fid %></td>
             <td><%= order.ordertime %></td>
             <td><%= order.sumprice %></td>
-            <td><a  href="/editlocation/<%= order.id %>">Update</a></td>
+            <td><a  href="/editorder/<%= order.id %>">Update</a></td>
             <td><button data-toggle="modal" data-target="#modal-toTrash<%= order.id %>" class="btn-sm btn-dark details">Delete
                 <span class="glyphicon glyphicon-trash" data-toggle="tooltip"
                       data-placement="top" title="Sent to Trash Box"></span></button>
@@ -425,7 +426,7 @@ th,td{
                     <button class="btn-sm btn-dark details" data-dismiss="modal" aria-hidden="true">
                       Cancel
                     </button>
-                    <form action="/deletelocation/<%= order.id %>" method="post">
+                    <form action="/deleteorder/<%= order.id %>" method="post">
                       <button class="btn-sm btn-dark details" value="delete">Yes</button></a>
                     </form>
                   </div>

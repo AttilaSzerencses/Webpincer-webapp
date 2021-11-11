@@ -234,13 +234,13 @@ router.post("/deleteuser/:id",checkNotAuthenticated,checkIfAdmin, async (req, re
 router.post("/addlocation",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
 	let {u_id} = req.body;
 	let {postcode} = req.body;
-	let {cityname} = req.body;
+	let {city} = req.body;
 	let {street} = req.body;
 	let {streetnumber} = req.body;
 	let {phone} = req.body;
 	let {other} = req.body;
-	await new DAOlocation().createLocation(u_id,postcode,cityname,street,streetnumber,other);
-	return res.redirect('/')
+	await new DAOlocation().createLocation(u_id,postcode,city,street,streetnumber,other);
+	return res.redirect('/admin')
 });
   
 router.get("/editlocation/:id",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
@@ -253,18 +253,19 @@ router.post("/updatelocation/:id",checkNotAuthenticated,checkIfAdmin, async (req
     let id = req.params.id;
     let {u_id} = req.body;
 	let {postcode} = req.body;
+	let {city} = req.body;
 	let {street} = req.body;
 	let {streetnumber} = req.body;
 	let {phone} = req.body;
 	let {other} = req.body;
-    await new DAOlocation().updateLocation(id,u_id,postcode,cityname,street,streetnumber,other);
-    res.redirect("/");
+    await new DAOlocation().updateLocation(id,u_id,postcode,city,street,streetnumber,other);
+    res.redirect("/admin");
 });
   
 router.post("/deletelocation/:id",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
     let id = req.params.id;
     await  new DAOlocation().deleteLocation(id);
-    res.redirect("/");
+    res.redirect("/admin");
   });
 
 //RESTAURANTS
@@ -276,7 +277,7 @@ router.post("/addrestaurant",checkNotAuthenticated,checkIfAdmin, async (req, res
 	let {cprice} = req.body;
 	let {restaurantpic} = req.body;
 	await new DAOrestaurant().createRestaurant(u_id,opens,closes,cprice,restaurantpic);
-	return res.redirect('/')
+	return res.redirect('/admin')
 });
   
 router.get("/editrestaurant/:id",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
@@ -293,13 +294,13 @@ router.post("/updaterestaurant/:id",checkNotAuthenticated,checkIfAdmin, async (r
 	let {cprice} = req.body;
 	let {restaurantpic} = req.body;
     await new DAOrestaurant().updateRestaurant(id,u_id,opens,closes,cprice,restaurantpic);
-    res.redirect("/");
+    res.redirect("/admin");
 });
   
 router.post("/deleterestaurant/:id",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
     let id = req.params.id;
     await  new DAOrestaurant().deleteRestaurant(id);
-    res.redirect("/");
+    res.redirect("/admin");
   });
   
   
@@ -311,7 +312,7 @@ router.post("/deleterestaurant/:id",checkNotAuthenticated,checkIfAdmin, async (r
 	let {price} = req.body;
 	let {foodpic} = req.body;
 	await new DAOfood().createFood(u_id,foodname,price,foodpic);
-	return res.redirect('/')
+	return res.redirect('/admin')
 });
   
 router.get("/editfood/:id",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
@@ -327,14 +328,14 @@ router.post("/updatefood/:id",checkNotAuthenticated,checkIfAdmin, async (req, re
 	let {price} = req.body;
 	let {foodpic} = req.body;
     await new DAOfood().updateFood(id,u_id,foodname,price,foodpic);
-    res.redirect("/");
+    res.redirect("/admin");
 });
   
 router.post("/deletefood/:id",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
     let id = req.params.id;
 	await new DAOorder.deleteFIDOrder(id);
     await new DAOfood().deleteFood(id);
-    res.redirect("/");
+    res.redirect("/admin");
   });
   
 //ORDERS
@@ -345,7 +346,7 @@ router.post("/addorder",checkNotAuthenticated,checkIfAdmin, async (req, res) => 
 	let {ordertime} = req.body;
 	let {sumprice} = req.body;
 	await new DAOorder().createOrder(u_id,fid,ordertime,sumprice);
-	return res.redirect('/')
+	return res.redirect('/admin')
 });
   
 router.get("/editorder/:id",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
@@ -361,13 +362,13 @@ router.post("/updateorder/:id",checkNotAuthenticated,checkIfAdmin, async (req, r
 	let {ordertime} = req.body;
 	let {sumprice} = req.body;
     await new DAOorder().updateOrder(id,u_id,fid,ordertime,sumprice);
-    res.redirect("/");
+    res.redirect("/admin");
 });
   
 router.post("/deleteorder/:id",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
     let id = req.params.id;
     await  new DAOorder().deleteOrder(id);
-    res.redirect("/");
+    res.redirect("/admin");
   });
 
 module.exports = router;
