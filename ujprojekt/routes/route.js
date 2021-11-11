@@ -50,7 +50,7 @@ router.post("/ordered",checkNotAuthenticated,async(req,res)=>{
 	console.log(typeof food.price+" "+food.price);
 	await new DAOorder().createOrder(parseInt(req.user.id),parseInt(food.id),60,parseInt(restaurant.cprice)+parseInt(food.price));
 	//TODO
-	res.render('index');
+	res.render('index',{message:"A rendelés megtörtént"});
 });
 
 
@@ -90,22 +90,6 @@ router.get("/dashboard", checkNotAuthenticated, async (req, res) => {
 
 router.get("/kereses", (req,res) => {
 	res.render("kereses");
-});
-
-router.get("/kapcsolatok", (req,res) => {
-	res.render("kapcsolatok");
-});
-
-router.get("/cart", (req,res) => {
-	res.render("cart");
-});
-
-router.get("/regorlog", checkAuthenticated, (req,res) => {
-	res.render("regorlog");
-});
-
-router.get("/kapcsolatok", (req,res) => {
-	res.render("regorlog");
 });
 
 router.get("/kapcsolatok", (req,res) => {
@@ -160,7 +144,7 @@ router.post('/register', async (req,res)=> {
 });
 
 router.post("/login",passport.authenticate("local", {
-		successRedirect: "/dashboard",
+		successRedirect: "/",
 		failureRedirect: "/login",
 		failureFlash: true
 	})
@@ -190,7 +174,7 @@ function checkNotAuthenticated(req, res, next) {
 
 //USER
   
-router.post("/adduser", async (req, res) => {
+router.post("/adduser",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
 	let {password} = req.body;
 	let hashedPassword = await bcrypt.hash(password, 10);
 	let {email} = req.body;
@@ -200,13 +184,13 @@ router.post("/adduser", async (req, res) => {
 	return res.redirect('/admin')
 });
   
-router.get("/edituser/:id", async (req, res) => {
+router.get("/edituser/:id",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
     let id = req.params.id;
     let user = await new DAOuser().getOneUser(id);
     res.render("update-user", { model: user });
   });
   
-router.post("/updateuser/:id", async (req, res) => {
+router.post("/updateuser/:id",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
     let id = req.params.id;
     let {permission} = req.body;
 	let {email} = req.body;
@@ -216,7 +200,7 @@ router.post("/updateuser/:id", async (req, res) => {
     res.redirect("/admin");
 });
   
-router.post("/deleteuser/:id", async (req, res) => {
+router.post("/deleteuser/:id",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
     let id = req.params.id;
 	
 	await new DAOorder().deleteUIDOrder(id);
@@ -229,7 +213,7 @@ router.post("/deleteuser/:id", async (req, res) => {
 
 //LOCATION
 
-router.post("/addlocation", async (req, res) => {
+router.post("/addlocation",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
 	let {u_id} = req.body;
 	let {postcode} = req.body;
 	let {cityname} = req.body;
@@ -241,13 +225,13 @@ router.post("/addlocation", async (req, res) => {
 	return res.redirect('/')
 });
   
-router.get("/editlocation/:id", async (req, res) => {
+router.get("/editlocation/:id",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
     let id = req.params.id;
     let location = await new DAOlocation().getOneLocation(id);
     res.render("update-location", { model: location });
   });
   
-router.post("/updatelocation/:id", async (req, res) => {
+router.post("/updatelocation/:id",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
     let id = req.params.id;
     let {u_id} = req.body;
 	let {postcode} = req.body;
@@ -259,7 +243,7 @@ router.post("/updatelocation/:id", async (req, res) => {
     res.redirect("/");
 });
   
-router.post("/deletelocation/:id", async (req, res) => {
+router.post("/deletelocation/:id",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
     let id = req.params.id;
     await  new DAOlocation().deleteLocation(id);
     res.redirect("/");
@@ -267,7 +251,7 @@ router.post("/deletelocation/:id", async (req, res) => {
 
 //RESTAURANTS
 
-router.post("/addrestaurant", async (req, res) => {
+router.post("/addrestaurant",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
 	let {u_id} = req.body;
 	let {opens} = req.body;
 	let {closes} = req.body;
@@ -277,13 +261,13 @@ router.post("/addrestaurant", async (req, res) => {
 	return res.redirect('/')
 });
   
-router.get("/editrestaurant/:id", async (req, res) => {
+router.get("/editrestaurant/:id",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
     let id = req.params.id;
     let restaurant = await new DAOrestaurant().getOneRestaurant(id);
     res.render("update-restaurant", { model: restaurant });
   });
   
-router.post("/updaterestaurant/:id", async (req, res) => {
+router.post("/updaterestaurant/:id",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
     let id = req.params.id;
     let {u_id} = req.body;
 	let {opens} = req.body;
@@ -294,7 +278,7 @@ router.post("/updaterestaurant/:id", async (req, res) => {
     res.redirect("/");
 });
   
-router.post("/deleterestaurant/:id", async (req, res) => {
+router.post("/deleterestaurant/:id",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
     let id = req.params.id;
     await  new DAOrestaurant().deleteRestaurant(id);
     res.redirect("/");
@@ -303,7 +287,7 @@ router.post("/deleterestaurant/:id", async (req, res) => {
   
  //FOODS
  
- router.post("/addfood", async (req, res) => {
+ router.post("/addfood",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
 	let {u_id} = req.body;
 	let {foodname} = req.body;
 	let {price} = req.body;
@@ -312,13 +296,13 @@ router.post("/deleterestaurant/:id", async (req, res) => {
 	return res.redirect('/')
 });
   
-router.get("/editfood/:id", async (req, res) => {
+router.get("/editfood/:id",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
     let id = req.params.id;
     let food = await new DAOfood().getOneFood(id);
     res.render("update-food", { model: food });
   });
   
-router.post("/updatefood/:id", async (req, res) => {
+router.post("/updatefood/:id",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
     let id = req.params.id;
     let {u_id} = req.body;
 	let {foodname} = req.body;
@@ -328,7 +312,7 @@ router.post("/updatefood/:id", async (req, res) => {
     res.redirect("/");
 });
   
-router.post("/deletefood/:id", async (req, res) => {
+router.post("/deletefood/:id",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
     let id = req.params.id;
 	await new DAOorder.deleteFIDOrder(id);
     await new DAOfood().deleteFood(id);
@@ -337,7 +321,7 @@ router.post("/deletefood/:id", async (req, res) => {
   
 //ORDERS
 
-router.post("/addorder", async (req, res) => {
+router.post("/addorder",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
 	let {u_id} = req.body;
 	let {fid} = req.body;
 	let {ordertime} = req.body;
@@ -346,13 +330,13 @@ router.post("/addorder", async (req, res) => {
 	return res.redirect('/')
 });
   
-router.get("/editorder/:id", async (req, res) => {
+router.get("/editorder/:id",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
     let id = req.params.id;
     let order = await new DAOorder().getOneOrder(id);
     res.render("update-order", { model: order });
   });
   
-router.post("/updateorder/:id", async (req, res) => {
+router.post("/updateorder/:id",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
     let id = req.params.id;
     let {u_id} = req.body;
 	let {fid} = req.body;
@@ -362,7 +346,7 @@ router.post("/updateorder/:id", async (req, res) => {
     res.redirect("/");
 });
   
-router.post("/deleteorder/:id", async (req, res) => {
+router.post("/deleteorder/:id",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
     let id = req.params.id;
     await  new DAOorder().deleteOrder(id);
     res.redirect("/");
