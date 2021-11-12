@@ -35,7 +35,7 @@ Telefon: <%=user.phone%>
 Étel: <%=food.foodname%> | Ár: <%=order.sumprice%>
 
 <form action="/courierDone" method="post">
-	<input type="hidden" name="order_id" value="order.id">
+	<input type="hidden" name="order_id" value="<%=order.id%>">
 	<input type="submit" value="Rendelés kézbesítve">
 </form>
 
