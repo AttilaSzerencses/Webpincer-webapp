@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bad53bbb-d6ee-4e52-9565-7e2a34de4081" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ujprojekt/public/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/ujprojekt/public/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ujprojekt/views/kereses.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/ujprojekt/views/kereses.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +57,7 @@
       <workItem from="1636653809802" duration="14000" />
       <workItem from="1636653857649" duration="20071000" />
       <workItem from="1636727066591" duration="295000" />
-      <workItem from="1636736586219" duration="4560000" />
+      <workItem from="1636736586219" duration="7040000" />
     </task>
     <servers />
   </component>

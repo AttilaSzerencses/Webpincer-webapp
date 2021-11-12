@@ -47,14 +47,17 @@
         <div class="card mb-3 " style="max-width: 540px;">
             <div class="row">
                 <div class="col-md-4">
-                    <img src="..." class="img-fluid rounded-start" alt="...">
+                    <img src="./Kepek/etteremkepek/<%=restaurants[i].restaurantpic%>" class="img-fluid rounded-start" style="height:100%; "alt="...">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
                         <h5 class="card-title"> <%=users[i].name%></h5>
                         <p class="card-text">Nyitvatartás: <%=restaurants[i].opens%> - <%=restaurants[i].closes%></p>
                         <small class="text-muted">Szállítási költség: <%=restaurants[i].cprice%> ft</small>
-                        <a class="btn btn-warning" href="/restaurant" role="button">Megnéz</a>
+                        <form action="/restaurant" method="post">
+                            <input type="hidden" name="u_id" value="<%=users[i].u_id%>">
+                            <input class="btn btn-warning" type="submit" value="Megnéz">
+                        </form>
                     </div>
                 </div>
             </div>
