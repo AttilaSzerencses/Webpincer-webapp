@@ -16,7 +16,9 @@ const email = require('./email');
 
 
 router.get("/", (req, res) => {
-	res.render("index");
+	res.render("index",{
+		authUser:req.user
+	});
 });
 
 router.post("/restaurant", checkNotAuthenticated ,async(req,res)=>{
@@ -26,8 +28,15 @@ router.post("/restaurant", checkNotAuthenticated ,async(req,res)=>{
 	let restaurant = await new DAOrestaurant().getOneRestaurant(foods[0].u_id);
 	console.log(foods);
 	res.render("restaurant",{
+		authUser:req.user,
 		foods:foods,
 		user:user
+	});
+});
+
+router.get("/header", (req, res) => {
+	res.render("header",{
+		authUser:req.user
 	});
 });
 
@@ -39,6 +48,7 @@ router.post("/order",checkNotAuthenticated,async(req,res)=>{
 	let location=await new DAOlocation().getLocationByUID(order.u_id);
 	let restaurant=await new DAOrestaurant().getRestaurantByUID(order.u_id);
 	res.render("order",{
+		authUser:req.user,
 		order:order,
 		restaurant:restaurant,
 		location:location,
@@ -54,9 +64,8 @@ router.post("/ordered",checkNotAuthenticated,async(req,res)=>{
 		name: food.foodname,
 		price: parseInt(restaurant.cprice)+parseInt(food.price)
 	}
-	//TODO
 	await new email().sendMailOrder(req.user.email,data);
-	res.render('index',{message:"A rendelés megtörtént"});
+	res.render('index',{authUser:req.user});
 });
 
 
@@ -68,7 +77,8 @@ router.get("/admin",checkNotAuthenticated, checkIfAdmin, async (req, res) => {
 	let foods = await new DAOfood().getFoods();
 	
 	return res.render('admin',
-		{ 	users : users,
+		{ 	authUser:req.user,
+			users : users,
 			locations : locations,
 			restaurants : restaurants,
 			orders : orders,
@@ -86,7 +96,8 @@ router.get("/courier",checkNotAuthenticated, checkIfCourier, async (req, res) =>
 			let restaurant = await new DAOuser().getOneUser(food.u_id)
 			let restaurantLocation = await new DAOlocation().getLocationByUID(food.u_id);
 			return res.render('courierShip',
-			{ 	order:order,
+			{ 	authUser:req.user,
+				order:order,
 				user:user,
 				userLocation:userLocation,
 				food:food,
@@ -100,7 +111,8 @@ router.get("/courier",checkNotAuthenticated, checkIfCourier, async (req, res) =>
 	let restaurants = await new DAOrestaurant().getRestaurants();
 	let foods = await new DAOfood().getFoods();
 	return res.render('courier',
-		{ 	users : users,
+		{ 	authUser:req.user,
+			users : users,
 			locations : locations,
 			restaurants : restaurants,
 			orders : orders,
@@ -119,7 +131,8 @@ router.post("/courierShip" , checkNotAuthenticated, checkIfCourier, async (req,r
 	let restaurantLocation = await new DAOlocation().getLocationByUID(food.u_id);
 	
 	return res.render('courierShip',
-		{ 	order:order,
+		{ 	authUser:req.user,
+			order:order,
 			user:user,
 			userLocation:userLocation,
 			food:food,
@@ -138,7 +151,8 @@ router.post("/courierDone" , checkNotAuthenticated, checkIfCourier, async (req,r
 	let foods = await new DAOfood().getFoods();
 	
 	return res.render('courier',
-		{ 	users : users,
+		{ 	authUser:req.user,
+			users : users,
 			locations : locations,
 			restaurants : restaurants,
 			orders : orders,
@@ -147,11 +161,11 @@ router.post("/courierDone" , checkNotAuthenticated, checkIfCourier, async (req,r
 });
 
 router.get("/register" , checkAuthenticated, (req,res) => {
-	res.render("register");
+	res.render("register",{authUser:req.user});
 });
 
 router.get("/login", checkAuthenticated, (req, res) => {
-	res.render("login");
+	res.render("login",{authUser:req.user});
 });
 
 router.get("/dashboard", checkNotAuthenticated, async (req, res) => {
@@ -161,7 +175,7 @@ router.get("/dashboard", checkNotAuthenticated, async (req, res) => {
 
 router.get("/kereses", async (req,res) => {
 	let users=await new DAOuser().getUsersByPermission("r");
-	restaurants.sort((a,b)=>{
+	users.sort((a,b)=>{
 		if(a.id>b.id){
 			return -1;
 		}
@@ -187,19 +201,20 @@ router.get("/kereses", async (req,res) => {
 	console.log(locations);
 	res.render('kereses',
 	{
-	users:users,
-	restaurants:restaurants,
-	locations:locations
+		authUser:req.user,
+		users:users,
+		restaurants:restaurants,
+		locations:locations
 	});
 });
 
 
 router.get("/kapcsolatok", (req,res) => {
-	res.render("kapcsolatok");
+	res.render("kapcsolatok",{authUser:req.user});
 });
 
 router.get("/aszf", (req,res) => {
-	res.render("aszf");
+	res.render("aszf",{authUser:req.user});
 });
 
 router.get("/logout",checkNotAuthenticated, (req,res)=>{
@@ -294,7 +309,9 @@ function checkNotAuthenticated(req, res, next) {
 	if (req.isAuthenticated()) {
 		return next();
 	}
-	res.render("login",{message: 'Mielőtt megtennéd, jelentkezz be!'});
+	res.render("login",{message: 'Mielőtt megtennéd, jelentkezz be!',
+	authUser:req.user
+	});
 }
 
 
