@@ -124,7 +124,7 @@ router.get("/aszf", (req,res) => {
 	res.render("aszf");
 });
 
-router.get("/logout", (req,res)=>{
+router.get("/logout",checkNotAuthenticated (req,res)=>{
 	req.logOut();
 	req.flash("success_msg","Sikeresen kijelentkeztél!");
 	res.redirect("/");
@@ -186,6 +186,16 @@ function checkIfAdmin(req,res,next){
 		return res.send("Not an admin");
 	}
 	return next();
+}
+
+function checkUserEditSelf(req,res,next){
+	if(req.user.permission==='a'){
+		return next()
+	}
+	if(req.user.id===req.params.id){
+		return next();
+	}
+	res.send("No permission granted");
 }
 
 function checkNotAuthenticated(req, res, next) {
