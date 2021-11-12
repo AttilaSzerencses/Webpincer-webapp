@@ -76,7 +76,7 @@ router.get("/admin",checkNotAuthenticated, checkIfAdmin, async (req, res) => {
 		});
 });
 
-router.get("/courier" , checkNotAuthenticated, async (req,res) => {
+router.get("/courier",checkNotAuthenticated, checkIfAdmin, async (req, res) => {
 	let users = await new DAOuser().getUsers();
 	let locations = await new DAOlocation().getLocations();
 	let restaurants = await new DAOrestaurant().getRestaurants();
@@ -90,6 +90,30 @@ router.get("/courier" , checkNotAuthenticated, async (req,res) => {
 			orders : orders,
 			foods : foods
 		});
+});
+
+
+router.post("/courierDone" , checkNotAuthenticated, async (req,res) => {
+	let order = await new DAOorder().getOneOrder(req.body.order_id);
+	let user = await new DAOuser().getOneUser(order.u_id);
+	let userLocation = await new DAOlocation().getLocationByUID(order.u_id);
+	let food = await new DAOfood().getOneFood(order.fid);
+	let restaurant = await new DAOuser().getOneUser(food.u_id)
+	let restaurantLocation = await new DAOlocation().getLocationByUID(food.u_id);
+	
+	return res.render('couirer',
+		{ 	order:order,
+			user:user,
+			userLocation:userLocation,
+			food:food,
+			restaurant:restaurant,
+			restaurantLocation:restaurantLocation
+		});
+});
+
+router.post("/courierShip" , checkNotAuthenticated, async (req,res) => {
+	
+	return res.render('courierShip');	
 });
 
 router.get("/register" , checkAuthenticated, (req,res) => {

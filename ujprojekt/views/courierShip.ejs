@@ -23,67 +23,25 @@
 
         <ul class="navbar-nav">
             <li class="nav-item"><a class="nav-link" href="/login" ><i class="fas fa-user"></i>Profil</a></li>
-
-
         </ul>
     </div>
 </nav>
-<%
-let userLocation;
-let restaurantLocation;
-let orderedFood;
-let orderedFromRestaurant;
-let userUser;
-let restaurantUser;
-for(const order of orders){
-	if(order.cdone!=="done"){
-		for(const food of foods){
-			if(order.fid===food.id){
-				orderedFood=food;
-				break;
-			}
-		}
-		for(const restaurant of restaurants){
-			if(orderedFood.u_id===restaurant.u_id){
-				orderedFromRestaurant=restaurant;
-				break;
-			}
-		}
-		
-		for(const location of locations){
-			if(orderedFromRestaurant.u_id===location.u_id){
-				restaurantLocation=location;
-				break;
-			}
-		}
-		for(const location of locations){
-			if(order.u_id===location.u_id){
-				userLocation=location;
-				break;
-			}
-		}
-		for(const user of users){
-			if(order.u_id===user.id){
-				userUser=user;
-			}
-		}
-		for(const user of users){
-			if(orderedFromRestaurant.u_id===user.id){
-				restaurantUser=user;
-			}
-		}
-		%>
-		<p>Étterem: <%=restaurantUser.name%> | Honnan: <%=restaurantLocation.city%> <%=restaurantLocation.street%> <%=restaurantLocation.streetnumber%> <%=restaurantLocation.other%>|
-		Hova: <%=userLocation.city%> <%=userLocation.street%> <%=userLocation.streetnumber%> <%=userLocation.other%> | Kinek: <%=userUser.name%> |
-		Telefon: <%=userUser.phone%> | Étel: <%=orderedFood.foodname%> | Ár: <%=order.sumprice%> 
-		<form action="/courierShip" method="post">
-			<input type="hidden" name="order_id" value="<%=order.id%>">
-			<input type="submit" value="Elfogad">
-		</form>
-		</p>
-	<%}%>
-	
-<%}%>
+
+<p>Étterem: <%=restaurant.name%>
+Honnan: <%=restaurantLocation.city%> <%=restaurantLocation.street%> <%=restaurantLocation.streetnumber%> <%=restaurantLocation.other%>
+Hova: <%=userLocation.city%> <%=userLocation.street%> <%=userLocation.streetnumber%> <%=userLocation.other%>
+Kinek: <%=user.name%>
+Telefon: <%=user.phone%>
+Étel: <%=food.foodname%> | Ár: <%=order.sumprice%>
+
+<form action="/courierDone" method="post">
+	<input type="hidden" name="order_id" value="order.id">
+	<input type="submit" value="Rendelés kézbesítve">
+</form>
+
+TÉRKÉP
+//TODO
+
 <footer>
     <hr>
     <p></p>
