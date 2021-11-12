@@ -20,7 +20,36 @@ i{
 *{
     font-family: 'Roboto Mono', monospace;
 }
+.container {
+    position: relative;
+    width: 30%;
+}
 
+/* Make the image responsive */
+.container img {
+    width: 60%;
+    height: auto;
+}
+
+/* Style the button and place it in the middle of the container/image */
+.container .btn {
+    position: absolute;
+    top: 70%;
+    left: 36%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #f39f86!important;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.container .btn:hover {
+    background-color: #e47c4c!important;
+}
 .cim{
     font-family: 'Abril Fatface', cursive;
     text-align: center;
