@@ -34,8 +34,11 @@
 				<%if (authUser.permission==="a"){%>
 					<li class="nav-item"><a class="nav-link" href="/admin" ><i class="fas fa-crown"></i>Admin</a></li>
 				<%}%>
-				<%if (authUser.permission==="c" || authUser.permission==="a"){%>
+				<%if (authUser.permission==="c"){%>
 					<li class="nav-item"><a class="nav-link" href="/courier" ><i class="fas fa-utensils"></i>Rendelések</a></li>
+				<%}%>
+				<%if (authUser.permission==="r"){%>
+					<li class="nav-item"><a class="nav-link" href="/restaurantorder" ><i class="fas fa-utensils"></i>Rendelések</a></li>
 				<%}%>
                 <li class="nav-item"><a class="nav-link" href="/logout" ><i class="fas fa-sign-out-alt"></i>Kijelentkezés</a></li>
 			<%}%>

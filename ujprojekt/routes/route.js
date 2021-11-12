@@ -141,6 +141,33 @@ router.post("/courierShip" , checkNotAuthenticated, checkIfCourier, async (req,r
 		});
 });
 
+router.post("/restaurantDone" , checkNotAuthenticated, checkIfRestaurant, async (req,res) => {
+	let order = await new DAOorder().getOneOrder(req.body.order_id);
+	await new DAOorder().updateOrder(order.id,order.ordertime,order.sumprice,order.cdone,"done");
+	let users = await new DAOuser().getUsers();
+	let orders = await new DAOorder().getOrders();
+	let foods = await new DAOfood().getFoods();
+	
+	return res.render('restaurantorder',
+		{ 	authUser:req.user,
+			users : users,
+			orders : orders,
+			foods : foods
+		});
+});
+
+router.get("/restaurantorder",checkNotAuthenticated,checkIfRestaurant, async (req,res) => {
+	let users = await new DAOuser().getUsers();
+	let orders = await new DAOorder().getOrders();
+	let foods = await new DAOfood().getFoods();
+	return res.render('restaurantorder',
+		{ 	authUser:req.user,
+			users : users,
+			orders : orders,
+			foods : foods
+		});
+});
+
 router.post("/courierDone" , checkNotAuthenticated, checkIfCourier, async (req,res) => {
 	let order = await new DAOorder().getOneOrder(req.body.order_id);
 	await new DAOorder().updateOrder(order.id,order.ordertime,order.sumprice,"done",order.rdone);
@@ -288,7 +315,7 @@ function checkIfCourier(req,res,next){
 	return next();
 }
 
-function checkIfCourier(req,res,next){
+function checkIfRestaurant(req,res,next){
 	if(req.user.permission!=='r' && req.user.permission!=='a'){
 		return res.send("Not a restaurant");
 	}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/3de6b5ab59.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+
+<%- include("header.ejs", {authUser:authUser}) %>
+<%
+let orderedFood;
+let userUser;
+let db=0;
+for(const order of orders){
+	if(order.rdone==="process"){
+		for(const food of foods){
+			if(order.fid===food.id){
+				orderedFood=food;
+				break;
+			}
+		}
+		for(const user of users){
+			if(order.u_id===user.id){
+				userUser=user;
+				break;
+			}
+		}
+		if(orderedFood.u_id===authUser.id){
+			db++;
+			%><p>Elkészítendő étel: <%=orderedFood.foodname%> | Rendelő: <%=userUser.name%> | </p>
+				<form action="/restaurantDone" method="post">
+					<input type="hidden" name="order_id" value="<%=order.id%>">
+					<input type="submit" value="Kész">
+				</form>
+		<%}
+	}%>
+	
+<%}
+if(db==0){
+	%><p>Sajnos nincs jelenleg rendelés</p><%
+}
+%>
+<footer>
+    <hr>
+    <p></p>
+    <p></p>
+    <table class="menu" align="center">
+        <tbody>
+        <tr>
+            <td ><a href="/kapcsolatok" style="color:white"> Kapcsolatok </a></td>
+            <td ><a href="/aszf" style="color:white">  ÁSZF</a></td>
+        </tr>
+        </tbody>
+
+    </table>
+    <p></p>
+    <p></p>
+    <hr>
+</footer>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
