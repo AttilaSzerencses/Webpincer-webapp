@@ -170,7 +170,7 @@ router.get("/login", checkAuthenticated, (req, res) => {
 
 router.get("/dashboard", checkNotAuthenticated, async (req, res) => {
 	res.render("dashboard", 
-	{user: req.user.name});
+	{authUser: req.user});
 });
 
 router.get("/kereses", async (req,res) => {

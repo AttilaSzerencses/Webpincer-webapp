@@ -3,10 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="bad53bbb-d6ee-4e52-9565-7e2a34de4081" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ujprojekt/public/Kepek/ajanlat.png" beforeDir="false" afterPath="$PROJECT_DIR$/ujprojekt/public/Kepek/ajanlat.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ujprojekt/public/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/ujprojekt/public/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ujprojekt/routes/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/ujprojekt/routes/route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ujprojekt/views/admin.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/ujprojekt/views/admin.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ujprojekt/views/courier.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/ujprojekt/views/courier.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ujprojekt/views/dashboard.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/ujprojekt/views/dashboard.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ujprojekt/views/header.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/ujprojekt/views/header.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ujprojekt/views/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/ujprojekt/views/index.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ujprojekt/views/kapcsolatok.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/ujprojekt/views/kapcsolatok.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ujprojekt/views/kereses.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/ujprojekt/views/kereses.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ujprojekt/views/login.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/ujprojekt/views/login.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ujprojekt/views/order.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/ujprojekt/views/order.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ujprojekt/views/register.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/ujprojekt/views/register.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ujprojekt/views/restaurant.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/ujprojekt/views/restaurant.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +67,7 @@
       <workItem from="1636653809802" duration="14000" />
       <workItem from="1636653857649" duration="20071000" />
       <workItem from="1636727066591" duration="295000" />
-      <workItem from="1636736586219" duration="9189000" />
+      <workItem from="1636736586219" duration="11379000" />
     </task>
     <servers />
   </component>
