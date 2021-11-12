@@ -14,7 +14,7 @@ class Email{
 		from: 'webpincer@gmail.com',
 		to: sendTo,
 		subject: 'Rendelés a Webpincértől',
-		text: 'A rendelésed sikeresen megtörtént a Webpincér felüleletén. Az étel neve: '+data.name+' | A rendelés ára: '+data.price
+		text: 'A rendelésed sikeresen megtörtént a Webpincér felüleletén. Az étel neve: '+data.name+' | A rendelés ára: '+data.price+" FT"
 	};
 
 	transporter.sendMail(mailOptions, function(error, info){

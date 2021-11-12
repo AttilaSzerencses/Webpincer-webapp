@@ -124,7 +124,7 @@ router.get("/aszf", (req,res) => {
 	res.render("aszf");
 });
 
-router.get("/logout",checkNotAuthenticated (req,res)=>{
+router.get("/logout",checkNotAuthenticated, (req,res)=>{
 	req.logOut();
 	req.flash("success_msg","Sikeresen kijelentkeztél!");
 	res.redirect("/");
