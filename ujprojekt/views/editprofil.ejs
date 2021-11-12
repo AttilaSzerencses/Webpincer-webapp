@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/3de6b5ab59.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+<%- include('header.ejs', {authUser:authUser}) %>
+
+<form action="/updateuser" method="post">
+    <div class="form-horizontal">
+        <label>Name:
+            <input type="text" name="name" id="name" value="<%=user.name%>"></input>
+        </label>
+        <label>Email:
+            <input type="text" name="email" id="email" value="<%=user.email%>"></input>
+        </label>
+        <label>Password:
+            <input type="text" name="password" id="password"></input>
+        </label>
+        <label>Phone:
+            <input type="text" name="phone" id="phone" value="<%=user.phone%>"></input>
+        </label>
+
+        <input type="submit" value="Submit" class="btn-sm btn-dark details"></input>
+
+    </div>
+</form>
+
+<h2>Edit Location</h2>
+<form action="ROOT" method="post">
+    <label>Postcode:
+        <input type="text" name="postcode" id="postcode" value="<%= location.postcode %>"></input>
+    </label>
+    <label>City:
+        <input type="text" name="city" id="city" value="<%= location.city %>"></input>
+    </label>
+    <label>Street:
+        <input type="text" name="street" id="street" value="<%= location.street %>"></input>
+    </label>
+    <label>Streetnumber:
+        <input type="text" name="streetnumber" id="streetnumber" value="<%= location.streetnumber %>"></input>
+    </label>
+    <label>Other:
+        <input type="text" name="other" id="other" value="<%= location.other %>"></input>
+    </label>
+    <input type="submit" value="Submit" class="btn-sm btn-dark details"></input>
+</form>
+
+<% if (authUser.permission === "r") {%>
+    <form action="ROOT" method="post">
+        <label>Opens:
+            <input type="text" name="opens" id="opens" value="<%= restaurant.opens %>"></input>
+        </label>
+        <label>Closes:
+            <input type="text" name="closes" id="closes" value="<%= restaurant.closes %>"></input>
+        </label>
+        <label>Currier price:
+            <input type="text" name="cprice" id="cprice" value="<%= restaurant.cprice %>"></input>
+        </label>
+        <label>Restaurant picture:
+            <input type="text" name="restaurantpic" id="restaurantpic" value="<%= restaurant.restaurantpic %>"></input>
+        </label>
+        <label>Type:
+            <input type="text" name="type" id="type" value="<%= restaurant.type %>"></input>
+        </label>
+        <input type="submit" value="Submit" class="btn-sm btn-dark details"></input>
+    </form>
+
+<%}%>
+
+<footer>
+    <hr>
+    <p></p>
+    <p></p>
+    <table class="menu" align="center">
+        <tbody>
+        <tr>
+            <td ><a href="/kapcsolatok" style="color:white"> Kapcsolatok </a></td>
+            <td ><a href="/aszf" style="color:white">  ÁSZF</a></td>
+        </tr>
+        </tbody>
+
+    </table>
+    <p></p>
+    <p></p>
+    <hr>
+</footer>
+</body>
+</html>
