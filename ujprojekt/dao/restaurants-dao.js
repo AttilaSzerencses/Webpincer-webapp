@@ -20,14 +20,14 @@ class RestaurantDAO {
         return result.rows[0];
     };
 
-    async createRestaurant(uid, opens, closes, cprice, restaurantpic){
-        await db.query("INSERT INTO RESTAURANTS(u_id, opens, closes, cprice, restaurantpic) VALUES ($1,$2,$3,$4,$5)",[uid, opens, closes, cprice, restaurantpic])
+    async createRestaurant(uid, opens, closes, cprice, restaurantpic, type){
+        await db.query("INSERT INTO RESTAURANTS(u_id, opens, closes, cprice, restaurantpic, type) VALUES ($1,$2,$3,$4,$5,$6)",[uid, opens, closes, cprice, restaurantpic, type])
         .catch(console.log);
         return;        
     };
 
-    async updateRestaurant(id, opens, closes, cprice, restaurantpic){
-        await db.query(`UPDATE RESTAURANTS SET opens = $1, closes= $2, cprice=$3, restaurantpic= $4  WHERE id = $5`,[opens, closes, parseInt(cprice), restaurantpic,parseInt(id)])
+    async updateRestaurant(id, opens, closes, cprice, restaurantpic, type){
+        await db.query(`UPDATE RESTAURANTS SET opens = $1, closes= $2, cprice=$3, restaurantpic= $4, type= $5  WHERE id = $6`,[opens, closes, parseInt(cprice), restaurantpic,type, parseInt(id)])
         .catch(console.log);
 
         return;

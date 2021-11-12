@@ -221,6 +221,7 @@ th,td{
           <th>closes</th>
           <th>cprice</th>
           <th>restaurantpic</th>
+          <th>type</th>
         </tr>
         </thead>
         <tbody>
@@ -232,6 +233,7 @@ th,td{
             <td><%= restaurant.closes %></td>
             <td><%= restaurant.cprice %></td>
             <td><%= restaurant.restaurantpic %></td>
+            <td><%= restaurant.type %></td>
             <td><a  href="/editrestaurant/<%= restaurant.id %>">Update</a></td>
             <td><button data-toggle="modal" data-target="#modal-toTrash<%= restaurant.id %>" class="btn-sm btn-dark details">Delete
                 <span class="glyphicon glyphicon-trash" data-toggle="tooltip"
@@ -288,6 +290,9 @@ th,td{
           </label>
           <label>Restaurantpic:
             <input type="text" name="restaurantpic" id="restaurantpic"></input>
+          </label>
+          <label>Type:
+            <input type="text" name="type" id="type"></input>
           </label>
 
           <input type="submit" value="Submit" class="btn-sm btn-dark details"></input>
@@ -396,6 +401,8 @@ th,td{
           <th>fid</th>
           <th>ordertime</th>
           <th>sumprice</th>
+          <th>cdone</th>
+          <th>rdone</th>
         </tr>
         </thead>
         <tbody>
@@ -406,6 +413,8 @@ th,td{
             <td><%= order.fid %></td>
             <td><%= order.ordertime %></td>
             <td><%= order.sumprice %></td>
+            <td><%= order.cdone %></td>
+            <td><%= order.rdone %></td>
             <td><a  href="/editorder/<%= order.id %>">Update</a></td>
             <td><button data-toggle="modal" data-target="#modal-toTrash<%= order.id %>" class="btn-sm btn-dark details">Delete
                 <span class="glyphicon glyphicon-trash" data-toggle="tooltip"
@@ -459,6 +468,12 @@ th,td{
           </label>
           <label>Sumprice:
             <input type="text" name="sumprice" id="sumprice"></input>
+          </label>
+          <label>Courier done:
+            <input type="text" name="cdone" id="cdone"></input>
+          </label>
+          <label>Restaurant done:
+            <input type="text" name="rdone" id="rdone"></input>
           </label>
 
           <input type="submit" value="Submit" class="btn-sm btn-dark details"></input>

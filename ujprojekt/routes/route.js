@@ -49,7 +49,7 @@ router.post("/order",checkNotAuthenticated,async(req,res)=>{
 router.post("/ordered",checkNotAuthenticated,async(req,res)=>{
 	let food=await new DAOfood().getOneFood(req.body.fid);
 	let restaurant=await new DAOrestaurant().getRestaurantByUID(food.u_id);
-	await new DAOorder().createOrder(parseInt(req.user.id),parseInt(food.id),60,parseInt(restaurant.cprice)+parseInt(food.price));
+	await new DAOorder().createOrder(parseInt(req.user.id),parseInt(food.id),60,parseInt(restaurant.cprice)+parseInt(food.price),"process","process");
 	let data={
 		name: food.foodname,
 		price: parseInt(restaurant.cprice)+parseInt(food.price)
@@ -291,7 +291,8 @@ router.post("/addrestaurant",checkNotAuthenticated,checkIfAdmin, async (req, res
 	let {closes} = req.body;
 	let {cprice} = req.body;
 	let {restaurantpic} = req.body;
-	await new DAOrestaurant().createRestaurant(u_id,opens,closes,cprice,restaurantpic);
+	let {type} = req.body;
+	await new DAOrestaurant().createRestaurant(u_id,opens,closes,cprice,restaurantpic,type);
 	return res.redirect('/admin')
 });
   
@@ -307,7 +308,8 @@ router.post("/updaterestaurant/:id",checkNotAuthenticated,checkIfAdmin, async (r
 	let {closes} = req.body;
 	let {cprice} = req.body;
 	let {restaurantpic} = req.body;
-    await new DAOrestaurant().updateRestaurant(id,opens,closes,cprice,restaurantpic);
+	let {type} = req.body;
+    await new DAOrestaurant().updateRestaurant(id,opens,closes,cprice,restaurantpic,type);
     res.redirect("/admin");
 });
   
@@ -347,7 +349,7 @@ router.post("/updatefood/:id",checkNotAuthenticated,checkIfAdmin, async (req, re
   
 router.post("/deletefood/:id",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
     let id = req.params.id;
-	await new DAOorder.deleteFIDOrder(id);
+	await new DAOorder().deleteFIDOrder(id);
     await new DAOfood().deleteFood(id);
     res.redirect("/admin");
   });
@@ -359,7 +361,9 @@ router.post("/addorder",checkNotAuthenticated,checkIfAdmin, async (req, res) => 
 	let {fid} = req.body;
 	let {ordertime} = req.body;
 	let {sumprice} = req.body;
-	await new DAOorder().createOrder(u_id,fid,ordertime,sumprice);
+	let {cdone} = req.body;
+	let {rdone} = req.body;
+	await new DAOorder().createOrder(u_id,fid,ordertime,sumprice,cdone,rdone);
 	return res.redirect('/admin')
 });
   
@@ -373,7 +377,9 @@ router.post("/updateorder/:id",checkNotAuthenticated,checkIfAdmin, async (req, r
     let id = req.params.id;
 	let {ordertime} = req.body;
 	let {sumprice} = req.body;
-    await new DAOorder().updateOrder(id,ordertime,sumprice);
+	let {cdone} = req.body;
+	let {rdone} = req.body;
+    await new DAOorder().updateOrder(id,ordertime,sumprice,cdone,rdone);
     res.redirect("/admin");
 });
   
