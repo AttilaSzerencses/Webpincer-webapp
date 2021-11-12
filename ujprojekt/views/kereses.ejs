@@ -41,22 +41,26 @@
 
 
 
-<div class="row row-cols-1 row-cols-md-2 d-flex justify-content-center">
+<div class="row row-cols-1 row-cols-md-2 "   style="max-width: 1600px;">
 <%
     for(let i=0;i<users.length;i++){%>
-        <div class="row g-0">
-            <div class="col-md-4">
-                <img src="..." class="img-fluid rounded-start" alt="...">
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title"> <%=users[i].name%></h5>
-                    <p class="card-text">Nyitvatartás: <%=restaurants[i].opens%> - <%=restaurants[i].closes%></p>
-                    <small class="text-muted">Szállítási költség: <%=restaurants[i].cprice%> ft</small>
-                    <a class="btn btn-warning" href="/restaurant" role="button">Megnéz</a>
+    <div class="mx-center">
+        <div class="card mb-3 " style="max-width: 540px;">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="..." class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title"> <%=users[i].name%></h5>
+                        <p class="card-text">Nyitvatartás: <%=restaurants[i].opens%> - <%=restaurants[i].closes%></p>
+                        <small class="text-muted">Szállítási költség: <%=restaurants[i].cprice%> ft</small>
+                        <a class="btn btn-warning" href="/restaurant" role="button">Megnéz</a>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
     <%}%>
 </div>
 
