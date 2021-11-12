@@ -161,7 +161,7 @@ router.get("/dashboard", checkNotAuthenticated, async (req, res) => {
 
 router.get("/kereses", async (req,res) => {
 	let users=await new DAOuser().getUsersByPermission("r");
-	restaurants.sort((a,b)=>{
+	users.sort((a,b)=>{
 		if(a.id>b.id){
 			return -1;
 		}

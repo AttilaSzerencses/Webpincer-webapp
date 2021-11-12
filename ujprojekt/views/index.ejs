@@ -11,6 +11,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 
@@ -37,7 +39,16 @@
 <img class="borito" src="Kepek/finom.png" alt="Home">
 <div class="cim">Üdvözlünk a WebPincér honlapján!</div>
 
+<div class="container">
 <img class="ajanlat" src="Kepek/ajanlat.png" alt="akció">
+    <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Hiba!" data-content="Ez a funkció még nem elérhető!">Tudj meg többet!</button>
+</div>
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="popover"]').popover();
+    });
+</script>
+
 <footer>
     <hr>
     <p></p>
