@@ -178,10 +178,52 @@ A projekt hetente ülésezik, hogy megvitassák az azt megelőző hét problém�
  - Érintettek témák: Utóbbi simítások a projekttervben, Gantt chart elkészítése
 
 5. megbeszélés:
-- Időpont: 2021.10.18.
-- Hely: Discord
-- Résztvevők: Horváth-Czinger Bernadett, Martincsek Levente, Mitykó Norbert, Szerencsés Attila, Patai Zsolt, Fehér Erik, Simon Péter
-- Érintettek témák: Diagramok elkészítése, hibák javítása Readme fájlban, funkcionális követelmények részletezése, bővítése
+ - Időpont: 2021.10.18.
+ - Hely: Discord
+ - Résztvevők: Horváth-Czinger Bernadett, Martincsek Levente, Mitykó Norbert, Szerencsés Attila, Patai Zsolt, Fehér Erik, Simon Péter
+ - Érintettek témák: Diagramok elkészítése, hibák javítása Readme fájlban, funkcionális követelmények részletezése, bővítése
+6. megbeszélés:
+ - Időpont: 2021.10.25.
+ - Hely: Discord
+ - Résztvevők: Horváth-Czinger Bernadett, Martincsek Levente, Mitykó Norbert, Szerencsés Attila, Patai Zsolt, Fehér Erik, Simon Péter
+ - Érintett témák: Diagrammok átbeszélése, bemutató előtti rövid összefoglalás a bemutatóra.
+7. megbeszélés:
+ - Időpont: 2021.11.02.
+ - Hely: Discord
+ - Résztvevők: Horváth-Czinger Bernadett, Martincsek Levente, Mitykó Norbert, Szerencsés Attila, Patai Zsolt, Fehér Erik, Simon Péter
+ - Érintett témák: Projekt kezdés előtti rövid átbeszélés, feladatok áttekintése.
+8. megbeszélés:
+ - Időpont: 2021.11.04.
+ - Hely: Discord
+ - Résztvevők: Horváth-Czinger Bernadett, Martincsek Levente, Mitykó Norbert, Szerencsés Attila, Patai Zsolt, Fehér Erik, Simon Péter
+ - Érintett témák: Frontend backend feladatok elkezdése, átbeszélése. Alap backend, illetve alapvető kinézetek, oldalak elkészítése, átbeszélése.
+9. megbeszélés:
+ - 2021.11.05.
+ - Hely: Discord
+ - Résztvevők: Szerencsés Attila, Fehér Erik
+ - Érintett témák: Adatbázis elkészítése, feltöltés alap adatokkal. Adatbázis kezelő,lekérdező,törlő függvények elkészítése. Admin felület elkészítése,
+ - ahonnan kinyerhető az összes adat az adatbázisból.
+10. megbeszélés:
+ - Időpont: 2021.11.07.
+ - Hely: Discord
+ - Résztvevők: Horváth-Czinger Bernadett, Martincsek Levente, Mitykó Norbert, Szerencsés Attila, Patai Zsolt, Fehér Erik, Simon Péter
+ - Érintett témák: Frontend. Weboldalak kinézetek, átbeszélése, 1-2 simítás, regisztációs oldal elkészítése.
+11. megbeszélés:
+ - Időpont: 2021.11.08. 
+ - Hely: Discord
+ - Résztvevők: Horváth-Czinger Bernadett, Martincsek Levente, Mitykó Norbert, Szerencsés Attila, Patai Zsolt, Fehér Erik, Simon Péter
+ - Érintett témák: Frontend. Weboldalak elkészítése, áttekintése, átbeszélése. Adatbázis apró módosítása.
+12. megbeszélés:
+ - Időpont: 2021.11.09.
+ - Hely: Discord
+ - Résztvevők: Szerencsés Attila, Fehér Erik
+ - Érintett témák: Backend. Login, Register megvalósítása, session kezelés próbálkozások, alapvető függvények elkészítése.
+13. megbeszélés:
+ - Időpont: 2021.11.10.
+ - Hely: Discord
+ - Résztvevők: Szerencsés Attila, Fehér Erik
+ - Érintett témák: Elkészített weboldalak, adatbázis, stb. összefüzése. Menürendszer kialakítása, oldalak megjelenítése, login-register funkció
+   véglegesítése működőképes állapotra, session kezelés. Appróbb esztétikai módosítások.
 
 
 ### 7.3. Minőségbiztosítás
