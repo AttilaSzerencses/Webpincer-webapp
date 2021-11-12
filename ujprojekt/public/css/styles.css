@@ -14,9 +14,17 @@ i{
     font-size: 50px;
     padding-right: 10px!important;
 }
-
+.navbar-brand{
+    padding-right: 90px!important;
+}
 *{
     font-family: 'Roboto Mono', monospace;
+}
+.cim{
+    font-family: 'Abril Fatface', cursive;
+    text-align: center;
+    font-size: 60px;
+    color: #e47c4c!important;
 }
 a{
     color: #e47c4c!important;
@@ -108,18 +116,6 @@ input[type=text],input[type=number],input[type=password],input[type=email], sele
   box-sizing: border-box;
 }
 
-input[type=submit],button {
-  width: 50%;
-  background-color: #e4935a;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
- 
-  font-size: 100%;
-}
 button:hover,input[type=submit]:hover {
   background-color: #e47c4c;
 }
