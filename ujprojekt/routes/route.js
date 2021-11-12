@@ -19,7 +19,7 @@ router.get("/", (req, res) => {
 	res.render("index");
 });
 
-router.get("/restaurant", checkNotAuthenticated ,async(req,res)=>{
+router.post("/restaurant", checkNotAuthenticated ,async(req,res)=>{
 	let foods = await new DAOfood().getAllFoodFromRestaurant(10);
 	console.log(foods);
 	let user = await new DAOuser().getOneUser(foods[0].u_id);
@@ -76,6 +76,22 @@ router.get("/admin",checkNotAuthenticated, checkIfAdmin, async (req, res) => {
 		});
 });
 
+router.get("/courier" , checkNotAuthenticated, async (req,res) => {
+	let users = await new DAOuser().getUsers();
+	let locations = await new DAOlocation().getLocations();
+	let restaurants = await new DAOrestaurant().getRestaurants();
+	let orders = await new DAOorder().getOrders();
+	let foods = await new DAOfood().getFoods();
+	
+	return res.render('courier',
+		{ 	users : users,
+			locations : locations,
+			restaurants : restaurants,
+			orders : orders,
+			foods : foods
+		});
+});
+
 router.get("/register" , checkAuthenticated, (req,res) => {
 	res.render("register");
 });
@@ -107,6 +123,9 @@ router.get("/kereses", async (req,res) => {
 	for(const restaurant of restaurants){
 		locations.push(await new DAOlocation().getLocationByUID(restaurant.u_id));
 	}
+	console.log(restaurants);
+	console.log(users);
+	console.log(locations);
 	res.render('kereses',
 	{
 	users:users,
@@ -385,6 +404,7 @@ router.post("/updateorder/:id",checkNotAuthenticated,checkIfAdmin, async (req, r
   
 router.post("/deleteorder/:id",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
     let id = req.params.id;
+	console.log(id);
     await  new DAOorder().deleteOrder(id);
     res.redirect("/admin");
   });

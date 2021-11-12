@@ -56,11 +56,11 @@ th,td{
                   <td><%= user.email %></td>
                   <td><%= user.phone %></td>
                   <td><a  href="/edituser/<%= user.id %>">Update</a></td>
-                  <td><button data-toggle="modal" data-target="#modal-toTrash<%= user.id %>" class="btn-sm btn-dark details">Delete
+                  <td><button data-toggle="modal" data-target="#modal-toTrashUser<%= user.id %>" class="btn-sm btn-dark details">Delete
                     <span class="glyphicon glyphicon-trash" data-toggle="tooltip"
                       data-placement="top" title="Sent to Trash Box"></span></button>
                   </td>
-                  <div class="modal modal-toTrash" id="modal-toTrash<%= user.id %>">
+                  <div class="modal modal-toTrash" id="modal-toTrashUser<%= user.id %>">
                     <div class="modal-dialog">
                       <div class="modal-content">
                         <div class="modal-header">
@@ -140,11 +140,11 @@ th,td{
                   <td><%= location.streetnumber%></td>
                   <td><%= location.other %></td>
                   <td><a  href="/editlocation/<%= location.id %>">Update</a></td>
-                  <td><button data-toggle="modal" data-target="#modal-toTrash<%= location.id %>" class="btn-sm btn-dark details">Delete
+                  <td><button data-toggle="modal" data-target="#modal-toTrashLocation<%= location.id %>" class="btn-sm btn-dark details">Delete
                     <span class="glyphicon glyphicon-trash" data-toggle="tooltip"
                       data-placement="top" title="Sent to Trash Box"></span></button>
                   </td>
-                  <div class="modal modal-toTrash" id="modal-toTrash<%= location.id %>">
+                  <div class="modal modal-toTrash" id="modal-toTrashLocation<%= location.id %>">
                     <div class="modal-dialog">
                       <div class="modal-content">
                         <div class="modal-header">
@@ -235,11 +235,11 @@ th,td{
             <td><%= restaurant.restaurantpic %></td>
             <td><%= restaurant.type %></td>
             <td><a  href="/editrestaurant/<%= restaurant.id %>">Update</a></td>
-            <td><button data-toggle="modal" data-target="#modal-toTrash<%= restaurant.id %>" class="btn-sm btn-dark details">Delete
+            <td><button data-toggle="modal" data-target="#modal-toTrashRestaurant<%= restaurant.id %>" class="btn-sm btn-dark details">Delete
                 <span class="glyphicon glyphicon-trash" data-toggle="tooltip"
                       data-placement="top" title="Sent to Trash Box"></span></button>
             </td>
-            <div class="modal modal-toTrash" id="modal-toTrash<%= restaurant.id %>">
+            <div class="modal modal-toTrash" id="modal-toTrashRestaurant<%= restaurant.id %>">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -326,11 +326,11 @@ th,td{
             <td><%= food.price %></td>
             <td><%= food.foodpic %></td>
             <td><a  href="/editfood/<%= food.id %>">Update</a></td>
-            <td><button data-toggle="modal" data-target="#modal-toTrash<%= food.id %>" class="btn-sm btn-dark details">Delete
+            <td><button data-toggle="modal" data-target="#modal-toTrashFood<%= food.id %>" class="btn-sm btn-dark details">Delete
                 <span class="glyphicon glyphicon-trash" data-toggle="tooltip"
                       data-placement="top" title="Sent to Trash Box"></span></button>
             </td>
-            <div class="modal modal-toTrash" id="modal-toTrash<%= food.id %>">
+            <div class="modal modal-toTrash" id="modal-toTrashFood<%= food.id %>">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -416,11 +416,11 @@ th,td{
             <td><%= order.cdone %></td>
             <td><%= order.rdone %></td>
             <td><a  href="/editorder/<%= order.id %>">Update</a></td>
-            <td><button data-toggle="modal" data-target="#modal-toTrash<%= order.id %>" class="btn-sm btn-dark details">Delete
+            <td><button data-toggle="modal" data-target="#modal-toTrashOrder<%= order.id %>" class="btn-sm btn-dark details">Delete
                 <span class="glyphicon glyphicon-trash" data-toggle="tooltip"
                       data-placement="top" title="Sent to Trash Box"></span></button>
             </td>
-            <div class="modal modal-toTrash" id="modal-toTrash<%= order.id %>">
+            <div class="modal modal-toTrash" id="modal-toTrashOrder<%= order.id %>">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
