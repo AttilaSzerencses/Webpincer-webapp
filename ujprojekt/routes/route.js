@@ -201,7 +201,7 @@ router.get("/kereses", async (req,res) => {
 	console.log(locations);
 	res.render('kereses',
 	{
-		authUser:req.user,
+		authUser:req.user,	
 		users:users,
 		restaurants:restaurants,
 		locations:locations
@@ -269,7 +269,7 @@ router.post("/login",passport.authenticate("local", {
 
 function checkAuthenticated(req, res, next) {
 	if (req.isAuthenticated()) {
-		return res.redirect("/dashboard");
+		return res.render("/dashboard",{authUser:req.user});
 	}
 	next();
 }
