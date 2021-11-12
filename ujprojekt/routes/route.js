@@ -23,7 +23,13 @@ router.get("/", (req, res) => {
 
 router.post("/restaurant", checkNotAuthenticated ,async(req,res)=>{
 	let foods = await new DAOfood().getAllFoodFromRestaurant(req.body.u_id);
-	console.log(foods);
+	if(foods[0]===undefined){
+		res.render("restaurant",{
+			authUser:req.user,
+			foods:[],
+			user:[]
+	});
+	}
 	let user = await new DAOuser().getOneUser(foods[0].u_id);
 	let restaurant = await new DAOrestaurant().getOneRestaurant(foods[0].u_id);
 	console.log(foods);

@@ -22,7 +22,7 @@ let orderedFromRestaurant;
 let userUser;
 let restaurantUser;
 for(const order of orders){
-	if(order.cdone==="process"){
+	if(order.cdone==="process" && order.rdone==="done"){
 		for(const food of foods){
 			if(order.fid===food.id){
 				orderedFood=food;
