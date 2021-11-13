@@ -136,6 +136,17 @@ router.get("/courier",checkNotAuthenticated, checkIfCourier, async (req, res) =>
 		});
 });
 
+router.get("/rendelesed",checkNotAuthenticated, checkIfUserOrCourier, async (req, res) => {
+	let orders = await new DAOorder().getOrders();
+	let users = await new DAOuser().getUsers();
+	let foods = await new DAOfood().getFoods();
+	return res.render('rendelesed',
+		{ 	authUser:req.user,
+			users : users,
+			orders : orders,
+			foods : foods
+		});
+});
 
 router.post("/courierShip" , checkNotAuthenticated, checkIfCourier, async (req,res) => {
 	let order = await new DAOorder().getOneOrder(req.body.order_id);
@@ -329,6 +340,13 @@ function checkIfAdmin(req,res,next){
 function checkIfCourier(req,res,next){
 	if(req.user.permission!=='c' && req.user.permission!=='a'){
 		return res.send("Not a courier");
+	}
+	return next();
+}
+
+function checkIfUserOrCourier(req,res,next){
+	if(req.user.permission!=='a' && req.user.permission!=='u' && req.user.permission!=='c'){
+		return res.send("Restaurants can't reach that");
 	}
 	return next();
 }

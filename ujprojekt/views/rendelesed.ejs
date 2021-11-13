@@ -11,67 +11,33 @@
 </head>
 <body>
 
+<%- include("header.ejs", {authUser:authUser}) %>
+<p>Rendeléseid</p>
 
-
-<%- include('header.ejs', {authUser:authUser}) %>
 <%
-let userLocation;
-let restaurantLocation;
+
 let orderedFood;
-let orderedFromRestaurant;
-let userUser;
 let restaurantUser;
-for(const order of orders){
-	if(order.cdone==="process" && order.rdone==="done"){
+for(order of orders){
+	if(order.u_id===authUser.id){
 		for(const food of foods){
 			if(order.fid===food.id){
 				orderedFood=food;
 				break;
 			}
 		}
-		for(const restaurant of restaurants){
-			if(orderedFood.u_id===restaurant.u_id){
-				orderedFromRestaurant=restaurant;
-				break;
-			}
-		}
-		
-		for(const location of locations){
-			if(orderedFromRestaurant.u_id===location.u_id){
-				restaurantLocation=location;
-				break;
-			}
-		}
-		for(const location of locations){
-			if(order.u_id===location.u_id){
-				userLocation=location;
-				break;
-			}
-		}
 		for(const user of users){
-			if(order.u_id===user.id){
-				userUser=user;
-				break;
-			}
-		}
-		for(const user of users){
-			if(orderedFromRestaurant.u_id===user.id){
+			if(orderedFood.u_id===user.id){
 				restaurantUser=user;
 				break;
 			}
 		}
-		%>
-		<p>Étterem: <%=restaurantUser.name%> | Honnan: <%=restaurantLocation.city%> <%=restaurantLocation.street%> <%=restaurantLocation.streetnumber%> <%=restaurantLocation.other%>|
-		Hova: <%=userLocation.city%> <%=userLocation.street%> <%=userLocation.streetnumber%> <%=userLocation.other%> | Kinek: <%=userUser.name%> |
-		Telefon: <%=userUser.phone%> | Étel: <%=orderedFood.foodname%> | Ár: <%=order.sumprice%> 
-		<form action="/courierShip" method="post">
-			<input type="hidden" name="order_id" value="<%=order.id%>">
-			<input type="submit" value="Elfogad">
-		</form>
-		</p>
-	<%}%>
-	
-<%}%>
+		%><p>Étterem: <%=restaurantUser.name%> | Étel: <%=orderedFood.foodname%> | Ár: <%=order.sumprice%> | Állapot: <% if(order.cdone==="done" && order.rdone==="done"){%>Átadva<%}else if(order.rdone==="done"){%>Kiszállítás alatt<%} else {%>Készítés alatt<%}%></p> 
+		<%
+	}
+}
+%>
+
 <footer>
     <hr>
     <p></p>
@@ -89,6 +55,7 @@ for(const order of orders){
     <p></p>
     <hr>
 </footer>
+
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
