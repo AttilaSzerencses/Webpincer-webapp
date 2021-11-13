@@ -136,7 +136,7 @@ html,body {
 	font-weight: bold;
 	text-align: center;
 }
-input[type=text],input[type=number],input[type=password],input[type=email], select {
+input[type=text],input[type=number],input[type=password],input[type=email], select ,textarea{
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -188,9 +188,45 @@ button:hover,input[type=submit]:hover {
 }
 .left{
     float: left;
-    padding-left: 8%;
+    padding-left: 10%;
+    padding-right: 10%;
+    max-width: 50%;
+    min-width: 40%;
+    text-align: center;
+    border-right: 6px solid rgb(217, 102, 53);
+    height: 500px;
+
 }
 .right{
     float: right;
-    padding-right: 8%;
+    padding-right: 10%;
+    max-width: 50%;
+    padding-left: 10%;
+
+}
+#sender_name{
+    width: 48%;
+    float:left;
+}
+#sender_email{
+    width: 48%;
+    float:right;
+}
+#sender_phonenumber{
+    width: 48%;
+    float:left;
+}
+#sender_subject{
+    width: 48%;
+    float:right;
+}
+#sender_text{
+
+}
+footer {
+    clear: both;
+    position: relative;
+    height: 10%;
+    margin-top: 0%;
+    bottom:0;
 }
