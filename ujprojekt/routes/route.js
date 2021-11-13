@@ -326,7 +326,7 @@ router.post("/login",passport.authenticate("local", {
 
 function checkAuthenticated(req, res, next) {
 	if (req.isAuthenticated()) {
-		return res.render("/dashboard",{authUser:req.user});
+		return res.render("dashboard",{authUser:req.user});
 	}
 	next();
 }
@@ -490,8 +490,14 @@ router.post("/adduser",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
 	let {email} = req.body;
 	let {name} = req.body;
 	let {phone} = req.body;
-	await new DAOuser().createUser(hashedPassword, email, name,phone);
-	return res.redirect('/admin')
+	if(password==="" || email==="" || name==="" || phone===""){
+		req.flash("error", "Nem töltöttél ki minden adatot!")
+		return res.redirect("/admin");
+	} else{
+		await new DAOuser().createUser(hashedPassword, email, name,phone);
+		return res.redirect('/admin');
+	}
+
 });
   
 router.get("/edituser/:id",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
@@ -530,8 +536,13 @@ router.post("/addlocation",checkNotAuthenticated,checkIfAdmin, async (req, res) 
 	let {street} = req.body;
 	let {streetnumber} = req.body;
 	let {other} = req.body;
-	await new DAOlocation().createLocation(u_id,postcode,city,street,streetnumber,other);
-	return res.redirect('/admin')
+	if(u_id==="" || postcode==="" || city==="" || street==="" || streetnumber===""){
+		req.flash("error","Nem töltöttél ki minden adatot!");
+		return res.redirect("/admin");
+	} else{
+		await new DAOlocation().createLocation(u_id,postcode,city,street,streetnumber,other);
+		return res.redirect('/admin')
+	}
 });
   
 router.get("/editlocation/:id",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
@@ -718,8 +729,13 @@ router.post("/addorder",checkNotAuthenticated,checkIfAdmin, async (req, res) => 
 	let {sumprice} = req.body;
 	let {cdone} = req.body;
 	let {rdone} = req.body;
-	await new DAOorder().createOrder(u_id,fid,ordertime,sumprice,cdone,rdone);
-	return res.redirect('/admin')
+	if (u_id==="" || fid==="" || ordertime==="" || sumprice==="" || cdone==="" || rdone==="" ){
+		req.flash("error","Nem töltöttél ki minden adatot!")
+		res.redirect("/admin");
+	} else{
+		await new DAOorder().createOrder(u_id,fid,ordertime,sumprice,cdone,rdone);
+		return res.redirect('/admin')
+	}
 });
   
 router.get("/editorder/:id",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
