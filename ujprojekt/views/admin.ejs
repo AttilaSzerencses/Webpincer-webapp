@@ -346,6 +346,59 @@ th,td{
         </tbody>
       </table>
     </div>
+    <div><div>
+      <h2>Current Foods</h2>
+      <table>
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>u_id</th>
+          <th>foodname</th>
+          <th>price</th>
+          <th>foodpic</th>
+        </tr>
+        </thead>
+        <tbody>
+        <%for (const food of foods) { %>
+          <tr>
+            <td><%= food.id %></td>
+            <td><%= food.u_id %></td>
+            <td><%= food.foodname %></td>
+            <td><%= food.price %></td>
+            <td><%= food.foodpic %></td>
+            <td><a  href="/editfood/<%= food.id %>">Update</a></td>
+            <td><button data-toggle="modal" data-target="#modal-toTrashFood<%= food.id %>" class="btn-sm btn-dark details">Delete
+                <span class="glyphicon glyphicon-trash" data-toggle="tooltip"
+                      data-placement="top" title="Sent to Trash Box"></span></button>
+            </td>
+            <div class="modal modal-toTrash" id="modal-toTrashFood<%= food.id %>">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-hidden="true">×
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <p class="error-text"><strong>Confirmation</strong></p>
+                  </div>
+                  <div class="modal-footer">
+                    <button class="btn-sm btn-dark details" data-dismiss="modal" aria-hidden="true">
+                      Cancel
+                    </button>
+                    <form action="/deletefood/<%= food.id %>" method="post">
+                      <button class="btn-sm btn-dark details" value="delete">Yes</button></a>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </tr>
+        <% } %>
+        </tbody>
+      </table>
+    </div>
     <div>
 
       <!--u_id,foodname, price, foodpic-->

@@ -95,6 +95,35 @@
         </div>
       </form>
 
+    <div>
+        <h2>Current Foods</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>foodname</th>
+                <th>price</th>
+                <th>foodpic</th>
+            </tr>
+            </thead>
+            <tbody>
+            <%for (const food of foods) { %>
+                <% if (food.u_id === authUser.id) {%>
+                <tr>
+                    <td><%= food.foodname %></td>
+                    <td><%= food.price %></td>
+                    <td><%= food.foodpic %></td>
+                    <td><form action="/editprofilDeleteFood" method="post">
+                            <input type="hidden" name="id" value="<%= food.id %>">
+                            <input type="submit" value="Delete">
+                        </form></td>
+                </tr>
+                    <%}%>
+            <% } %>
+            </tbody>
+        </table>
+    </div>
+<div>
+
 <%}%>
 
 <footer>

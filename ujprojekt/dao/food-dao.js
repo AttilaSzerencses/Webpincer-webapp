@@ -52,6 +52,11 @@ class FoodDAO {
         return;        
     };
 
+    async deleteUIDIDFood(u_id,id){
+        await db.query(`DELETE FROM FOODS WHERE u_id=$1 AND id=$2`,[parseInt(u_id),parseInt(id)])
+            .catch(console.log);
+        return;
+    };
 
 };
 

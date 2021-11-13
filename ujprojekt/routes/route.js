@@ -26,11 +26,13 @@ router.get("/editprofil",checkNotAuthenticated, async(req, res) => {
 	let user=await new DAOuser().getOneUser(req.user.id);
 	let location=await new DAOlocation().getLocationByUID(req.user.id);
 	let restaurant=await new DAOrestaurant().getRestaurantByUID(req.user.id);
+	let foods=await new DAOfood().getAllFoodFromRestaurant(req.user.id);
 	res.render("editprofil",{
 		authUser:req.user,
 		user:user,
 		location:location,
-		restaurant:restaurant
+		restaurant:restaurant,
+		foods:foods
 	});
 });
 
@@ -427,6 +429,13 @@ router.post("/editprofilFood",checkNotAuthenticated, async (req, res) => {
 	await new DAOfood().createFood(id,foodname,price,file.name);
 	return res.redirect('/editprofil');
 	});
+
+router.post("/editprofilDeleteFood", checkNotAuthenticated, async (req,res)=>{
+	let id = req.body.id;
+	let uid = req.user.id;
+	await new DAOfood().deleteUIDIDFood(uid,id);
+	return res.redirect("/editprofil");
+});
 
 
 
