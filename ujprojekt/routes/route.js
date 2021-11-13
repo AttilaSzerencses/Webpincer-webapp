@@ -84,6 +84,11 @@ router.post("/ordered",checkNotAuthenticated,async(req,res)=>{
 	res.render('index',{authUser:req.user});
 });
 
+router.post("/sendEmailToUs", async(req,res)=>{
+	await new email().sendMailKapcsolat(req.body.sender_name,req.body.sender_email,req.body.sender_phonenumber,req.body.sender_subject,req.body.sender_text);
+	return res.redirect("/kapcsolatok");
+});
+
 
 router.get("/admin",checkNotAuthenticated, checkIfAdmin, async (req, res) => {
 	let users = await new DAOuser().getUsers();

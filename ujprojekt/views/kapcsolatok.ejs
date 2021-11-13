@@ -12,9 +12,9 @@
 </head>
 <body>
 
-<%- include('header.ejs', {authUser:authUser}) %>
+<%- include("header.ejs", {authUser:authUser}) %>
 
-<div class=left>
+<div class="left">
 
     <p>
     <h1>Kapcsolatfelvétel</h1></p>
@@ -22,14 +22,14 @@
 
     <p><b> Keressen telefonon, vagy írjon üzenetet az alábbi űrlap segítségével! A válasz hamarosan érkezni fog!</b></p>
     <img src="Kepek/emailvonal.png" width="100%">
-    <form method="post" action="">
-    <input type="text" id="sender_name" name="name" placeholder="Név" required> <input type="text" id="sender_email" name="name" placeholder="Email cím" required>
-    <input type="text" id="sender_phonenumber" name="name" placeholder="Telefonszám" required> <input type="text" id="sender_subject" name="name" placeholder="Tárgy" required>
-    <textarea  id="sender_text" name="message"  placeholder="Üzenet szövege" ></textarea>
-    <input type="submit" class="btn btn-warning"></input>
+    <form method="post" action="/sendEmailToUs">
+		<input type="text" id="sender_name" name="sender_name" placeholder="Név" required> <input type="email" id="sender_email" name="sender_email" placeholder="Email cím" required>
+		<input type="tel" id="sender_phonenumber" name="sender_phonenumber" placeholder="Telefonszám" required> <input type="text" id="sender_subject" name="sender_subject" placeholder="Tárgy" required>
+		<textarea  id="sender_text" name="sender_text"  placeholder="Üzenet szövege" ></textarea>
+		<input type="submit" class="btn btn-warning"></input>
     </form>
 </div>
-<div class=right>
+<div class="right">
     <p>
     <h1>Általános céginformációk</h1></p>
     <p><b>Üzemeltető:</b> Rf1 kurzus, D csoport </p>
