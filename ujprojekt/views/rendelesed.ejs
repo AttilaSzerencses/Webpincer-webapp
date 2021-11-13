@@ -13,31 +13,48 @@
 <body>
 
 <%- include("header.ejs", {authUser:authUser}) %>
-<p>Rendeléseid</p>
 
-<%
 
-let orderedFood;
-let restaurantUser;
-for(order of orders){
-	if(order.u_id===authUser.id){
-		for(const food of foods){
-			if(order.fid===food.id){
-				orderedFood=food;
-				break;
-			}
-		}
-		for(const user of users){
-			if(orderedFood.u_id===user.id){
-				restaurantUser=user;
-				break;
-			}
-		}
-		%><p>Dátum:<%=order.date%> Étterem: <%=restaurantUser.name%> | Étel: <%=orderedFood.foodname%> | Ár: <%=order.sumprice%> | Állapot: <% if(order.cdone==="done" && order.rdone==="done"){%>Átadva<%}else if(order.rdone==="done"){%>Kiszállítás alatt<%} else {%>Készítés alatt<%}%></p>
-		<%
-	}
-}
-%>
+<div class="card mx-auto" style="max-width: 1000px">
+    <div class="card-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-6"><h5 class="card-title"><%= authUser.name %> rendelései:</h5></div>
+
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <%
+
+                    let orderedFood;
+                    let restaurantUser;
+                            for(order of orders){
+                    if(order.u_id===authUser.id){
+                        for(const food of foods){
+                            if(order.fid===food.id){
+                                orderedFood=food;
+                                break;
+                            }
+                        }
+                        for(const user of users){
+                            if(orderedFood.u_id===user.id){
+                                restaurantUser=user;
+                                break;
+                            }
+                        }
+                    %><p>Dátum:<%=order.date%> Étterem: <%=restaurantUser.name%> | Étel: <%=orderedFood.foodname%> | Ár: <%=order.sumprice%> | Állapot: <% if(order.cdone==="done" && order.rdone==="done"){%>Átadva<%}else if(order.rdone==="done"){%>Kiszállítás alatt<%} else {%>Készítés alatt<%}%></p>
+                    <hr>
+                    <%
+                    }
+                    }
+                    %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 <footer>
     <hr>
