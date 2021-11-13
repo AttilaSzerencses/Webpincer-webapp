@@ -291,10 +291,9 @@ router.post('/register', async (req,res)=> {
 	}
 
 	if (errors.length > 0) {
-		res.render("register", { errors, name, email, password, phone, postcode, city, street, streetnumber, other });
+		res.render("register", {authUser:req.user, errors, name, email, password, phone, postcode, city, street, streetnumber, other });
 	} 
-	
-	
+
 	
 	else {
 		let hashedPassword = await bcrypt.hash(password, 10);
@@ -548,8 +547,21 @@ router.post("/addrestaurant",checkNotAuthenticated,checkIfAdmin, async (req, res
 	let {opens} = req.body;
 	let {closes} = req.body;
 	let {cprice} = req.body;
-	let {restaurantpic} = req.body;
 	let {type} = req.body;
+	let path="./public/Kepek/etteremkepek";
+	let file=req.files.restaurantpic;
+	let extension="."+file.name.split(".")[file.name.split(".").length-1];
+	filename=u_id+extension;
+	file.name=filename;
+	file.mv(path+"/"+file.name,(err)=>{
+		if(err){
+			console.log(err);
+		}
+		else{
+			console.log("Feltöltve: "+file.name);
+		}
+	});
+	let restaurantpic = file.name;
 	await new DAOrestaurant().createRestaurant(u_id,opens,closes,cprice,restaurantpic,type);
 	return res.redirect('/admin')
 });
@@ -562,11 +574,25 @@ router.get("/editrestaurant/:id",checkNotAuthenticated,checkIfAdmin, async (req,
   
 router.post("/updaterestaurant/:id",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
     let id = req.params.id;
+	let {u_id} = req.body;
 	let {opens} = req.body;
 	let {closes} = req.body;
 	let {cprice} = req.body;
-	let {restaurantpic} = req.body;
 	let {type} = req.body;
+	let path="./public/Kepek/etteremkepek";
+	let file=req.files.restaurantpic;
+	let extension="."+file.name.split(".")[file.name.split(".").length-1];
+	filename=u_id+extension;
+	file.name=filename;
+	file.mv(path+"/"+file.name,(err)=>{
+		if(err){
+			console.log(err);
+		}
+		else{
+			console.log("Feltöltve: "+file.name);
+		}
+	});
+	let restaurantpic = file.name;
     await new DAOrestaurant().updateRestaurant(id,opens,closes,cprice,restaurantpic,type);
     res.redirect("/admin");
 });
@@ -584,8 +610,20 @@ router.post("/deleterestaurant/:id",checkNotAuthenticated,checkIfAdmin, async (r
 	let {u_id} = req.body;
 	let {foodname} = req.body;
 	let {price} = req.body;
-	let {foodpic} = req.body;
-	await new DAOfood().createFood(u_id,foodname,price,foodpic);
+	let path = "./public/Kepek/";
+	let file = req.files.foodpic;
+	let extension="."+file.name.split(".")[file.name.split(".").length-1];
+	filename = u_id+foodname+extension;
+	file.name = filename;
+	 file.mv(path+"/"+file.name,(err)=>{
+		 if(err){
+			 console.log(err);
+		 }
+		 else{
+			 console.log("Feltöltve: "+file.name);
+		 }
+	 });
+	await new DAOfood().createFood(u_id,foodname,price,file.name);
 	return res.redirect('/admin')
 });
   
@@ -600,9 +638,21 @@ router.post("/updatefood/:id",checkNotAuthenticated,checkIfAdmin, async (req, re
     let {u_id} = req.body;
 	let {foodname} = req.body;
 	let {price} = req.body;
-	let {foodpic} = req.body;
-    await new DAOfood().updateFood(id,foodname,price,foodpic);
-    res.redirect("/admin");
+	let path = "./public/Kepek/";
+	let file = req.files.foodpic;
+	let extension="."+file.name.split(".")[file.name.split(".").length-1];
+	filename = u_id+foodname+extension;
+	file.name = filename;
+	file.mv(path+"/"+file.name,(err)=>{
+		if(err){
+			console.log(err);
+		}
+		else{
+			console.log("Feltöltve: "+file.name);
+		}
+	});
+	await new DAOfood().createFood(u_id,foodname,price,file.name);
+	return res.redirect('/admin')
 });
   
 router.post("/deletefood/:id",checkNotAuthenticated,checkIfAdmin, async (req, res) => {

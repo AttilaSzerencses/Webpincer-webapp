@@ -27,7 +27,10 @@
 <body>
 <div>
     <h2>Edit Food</h2>
-    <form action="/updatefood/<%= model.id %>" method="post">
+    <form action="/updatefood/<%= model.id %>" enctype="multipart/form-data" method="post">
+        <label>Uid:
+            <input type="text" name="u_id" id="u_id" value="<%= model.u_id %>"></input>
+        </label>
         <label>Foodname:
             <input type="text" name="foodname" id="foodname" value="<%= model.foodname %>"></input>
         </label>
@@ -35,7 +38,7 @@
             <input type="text" name="price" id="price" value="<%= model.price %>"></input>
         </label>
         <label>Food picture:
-            <input type="text" name="foodpic" id="foodpic" value="<%= model.foodpic %>"></input>
+            <input type="file" name="foodpic" id="foodpic" value="<%= model.foodpic %>"></input>
         </label>
         <input type="submit" value="Submit" class="btn-sm btn-dark details"></input>
     </form>
