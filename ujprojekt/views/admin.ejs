@@ -19,10 +19,9 @@ th,td{
 }
 </style>
 </head>
-
-<%- include('header.ejs', {authUser:authUser}) %>
-
   <body>
+<%- include('header.ejs', {authUser:authUser}) %>
+<%if(messages.error){%><%=messages.error%><%}%>
     <div>
       <h2>Current Users</h2>
       <table>

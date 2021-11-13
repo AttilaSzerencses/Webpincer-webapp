@@ -11,7 +11,7 @@
 </head>
 <body>
 <%- include("header.ejs", {authUser:authUser}) %>
-
+<%if(messages.error){%><%=messages.error%><%}%>
 <form action="/editprofilPassword" method="post">
     <div class="form-horizontal">
         <label>Password:
@@ -77,7 +77,6 @@
         </label>
         <input type="submit" value="Submit" class="btn-sm btn-dark details"></input>
     </form>
-	
 	<form action="/editprofilFood" enctype="multipart/form-data" method="post">
         <div class="form-horizontal">
           <label>Foodname:

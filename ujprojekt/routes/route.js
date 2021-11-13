@@ -250,9 +250,6 @@ router.get("/kereses", async (req,res) => {
 	for(const restaurant of restaurants){
 		locations.push(await new DAOlocation().getLocationByUID(restaurant.u_id));
 	}
-	console.log(restaurants);
-	console.log(users);
-	console.log(locations);
 	res.render('kereses',
 	{
 		authUser:req.user,	
@@ -407,20 +404,31 @@ router.post("/editprofilRestaurant",checkNotAuthenticated, async (req, res) => {
 	let {opens} = req.body;
 	let {closes} = req.body;
 	let {cprice} = req.body;
-	let path="./public/Kepek/etteremkepek";
-	let file=req.files.restaurantpic;
-	let extension="."+file.name.split(".")[file.name.split(".").length-1];
-	filename=req.user.id+extension;
-	file.name=filename;
-	file.mv(path+"/"+file.name,(err)=>{
-		if(err){
-			console.log(err);
-		}
-		else{
-			console.log("Feltöltve: "+file.name);
-		}
-	});
-	let restaurantpic = file.name;
+	let restaurantpic;
+	if(opens==="" || closes==="" || cprice===""){
+		req.flash("error","Nem töltöttél ki minden adatot ");
+		return res.redirect("/editprofil");
+	}
+	if(req.files===null){
+		let restaurant=await new DAOrestaurant().getRestaurantByUID(id);
+		restaurantpic=restaurant.restaurantpic;
+	}
+	else{
+		let path="./public/Kepek/etteremkepek";
+		let file=req.files.restaurantpic;
+		let extension="."+file.name.split(".")[file.name.split(".").length-1];
+		filename=req.user.id+extension;
+		file.name=filename;
+		file.mv(path+"/"+file.name,(err)=>{
+			if(err){
+				console.log(err);
+			}
+			else{
+				console.log("Feltöltve: "+file.name);
+			}
+		});
+		restaurantpic = file.name;
+	}
 	let {type} = req.body;
     await new DAOrestaurant().updateRestaurantByUID(id,opens,closes,cprice,restaurantpic,type);
     res.redirect("/editprofil");
@@ -430,6 +438,10 @@ router.post("/editprofilFood",checkNotAuthenticated, async (req, res) => {
 	let id = req.user.id;
 	let {foodname} = req.body;
 	let {price} = req.body;
+	if(req.files===null || foodname==="" || price===""){
+		req.flash("error","Nem töltöttél ki minden adatot ");
+		return res.redirect("/editprofil");
+	}
 	let path="./public/Kepek/";
 	let file=req.files.foodpic;
 	let extension="."+file.name.split(".")[file.name.split(".").length-1];
@@ -548,6 +560,10 @@ router.post("/addrestaurant",checkNotAuthenticated,checkIfAdmin, async (req, res
 	let {closes} = req.body;
 	let {cprice} = req.body;
 	let {type} = req.body;
+	if(opens==="" || u_id==="" || closes==="" || cprice==="" || type==="" || req.files===null){
+		req.flash("error","Nem töltöttél ki minden adatot ");
+		return res.redirect("/admin");
+	}
 	let path="./public/Kepek/etteremkepek";
 	let file=req.files.restaurantpic;
 	let extension="."+file.name.split(".")[file.name.split(".").length-1];
@@ -579,20 +595,31 @@ router.post("/updaterestaurant/:id",checkNotAuthenticated,checkIfAdmin, async (r
 	let {closes} = req.body;
 	let {cprice} = req.body;
 	let {type} = req.body;
-	let path="./public/Kepek/etteremkepek";
-	let file=req.files.restaurantpic;
-	let extension="."+file.name.split(".")[file.name.split(".").length-1];
-	filename=u_id+extension;
-	file.name=filename;
-	file.mv(path+"/"+file.name,(err)=>{
-		if(err){
-			console.log(err);
-		}
-		else{
-			console.log("Feltöltve: "+file.name);
-		}
-	});
-	let restaurantpic = file.name;
+	let restaurantpic;
+	if(opens==="" || u_id==="" || closes==="" || cprice==="" || type===""){
+		req.flash("error","Nem töltöttél ki minden adatot ");
+		return res.redirect("/admin");
+	}
+	if(req.files!==null){
+		let path="./public/Kepek/etteremkepek";
+		let file=req.files.restaurantpic;
+		let extension="."+file.name.split(".")[file.name.split(".").length-1];
+		filename=u_id+extension;
+		file.name=filename;
+		file.mv(path+"/"+file.name,(err)=>{
+			if(err){
+				console.log(err);
+			}
+			else{
+				console.log("Feltöltve: "+file.name);
+			}
+		});
+		restaurantpic = file.name;
+	}
+	else{
+		let restaurant=await new DAOrestaurant().getOneRestaurant(id);
+		restaurantpic=restaurant.restaurantpic;
+	}
     await new DAOrestaurant().updateRestaurant(id,opens,closes,cprice,restaurantpic,type);
     res.redirect("/admin");
 });
@@ -610,6 +637,10 @@ router.post("/deleterestaurant/:id",checkNotAuthenticated,checkIfAdmin, async (r
 	let {u_id} = req.body;
 	let {foodname} = req.body;
 	let {price} = req.body;
+	if(req.files===null || foodname==="" || price==="" || u_id===""){
+		req.flash("error","Nem töltöttél ki minden adatot ");
+		return res.redirect("/admin");
+	}
 	let path = "./public/Kepek/";
 	let file = req.files.foodpic;
 	let extension="."+file.name.split(".")[file.name.split(".").length-1];
@@ -638,20 +669,31 @@ router.post("/updatefood/:id",checkNotAuthenticated,checkIfAdmin, async (req, re
     let {u_id} = req.body;
 	let {foodname} = req.body;
 	let {price} = req.body;
-	let path = "./public/Kepek/";
-	let file = req.files.foodpic;
-	let extension="."+file.name.split(".")[file.name.split(".").length-1];
-	filename = u_id+foodname+extension;
-	file.name = filename;
-	file.mv(path+"/"+file.name,(err)=>{
-		if(err){
-			console.log(err);
-		}
-		else{
-			console.log("Feltöltve: "+file.name);
-		}
-	});
-	await new DAOfood().createFood(u_id,foodname,price,file.name);
+	let foodpic;
+	if(foodname==="" || price==="" || u_id===""){
+		req.flash("error","Nem töltöttél ki minden adatot ");
+		return res.redirect("/admin");
+	}
+	if(req.files!==null){
+		let path = "./public/Kepek/";
+		let file = req.files.foodpic;
+		let extension="."+file.name.split(".")[file.name.split(".").length-1];
+		filename = u_id+foodname+extension;
+		file.name = filename;
+		file.mv(path+"/"+file.name,(err)=>{
+			if(err){
+				console.log(err);
+			}
+			else{
+				console.log("Feltöltve: "+file.name);
+			}
+		});
+		foodpic=file.name;
+	}else{
+		let food=await new DAOfood().getOneFood(id);
+		foodpic=food.foodpic;
+	}
+	await new DAOfood().createFood(u_id,foodname,price,foodpic);
 	return res.redirect('/admin')
 });
   
@@ -693,7 +735,6 @@ router.post("/updateorder/:id",checkNotAuthenticated,checkIfAdmin, async (req, r
   
 router.post("/deleteorder/:id",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
     let id = req.params.id;
-	console.log(id);
     await  new DAOorder().deleteOrder(id);
     res.redirect("/admin");
   });
