@@ -80,31 +80,31 @@
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
         <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
             <!--<svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>-->
-            <img class="bi me-2" src="Kepek/logo.png">
+            <img class="bi me-2" src="Kepek/logo.png" style="width: 200px">
             <!--<span class="fs-4">Simple header</span>-->
         </a>
 
         <ul class="nav nav-pills">
-            <li class="nav-item"><a class="nav-link" href="/" ><i class="fas fa-home"></i>Kezdőlap</a></li>
+            <li class="nav-item"><a class="nav-link" href="/" ><i class="fas fa-home fa-2x"></i>Kezdőlap</a></li>
             <%if (authUser===undefined){ %>
-                <li class="nav-item"><a class="nav-link" href="/login" ><i class="fas fa-user"></i>Profil</a></li>
-                <li class="nav-item"><a class="nav-link" href="/kereses" ><i class="fas fa-search"></i>Éttermek</a></li>
+                <li class="nav-item"><a class="nav-link" href="/login" ><i class="fas fa-2x fa-user"></i>Profil</a></li>
+                <li class="nav-item"><a class="nav-link" href="/kereses" ><i class="fas fa-2x fa-search"></i>Éttermek</a></li>
             <%}
             else{%>
-            <li class="nav-item"><a class="nav-link" href="/dashboard" ><i class="fas fa-user"></i>Profil</a></li>
+            <li class="nav-item"><a class="nav-link" href="/dashboard" ><i class="fas fa-2x fa-user"></i>Profil</a></li>
             <%if (authUser.permission!=="r"){%>
-                <li class="nav-item"><a class="nav-link" href="/kereses" ><i class="fas fa-search"></i>Éttermek</a></li>
+                <li class="nav-item"><a class="nav-link" href="/kereses" ><i class="fas fa-2x fa-search"></i>Éttermek</a></li>
             <%}%>
             <%if (authUser.permission==="a"){%>
-                <li class="nav-item"><a class="nav-link" href="/admin" ><i class="fas fa-crown"></i>Admin</a></li>
+                <li class="nav-item"><a class="nav-link" href="/admin" ><i class="fas fa-2x fa-crown"></i>Admin</a></li>
             <%}%>
             <%if (authUser.permission==="c"){%>
-                <li class="nav-item"><a class="nav-link" href="/courier" ><i class="fas fa-utensils"></i>Rendelések</a></li>
+                <li class="nav-item"><a class="nav-link" href="/courier" ><i class="fas fa-2x fa-utensils"></i>Rendelések</a></li>
             <%}%>
             <%if (authUser.permission==="r"){%>
-                <li class="nav-item"><a class="nav-link" href="/restaurantorder" ><i class="fas fa-utensils"></i>Rendelések</a></li>
+                <li class="nav-item"><a class="nav-link" href="/restaurantorder" ><i class="fas fa-2x fa-utensils"></i>Rendelések</a></li>
             <%}%>
-            <li class="nav-item"><a class="nav-link" href="/logout" ><i class="fas fa-sign-out-alt"></i>Kijelentkezés</a></li>
+            <li class="nav-item"><a class="nav-link" href="/logout" ><i class="fas fa-2x fa-sign-out-alt"></i>Kijelentkezés</a></li>
             <%}%>
         </ul>
     </header>
