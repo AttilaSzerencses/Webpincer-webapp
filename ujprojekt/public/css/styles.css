@@ -1,25 +1,31 @@
 p {
-	color: #e47c4c;
+    color: #e47c4c;
 }
-nav{
+
+nav {
     background-color: #f39f86;
     background-image: linear-gradient(315deg, #f39f86 0%, #f9d976 74%);
 }
-.btn-group{
+
+.btn-group {
     padding-bottom: 40px;
     padding-top: 40px;
 }
-i{
+
+i {
     color: #f39f86;
     font-size: 50px;
-    padding-right: 10px!important;
+    padding-right: 10px !important;
 }
-.navbar-brand{
-    padding-right: 90px!important;
+
+.navbar-brand {
+    padding-right: 90px !important;
 }
-*{
+
+* {
     font-family: 'Roboto Mono', monospace;
 }
+
 .container {
     position: relative;
     width: 30%;
@@ -38,7 +44,7 @@ i{
     left: 36%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    background-color: #f39f86!important;
+    background-color: #f39f86 !important;
     color: white;
     font-size: 16px;
     padding: 12px 24px;
@@ -48,149 +54,230 @@ i{
 }
 
 .container .btn:hover {
-    background-color: #e47c4c!important;
+    background-color: #e47c4c !important;
 }
-.cim{
+
+.cim {
     font-family: 'Abril Fatface', cursive;
     text-align: center;
     font-size: 60px;
-    color: #e47c4c!important;
+    color: #e47c4c !important;
 }
-a{
-    color: #e47c4c!important;
+
+a {
+    color: #e47c4c !important;
     font-size: 25px;
 }
 
-.menu{
-	color: #e47c4c;
-	font-weight: bold;
-	text-align: center;
-	width: 80%;
-	
+.menu {
+    color: #e47c4c;
+    font-weight: bold;
+    text-align: center;
+    width: 80%;
+
 }
-h1{
-	color: #e47c4c;
-	font-weight: bold;
-	
+
+h1 {
+    color: #e47c4c;
+    font-weight: bold;
+
 }
-h2{
-	color: #e47c4c;
-	font-weight: bold;
-	margin-left: 10%;
+
+h2 {
+    color: #e47c4c;
+    font-weight: bold;
+    margin-left: 10%;
 }
-h3{
+
+h3 {
     color: #f89f38;
     font-weight: bold;
     margin-left: 10%;
 }
-h4{
+
+h4 {
     color: #f89f38;
     font-weight: bold;
 
 }
-.icon{
-	width: 20%;
+
+.icon {
+    width: 20%;
 }
-.borito{
-	 display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
+
+.borito {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
 }
-html,body {
-    margin:0;
-    padding:0;
+
+html, body {
+    margin: 0;
+    padding: 0;
 }
-.inputbox{
-	width: 50%;
-	color: #e47c4c;
-	font-weight: bold;
-	margin-left: auto;
-  margin-right: auto;
-	
+
+.inputbox {
+    width: 50%;
+    color: #e47c4c;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+
 }
+
 .center {
-  margin: auto;
-  width: 50%;
-  text-align:center;
-  padding: 10px;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    padding: 10px;
 }
-.ajanlat{
-	display: block;
-	margin-left: auto;
+
+.ajanlat {
+    display: block;
+    margin-left: auto;
     margin-right: auto;
 }
-.loginalap{
+
+.loginalap {
     border-style: outset;
     width: 30%;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
 }
-.box{
-	color: #e47c4c;
-	border-style: outset;
-	width: 30%;
-	margin-left: auto;
+
+.box {
+    color: #e47c4c;
+    border-style: outset;
+    width: 30%;
+    margin-left: auto;
     margin-right: auto;
-	font-weight: bold;
-	text-align: center;
-}
-input[type=text],input[type=number],input[type=password],input[type=email], select {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+    font-weight: bold;
+    text-align: center;
 }
 
-button:hover,input[type=submit]:hover {
-  background-color: #e47c4c;
+input[type=text], input[type=number], input[type=password], input[type=email], select {
+
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
-.logintable{
-	color: #e47c4c;
-	margin-left: auto;
+textarea {
+    resize: none;
+    max-height: 200px;
+    height: 200px;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+}
+
+button:hover, input[type=submit]:hover {
+    background-color: #e47c4c;
+}
+
+.logintable {
+    color: #e47c4c;
+    margin-left: auto;
     margin-right: auto;
-	font-weight: bold;
-	text-align: center;
-	width: 80%;
+    font-weight: bold;
+    text-align: center;
+    width: 80%;
 }
-#postcode{
-	width:30%;
+
+#postcode {
+    width: 30%;
 }
-#cityname{
-	width:70%;
+
+#cityname {
+    width: 70%;
 }
-#street{
-	width:50%;
+
+#street {
+    width: 50%;
 }
-#streetnumber{
-	width:20%;
+
+#streetnumber {
+    width: 20%;
 }
-#other{
-	width:30%;
+
+#other {
+    width: 30%;
 }
-.bigpage{
-    width:80%;
+
+.bigpage {
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
     font-weight: bold;
     text-align: center;
     background: rgb(217, 102, 53);
-    color:white;
+    color: white;
     font-weight: bold;
 }
-.bigprofilkep{
-    width:250px;
+
+.bigprofilkep {
+    width: 250px;
     float: left;
 }
-.left{
+
+.left {
     float: left;
-    padding-left: 8%;
+    padding-left: 10%;
+    padding-right: 10%;
+    max-width: 50%;
+    min-width: 40%;
+    text-align: center;
+    border-right: 6px solid rgb(217, 102, 53);
+
+
 }
-.right{
+
+.right {
     float: right;
-    padding-right: 8%;
+    padding-right: 10%;
+    max-width: 50%;
+    padding-left: 10%;
+
+}
+
+#sender_name {
+    width: 48%;
+    float: left;
+}
+
+#sender_email {
+    width: 48%;
+    float: right;
+}
+
+#sender_phonenumber {
+    width: 48%;
+    float: left;
+}
+
+#sender_subject {
+    width: 48%;
+    float: right;
+}
+
+#sender_text {
+
+}
+
+footer {
+    clear: both;
+    position: relative;
+    height: 10%;
+    margin-top: 0%;
+    bottom: 0;
 }
