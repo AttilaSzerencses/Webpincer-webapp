@@ -38,7 +38,7 @@ i {
 }
 
 /* Style the button and place it in the middle of the container/image */
-.container .btn {
+.container   .btn {
     position: absolute;
     top: 70%;
     left: 36%;

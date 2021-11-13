@@ -21,6 +21,7 @@
     </div>
 </div>
 
+<!-- BERNI KODJA
 <div class="row row-cols-1 row-cols-md-2 "   style="max-width: 1600px; padding-left: 350px;">
     <%
     for(let i=0;i<users.length;i++){%>
@@ -35,6 +36,7 @@
                         <h5 class="card-title"> <%=users[i].name%></h5>
                         <p class="card-text">Nyitvatartás: <%=restaurants[i].opens%> - <%=restaurants[i].closes%></p>
                         <small class="text-muted">Szállítási költség: <%=restaurants[i].cprice%> ft</small>
+                        <br>
                         <form action="/restaurant" method="post">
                             <input type="hidden" name="u_id" value="<%=users[i].id%>">
                             <input class="btn btn-warning" type="submit" value="Megnéz">
@@ -46,6 +48,41 @@
     </div>
     <%}%>
 </div>
+-->
+
+
+
+
+<div class="album py-5 bg-light">
+    <div class="container">
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <%for(let i=0;i<users.length;i++){%>
+            <div class="col">
+                <div class="card shadow-sm" style="margin: 10px 0px 10px 0px">
+                    <img src="./Kepek/etteremkepek/<%=restaurants[i].restaurantpic%>" class="card-img-top rounded mx-auto d-block" style="max-height: 200px" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"> <%=users[i].name%></h5>
+                        <p class="card-text">Nyitvatartás: <%=restaurants[i].opens%> - <%=restaurants[i].closes%></p>
+                        <small class="text-muted">Szállítási költség: <%=restaurants[i].cprice%> ft</small>
+                        <br>
+                        <form action="/restaurant" method="post">
+                            <input type="hidden" name="u_id" value="<%=users[i].id%>">
+                            <button class="btn-warning" style="border: none;color: white;  padding: 15px 32px;  text-align: center; text-decoration: none; display: inline-block; font-size: 16px; border-radius: 8px;" type="submit">Megnéz</button>
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+            <%}%>
+        </div>
+    </div>
+</div>
+
+</main>
+
+
 
 
 <footer>
