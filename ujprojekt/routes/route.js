@@ -1,6 +1,7 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
 const session = require("express-session");
+const upload = require("express-fileupload");
 const flash = require("express-flash");
 const  pool  = require("../config/dbConfig");
 const router = express.Router();
@@ -13,11 +14,23 @@ const DAOfood = require('../dao/food-dao');
 const DAOlocation = require('../dao/location-dao');
 const DAOorder = require('../dao/order-dao');
 const email = require('./email');
-
+const fs = require('fs');
 
 router.get("/", (req, res) => {
 	res.render("index",{
 		authUser:req.user
+	});
+});
+
+router.get("/editprofil",checkNotAuthenticated, async(req, res) => {
+	let user=await new DAOuser().getOneUser(req.user.id);
+	let location=await new DAOlocation().getLocationByUID(req.user.id);
+	let restaurant=await new DAOrestaurant().getRestaurantByUID(req.user.id);
+	res.render("editprofil",{
+		authUser:req.user,
+		user:user,
+		location:location,
+		restaurant:restaurant
 	});
 });
 
@@ -40,11 +53,6 @@ router.post("/restaurant", checkNotAuthenticated ,async(req,res)=>{
 	});
 });
 
-router.get("/header", (req, res) => {
-	res.render("header",{
-		authUser:req.user
-	});
-});
 
 router.post("/order",checkNotAuthenticated,async(req,res)=>{
 	let order=await new DAOfood().getOneFood(req.body.ham);
@@ -300,6 +308,8 @@ router.post("/login",passport.authenticate("local", {
 	})
 );
 
+
+
 function checkAuthenticated(req, res, next) {
 	if (req.isAuthenticated()) {
 		return res.render("/dashboard",{authUser:req.user});
@@ -329,10 +339,7 @@ function checkIfRestaurant(req,res,next){
 }
 
 function checkUserEditSelf(req,res,next){
-	if(req.user.permission==='a'){
-		return next()
-	}
-	if(req.user.id===req.params.id){
+	if(req.user.id===req.body.id || req.user.id===req.body.u_id){
 		return next();
 	}
 	res.send("No permission granted");
@@ -346,6 +353,90 @@ function checkNotAuthenticated(req, res, next) {
 	authUser:req.user
 	});
 }
+
+//SelfEdit
+
+
+
+router.post("/editprofilUser",checkNotAuthenticated, async (req, res) => {
+    let id = req.user.id;
+	let {email} = req.body;
+	let {name} = req.body;
+	let {phone} = req.body;
+    await new DAOuser().updateUser(id, name, email, req.user.permission, phone);
+    res.redirect("/editprofil");
+});
+router.post("/editprofilPassword",checkNotAuthenticated, async (req, res) => {
+    let id = req.user.id;
+	let pw = await bcrypt.hash(req.body.password, 10);
+    await new DAOuser().updateUserPassword(id, pw);
+    res.redirect("/editprofil");
+});
+
+router.post("/editprofilLocation",checkNotAuthenticated, async (req, res) => {
+    let id = req.user.id;
+	let {postcode} = req.body;
+	let {city} = req.body;
+	let {street} = req.body;
+	let {streetnumber} = req.body;
+	let {other} = req.body;
+    await new DAOlocation().updateLocationByUID(id,postcode,city,street,streetnumber,other);
+    res.redirect("/editprofil");
+});
+router.post("/editprofilRestaurant",checkNotAuthenticated, async (req, res) => {
+    let id = req.user.id;
+	let {opens} = req.body;
+	let {closes} = req.body;
+	let {cprice} = req.body;
+	let path="./public/Kepek/etteremkepek";
+	let file=req.files.restaurantpic;
+	let extension="."+file.name.split(".")[file.name.split(".").length-1];
+	filename=req.user.id+extension;
+	file.name=filename;
+	file.mv(path+"/"+file.name,(err)=>{
+		if(err){
+			console.log(err);
+		}
+		else{
+			console.log("Feltöltve: "+file.name);
+		}
+	});
+	let restaurantpic = file.name;
+	let {type} = req.body;
+    await new DAOrestaurant().updateRestaurantByUID(id,opens,closes,cprice,restaurantpic,type);
+    res.redirect("/editprofil");
+});
+
+router.post("/editprofilFood",checkNotAuthenticated, async (req, res) => {
+	let id = req.user.id;
+	let {foodname} = req.body;
+	let {price} = req.body;
+	let path="./public/Kepek/";
+	let file=req.files.foodpic;
+	let extension="."+file.name.split(".")[file.name.split(".").length-1];
+	filename=req.user.id+foodname+extension;
+	file.name=filename;
+	file.mv(path+"/"+file.name,(err)=>{
+		if(err){
+			console.log(err);
+		}
+		else{
+			console.log("Feltöltve: "+file.name);
+		}
+	});
+	await new DAOfood().createFood(id,foodname,price,file.name);
+	return res.redirect('/editprofil');
+	});
+
+
+
+
+
+
+
+
+
+
 
 
 //USER
@@ -395,7 +486,6 @@ router.post("/addlocation",checkNotAuthenticated,checkIfAdmin, async (req, res) 
 	let {city} = req.body;
 	let {street} = req.body;
 	let {streetnumber} = req.body;
-	let {phone} = req.body;
 	let {other} = req.body;
 	await new DAOlocation().createLocation(u_id,postcode,city,street,streetnumber,other);
 	return res.redirect('/admin')
@@ -413,7 +503,6 @@ router.post("/updatelocation/:id",checkNotAuthenticated,checkIfAdmin, async (req
 	let {city} = req.body;
 	let {street} = req.body;
 	let {streetnumber} = req.body;
-	let {phone} = req.body;
 	let {other} = req.body;
     await new DAOlocation().updateLocation(id,postcode,city,street,streetnumber,other);
     res.redirect("/admin");

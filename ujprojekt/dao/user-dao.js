@@ -31,6 +31,11 @@ class UserDAO {
         .catch(console.log);
         return;
     };
+	async updateUserPassword(id, password){
+        await db.query(`UPDATE USERS SET password=$1 WHERE id = $2`,[password,id])
+        .catch(console.log);
+        return;
+    };
 
     async getUserByEmail(email){
         let result = await db.query('SELECT * FROM USERS WHERE email = $1',[email])

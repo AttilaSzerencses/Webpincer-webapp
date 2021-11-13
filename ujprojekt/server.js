@@ -2,12 +2,14 @@ const express = require('express');
 const route = require('./routes/route');
 const session = require("express-session");
 const flash = require("express-flash");
+const upload = require("express-fileupload");	
 const passport = require("passport");
 
 const initializePassport = require("./config/passportConfig");
 initializePassport(passport);
 
 const app = express();
+app.use(upload());
 const bodyParser = require('body-parser')
 app.use(bodyParser.json())
 const { pool } = require("./config/dbConfig");

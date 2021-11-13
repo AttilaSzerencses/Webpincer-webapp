@@ -10,18 +10,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
-<%- include('header.ejs', {authUser:authUser}) %>
+<%- include("header.ejs", {authUser:authUser}) %>
 
-<form action="/updateuser" method="post">
+<form action="/editprofilPassword" method="post">
+    <div class="form-horizontal">
+        <label>Password:
+            <input type="password" name="password" id="password"></input>
+        </label>
+		<input type="submit" value="Submit" class="btn-sm btn-dark details"></input>
+	</div>
+</form>
+
+<form action="/editprofilUser" method="post">
     <div class="form-horizontal">
         <label>Name:
             <input type="text" name="name" id="name" value="<%=user.name%>"></input>
         </label>
         <label>Email:
             <input type="text" name="email" id="email" value="<%=user.email%>"></input>
-        </label>
-        <label>Password:
-            <input type="text" name="password" id="password"></input>
         </label>
         <label>Phone:
             <input type="text" name="phone" id="phone" value="<%=user.phone%>"></input>
@@ -33,7 +39,7 @@
 </form>
 
 <h2>Edit Location</h2>
-<form action="ROOT" method="post">
+<form action="/editprofilLocation" method="post">
     <label>Postcode:
         <input type="text" name="postcode" id="postcode" value="<%= location.postcode %>"></input>
     </label>
@@ -53,7 +59,7 @@
 </form>
 
 <% if (authUser.permission === "r") {%>
-    <form action="ROOT" method="post">
+    <form action="/editprofilRestaurant" enctype="multipart/form-data" method="post">
         <label>Opens:
             <input type="text" name="opens" id="opens" value="<%= restaurant.opens %>"></input>
         </label>
@@ -64,13 +70,30 @@
             <input type="text" name="cprice" id="cprice" value="<%= restaurant.cprice %>"></input>
         </label>
         <label>Restaurant picture:
-            <input type="text" name="restaurantpic" id="restaurantpic" value="<%= restaurant.restaurantpic %>"></input>
+            <input type="file" name="restaurantpic" id="restaurantpic" value="<%= restaurant.restaurantpic %>"></input>
         </label>
         <label>Type:
             <input type="text" name="type" id="type" value="<%= restaurant.type %>"></input>
         </label>
         <input type="submit" value="Submit" class="btn-sm btn-dark details"></input>
     </form>
+	
+	<form action="/editprofilFood" enctype="multipart/form-data" method="post">
+        <div class="form-horizontal">
+          <label>Foodname:
+            <input type="text" name="foodname" id="foodname"></input>
+          </label>
+          <label>Price:
+            <input type="text" name="price" id="price"></input>
+          </label>
+          <label>Foodpic:
+            <input type="file" name="foodpic" id="foodpic"></input>
+          </label>
+
+          <input type="submit" value="Submit" class="btn-sm btn-dark details"></input>
+
+        </div>
+      </form>
 
 <%}%>
 

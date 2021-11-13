@@ -32,6 +32,13 @@ class LocationDAO {
 
         return;
     };
+	
+	async updateLocationByUID(id, postcode, city, street, streetnumber, other){
+        await db.query(`UPDATE LOCATIONS SET postcode = $1, city=$2, street=$3, streetnumber=$4, other=$5  WHERE u_id = $6`,[parseInt(postcode), city, street, parseInt(streetnumber), other ,parseInt(id)])
+        .catch(console.log);
+
+        return;
+    };
 
     async deleteLocation(id){
         await db.query(`DELETE FROM LOCATIONS WHERE id=$1`,[parseInt(id)])

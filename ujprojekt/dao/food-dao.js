@@ -32,6 +32,13 @@ class FoodDAO {
 
         return;
     };
+	
+	async updateFoodByUID(id ,foodname, price, foodpic){
+        await db.query(`UPDATE FOODS SET foodname= $1, price= $2, foodpic= $3 WHERE u_id = $4`,[foodname, price, foodpic, parseInt(id)])
+        .catch(console.log);
+
+        return;
+    };
 
     async deleteFood(id){
         await db.query(`DELETE FROM FOODS WHERE id=$1`,[parseInt(id)])
