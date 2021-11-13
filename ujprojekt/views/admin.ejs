@@ -391,6 +391,7 @@ th,td{
           <th>sumprice</th>
           <th>cdone</th>
           <th>rdone</th>
+          <th>date</th>
         </tr>
         </thead>
         <tbody>
@@ -403,6 +404,7 @@ th,td{
             <td><%= order.sumprice %></td>
             <td><%= order.cdone %></td>
             <td><%= order.rdone %></td>
+            <td><%= order.date %></td>
             <td><a  href="/editorder/<%= order.id %>">Update</a></td>
             <td><button data-toggle="modal" data-target="#modal-toTrashOrder<%= order.id %>" class="btn-sm btn-dark details">Delete
                 <span class="glyphicon glyphicon-trash" data-toggle="tooltip"
@@ -462,6 +464,9 @@ th,td{
           </label>
           <label>Restaurant done:
             <input type="text" name="rdone" id="rdone"></input>
+          </label>
+          <label>Date:
+            <input type="date" name="date" id="date"></input>
           </label>
 
           <input type="submit" value="Submit" class="btn-sm btn-dark details"></input>

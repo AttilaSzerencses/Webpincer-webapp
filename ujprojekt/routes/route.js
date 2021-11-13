@@ -16,6 +16,35 @@ const DAOorder = require('../dao/order-dao');
 const email = require('./email');
 const fs = require('fs');
 
+function datum() {
+	function datum() {
+		var currentdate = new Date();
+		let hour = "";
+		let min = "";
+		let mp = "";
+		if (parseInt(currentdate.getHours()) < 10){
+			hour = "0" + currentdate.getHours();
+		} else{
+			hour = "" + currentdate.getHours();
+		}
+		if (parseInt(currentdate.getMinutes()) < 10){
+			min = "0" + currentdate.getMinutes();
+		} else{
+			min = "" + currentdate.getMinutes();
+		}
+		if (parseInt(currentdate.getSeconds()) < 10){
+			mp = "0" + currentdate.getSeconds();
+		} else{
+			mp = ""+currentdate.getSeconds();
+		}
+		var datetime = currentdate.getFullYear() + "-"
+			+ (currentdate.getMonth()+1) + "-"
+			+ currentdate.getDate() + " "
+			+ hour + ":" + min + ":" + mp
+		return datetime;
+	}
+}
+
 router.get("/", (req, res) => {
 	res.render("index",{
 		authUser:req.user
@@ -75,7 +104,8 @@ router.post("/order",checkNotAuthenticated,async(req,res)=>{
 router.post("/ordered",checkNotAuthenticated,async(req,res)=>{
 	let food=await new DAOfood().getOneFood(req.body.fid);
 	let restaurant=await new DAOrestaurant().getRestaurantByUID(food.u_id);
-	await new DAOorder().createOrder(parseInt(req.user.id),parseInt(food.id),60,parseInt(restaurant.cprice)+parseInt(food.price),"process","process");
+
+	await new DAOorder().createOrder(parseInt(req.user.id),parseInt(food.id),60,parseInt(restaurant.cprice)+parseInt(food.price),"process","process", datum() );
 	let data={
 		name: food.foodname,
 		price: parseInt(restaurant.cprice)+parseInt(food.price)
@@ -155,7 +185,7 @@ router.get("/rendelesed",checkNotAuthenticated, checkIfUserOrCourier, async (req
 
 router.post("/courierShip" , checkNotAuthenticated, checkIfCourier, async (req,res) => {
 	let order = await new DAOorder().getOneOrder(req.body.order_id);
-	await new DAOorder().updateOrder(order.id,order.ordertime,order.sumprice,req.user.id+"",order.rdone);
+	await new DAOorder().updateOrder(order.id,order.ordertime,order.sumprice,req.user.id+"",order.rdone, order.date);
 	let user = await new DAOuser().getOneUser(order.u_id);
 	let userLocation = await new DAOlocation().getLocationByUID(order.u_id);
 	let food = await new DAOfood().getOneFood(order.fid);
@@ -175,7 +205,7 @@ router.post("/courierShip" , checkNotAuthenticated, checkIfCourier, async (req,r
 
 router.post("/restaurantDone" , checkNotAuthenticated, checkIfRestaurant, async (req,res) => {
 	let order = await new DAOorder().getOneOrder(req.body.order_id);
-	await new DAOorder().updateOrder(order.id,order.ordertime,order.sumprice,order.cdone,"done");
+	await new DAOorder().updateOrder(order.id,order.ordertime,order.sumprice,order.cdone,"done", order.date);
 	let users = await new DAOuser().getUsers();
 	let orders = await new DAOorder().getOrders();
 	let foods = await new DAOfood().getFoods();
@@ -202,7 +232,7 @@ router.get("/restaurantorder",checkNotAuthenticated,checkIfRestaurant, async (re
 
 router.post("/courierDone" , checkNotAuthenticated, checkIfCourier, async (req,res) => {
 	let order = await new DAOorder().getOneOrder(req.body.order_id);
-	await new DAOorder().updateOrder(order.id,order.ordertime,order.sumprice,"done",order.rdone);
+	await new DAOorder().updateOrder(order.id,order.ordertime,order.sumprice,"done",order.rdone,order.date);
 	let users = await new DAOuser().getUsers();
 	let locations = await new DAOlocation().getLocations();
 	let restaurants = await new DAOrestaurant().getRestaurants();
@@ -729,11 +759,12 @@ router.post("/addorder",checkNotAuthenticated,checkIfAdmin, async (req, res) => 
 	let {sumprice} = req.body;
 	let {cdone} = req.body;
 	let {rdone} = req.body;
-	if (u_id==="" || fid==="" || ordertime==="" || sumprice==="" || cdone==="" || rdone==="" ){
+	let {date} = req.body;
+	if (u_id==="" || fid==="" || ordertime==="" || sumprice==="" || cdone==="" || rdone==="" || date==="" ){
 		req.flash("error","Nem töltöttél ki minden adatot!")
 		res.redirect("/admin");
 	} else{
-		await new DAOorder().createOrder(u_id,fid,ordertime,sumprice,cdone,rdone);
+		await new DAOorder().createOrder(u_id,fid,ordertime,sumprice,cdone,rdone,date);
 		return res.redirect('/admin')
 	}
 });
@@ -750,7 +781,8 @@ router.post("/updateorder/:id",checkNotAuthenticated,checkIfAdmin, async (req, r
 	let {sumprice} = req.body;
 	let {cdone} = req.body;
 	let {rdone} = req.body;
-    await new DAOorder().updateOrder(id,ordertime,sumprice,cdone,rdone);
+	let {date} = req.body;
+    await new DAOorder().updateOrder(id,ordertime,sumprice,cdone,rdone,date);
     res.redirect("/admin");
 });
   

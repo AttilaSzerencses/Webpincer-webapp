@@ -14,14 +14,14 @@ class OrderDAO {
         return result.rows[0];
     };
 
-    async createOrder(uid, fid, ordertime, sumprice, cdone, rdone){
-        await db.query("INSERT INTO ORDERS(u_id, fid, ordertime, sumprice, cdone, rdone) VALUES ($1,$2,$3,$4,$5,$6)",[parseInt(uid), parseInt(fid), parseInt(ordertime), parseInt(sumprice), cdone, rdone])
+    async createOrder(uid, fid, ordertime, sumprice, cdone, rdone, date){
+        await db.query("INSERT INTO ORDERS(u_id, fid, ordertime, sumprice, cdone, rdone, date) VALUES ($1,$2,$3,$4,$5,$6,$7)",[parseInt(uid), parseInt(fid), parseInt(ordertime), parseInt(sumprice), cdone, rdone, date])
         .catch(console.log);
         return;        
     };
 
-    async updateOrder(id ,ordertime, sumprice, cdone, rdone){
-        await db.query(`UPDATE ORDERS SET ordertime= $1, sumprice= $2, cdone = $3, rdone = $4 WHERE id = $5`,[parseInt(ordertime), parseInt(sumprice), cdone, rdone, parseInt(id)])
+    async updateOrder(id ,ordertime, sumprice, cdone, rdone, date){
+        await db.query(`UPDATE ORDERS SET ordertime= $1, sumprice= $2, cdone = $3, rdone = $4, date = $5 WHERE id = $6 `,[parseInt(ordertime), parseInt(sumprice), cdone, rdone, date, parseInt(id)])
         .catch(console.log);
 
         return;
