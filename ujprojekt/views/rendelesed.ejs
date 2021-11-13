@@ -32,7 +32,7 @@ for(order of orders){
 				break;
 			}
 		}
-		%><p>Étterem: <%=restaurantUser.name%> | Étel: <%=orderedFood.foodname%> | Ár: <%=order.sumprice%> | Állapot: <% if(order.cdone==="done" && order.rdone==="done"){%>Átadva<%}else if(order.rdone==="done"){%>Kiszállítás alatt<%} else {%>Készítés alatt<%}%></p> 
+		%><p>Dátum:<%=order.date%> Étterem: <%=restaurantUser.name%> | Étel: <%=orderedFood.foodname%> | Ár: <%=order.sumprice%> | Állapot: <% if(order.cdone==="done" && order.rdone==="done"){%>Átadva<%}else if(order.rdone==="done"){%>Kiszállítás alatt<%} else {%>Készítés alatt<%}%></p>
 		<%
 	}
 }

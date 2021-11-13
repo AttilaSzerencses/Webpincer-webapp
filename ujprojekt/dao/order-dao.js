@@ -3,7 +3,7 @@ const db = require('../config/dbConfig');
 class OrderDAO {
 
     async getOrders(){
-        let results = await db.query(`SELECT * FROM ORDERS`).
+        let results = await db.query(`SELECT * FROM ORDERS ORDER BY date desc`).
         catch(console.log);
         return results.rows;
     };

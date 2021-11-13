@@ -17,7 +17,6 @@ const email = require('./email');
 const fs = require('fs');
 
 function datum() {
-	function datum() {
 		var currentdate = new Date();
 		let hour = "";
 		let min = "";
@@ -41,8 +40,7 @@ function datum() {
 			+ (currentdate.getMonth()+1) + "-"
 			+ currentdate.getDate() + " "
 			+ hour + ":" + min + ":" + mp
-		return datetime;
-	}
+	return datetime;
 }
 
 router.get("/", (req, res) => {
