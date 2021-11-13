@@ -186,3 +186,11 @@ button:hover,input[type=submit]:hover {
     width:250px;
     float: left;
 }
+.left{
+    float: left;
+    padding-left: 8%;
+}
+.right{
+    float: right;
+    padding-right: 8%;
+}
