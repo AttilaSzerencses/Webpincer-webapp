@@ -18,7 +18,7 @@ Megrendeled?<br>
 Honnan: <%=restaurantUser.name %><br>
 Location: <%=location.city%> <%=location.street%> <%=location.streetnumber%><br>
 Termék: <%=order.name%><br>
-Ár: <%=order.price+restaurant.cprice%><br>
+Ár: <%=order.price+restaurant.cprice%> FT<br>
 
 <form action="/ordered" method="post">
 <input type="hidden" value='<%=order.id%>' name='fid'>

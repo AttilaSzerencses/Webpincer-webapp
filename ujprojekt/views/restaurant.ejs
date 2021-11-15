@@ -33,7 +33,7 @@ for(const food of foods){%>
         <img src="Kepek/<%=food.foodpic%>" class="card-img-top rounded mx-auto d-block" alt="..." style="max-height: 250px; max-width: 250px; ">
             <div class="card-body">
                 <h5 class="card-title"><%=food.foodname%></h5>
-                <p class="card-text"><%=food.price%></p>
+                <p class="card-text"><%=food.price%> FT</p>
                 <form action="/order" method="post">
                     <input type="hidden" name="ham" value="<%=food.id%>">
                     <input class="btn btn-warning" type="submit" value="Rendeles">
