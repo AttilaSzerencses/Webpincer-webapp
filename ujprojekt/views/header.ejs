@@ -88,12 +88,12 @@
             <li class="nav-item"><a class="nav-link" href="/" ><i class="fas fa-home fa-2x"></i>Kezdőlap</a></li>
             <%if (authUser===undefined){ %>
                 <li class="nav-item"><a class="nav-link" href="/login" ><i class="fas fa-2x fa-user"></i>Profil</a></li>
-                <li class="nav-item"><a class="nav-link" href="/kereses" ><i class="fas fa-2x fa-search"></i>Éttermek</a></li>
+                <li class="nav-item"><a class="nav-link" href="/search" ><i class="fas fa-2x fa-search"></i>Éttermek</a></li>
             <%}
             else{%>
             <li class="nav-item"><a class="nav-link" href="/dashboard" ><i class="fas fa-2x fa-user"></i>Profil</a></li>
             <%if (authUser.permission!=="r"){%>
-                <li class="nav-item"><a class="nav-link" href="/kereses" ><i class="fas fa-2x fa-search"></i>Éttermek</a></li>
+                <li class="nav-item"><a class="nav-link" href="/search" ><i class="fas fa-2x fa-search"></i>Éttermek</a></li>
             <%}%>
             <%if (authUser.permission==="a"){%>
                 <li class="nav-item"><a class="nav-link" href="/admin" ><i class="fas fa-2x fa-crown"></i>Admin</a></li>

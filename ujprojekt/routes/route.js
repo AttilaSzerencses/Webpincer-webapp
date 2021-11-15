@@ -115,7 +115,7 @@ router.post("/ordered",checkNotAuthenticated,async(req,res)=>{
 
 router.post("/sendEmailToUs", async(req,res)=>{
 	await new email().sendMailKapcsolat(req.body.sender_name,req.body.sender_email,req.body.sender_phonenumber,req.body.sender_subject,req.body.sender_text);
-	return res.redirect("/kapcsolatok");
+	return res.redirect("/connections");
 });
 
 
@@ -261,7 +261,7 @@ router.get("/dashboard", checkNotAuthenticated, async (req, res) => {
 	{authUser: req.user});
 });
 
-router.get("/kereses", async (req,res) => {
+router.get("/search", async (req,res) => {
 	let users=await new DAOuser().getUsersByPermission("r");
 	users.sort((a,b)=>{
 		if(a.id>b.id){
@@ -284,7 +284,7 @@ router.get("/kereses", async (req,res) => {
 	for(const restaurant of restaurants){
 		locations.push(await new DAOlocation().getLocationByUID(restaurant.u_id));
 	}
-	return res.render('kereses',
+	return res.render('search',
 	{
 		authUser:req.user,	
 		users:users,
@@ -294,8 +294,8 @@ router.get("/kereses", async (req,res) => {
 });
 
 
-router.get("/kapcsolatok", (req,res) => {
-	return res.render("kapcsolatok",{authUser:req.user});
+router.get("/connections", (req,res) => {
+	return res.render("connections",{authUser:req.user});
 });
 
 router.get("/aszf", (req,res) => {
