@@ -42,6 +42,16 @@
         </label>
         <input type="submit" value="Submit" class="btn-sm btn-dark details"></input>
       </form>
+      <br>
+      <form action="/UpdateUserPassword/<%= model.id %>" method="post">
+        <h2>Password update:</h2>
+        <div class="form-horizontal">
+          <label>Password:
+            <input type="password" name="password" id="password"></input>
+          </label>
+          <input type="submit" value="Submit" class="btn-sm btn-dark details"></input>
+        </div>
+      </form>
     </div>
   </body>
 </html>

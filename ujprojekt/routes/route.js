@@ -63,6 +63,7 @@ router.get("/editprofil",checkNotAuthenticated, async(req, res) => {
 	});
 });
 
+
 router.post("/restaurant", checkNotAuthenticated ,async(req,res)=>{
 	let foods = await new DAOfood().getAllFoodFromRestaurant(req.body.u_id);
 	if(foods[0]===undefined){
@@ -533,6 +534,13 @@ router.get("/edituser/:id",checkNotAuthenticated,checkIfAdmin, async (req, res) 
     let user = await new DAOuser().getOneUser(id);
     res.render("update-user", { model: user });
   });
+
+router.post("/UpdateUserPassword/:id",checkNotAuthenticated, checkIfAdmin, async (req, res) => {
+	let id = req.params.id;
+	let pw = await bcrypt.hash(req.body.password, 10);
+	await new DAOuser().updateUserPassword(id, pw);
+	res.redirect("/admin");
+});
   
 router.post("/updateuser/:id",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
     let id = req.params.id;
@@ -543,6 +551,7 @@ router.post("/updateuser/:id",checkNotAuthenticated,checkIfAdmin, async (req, re
     await new DAOuser().updateUser(id, name, email, permission, phone);
     res.redirect("/admin");
 });
+
   
 router.post("/deleteuser/:id",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
     let id = req.params.id;
