@@ -1,6 +1,7 @@
 # Étel Projektterv 2021
 
 ## 1. Összefoglaló 
+https://etel-ib153i-13-2021.herokuapp.com/
 
 A Webpincér célja, hogy minél olcsóbban és minél gyorsabban tudjon az ügyfél választani az általa kedvelt éttermek és ételek közül. Ehhez egy online webalkalmazást készítünk amelyben éttermek széles választéka elérhető. Rengeteg étel és ital közül választhatnak a megrendelők. A weboldal biztosítja a megfelelő tájékoztatást a megrendelők számára. Információt biztosít az étel árakkal kapcsolatban, és a különböző szállítási költségekkel is.
 
