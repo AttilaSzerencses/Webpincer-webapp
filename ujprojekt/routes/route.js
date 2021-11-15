@@ -77,7 +77,7 @@ router.post("/restaurant", checkNotAuthenticated ,async(req,res)=>{
 	let restaurant = await new DAOrestaurant().getOneRestaurant(foods[0].u_id);
 	console.log(foods);
 	return res.render("restaurant",{
-		authUser:req.user,http://localhost:8080/Kepek/etteremkepek/39.png
+		authUser:req.user,
 		foods:foods,
 		user:user
 	});
