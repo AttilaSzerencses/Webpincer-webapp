@@ -283,17 +283,50 @@ footer {
 }
 
 #passwd {
-	margin-left: 20px
+	width: 400px;
+	padding: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
 }
 
 #secondsubmit {
-	margin-left: 20px
+	width: 400px;
+	padding: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
 }
 
 #thirdsubmit {
-	margin-left: 20px
+	width: 400px;
+	padding: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
 }
 
 #location {
 	margin-left: 20px
+}
+
+#postcode {
+	width: 80px;
+}
+
+#phone {
+	width: 150px;
+}
+
+#street {
+	width: 255px;
+}
+
+#streetnumber {
+	width: 90px;
+}
+
+#other {
+	width: 245px;
+}
+
+#secondsubmitbutton {
+	margin-left: 6px
 }
