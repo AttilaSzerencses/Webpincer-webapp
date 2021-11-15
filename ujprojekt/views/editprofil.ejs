@@ -30,11 +30,11 @@
         <label id = "email">E-mail:
             <input type="text" name="email" id="email" value="<%=user.email%>"></input>
         </label>
-        <label id = "phone">Telefonszám:
+        <label>Telefonszám:
             <input type="text" name="phone" id="phone" value="<%=user.phone%>"></input>
         </label>
 
-        <input type="submit" value="Submit" class="btn-sm btn-dark details"></input>
+        <input type="submit" value="Submit" class="btn-sm btn-dark details" id = "secondsubmitbutton"></input>
 
     </div>
 </form>
@@ -42,19 +42,19 @@
 <h2 id = "location">Lakcím változtatása</h2>
 <form action="/editprofilLocation" method="post">
 	<div class="form-horizontal" id = "thirdsubmit">
-		<label id = "postcode">Irányítószám:
+		<label>Irányítószám:
 			<input type="text" name="postcode" id="postcode" value="<%= location.postcode %>"></input>
 		</label>
-		<label id = "city">Város:
+		<label>Város:
 			<input type="text" name="city" id="city" value="<%= location.city %>"></input>
 		</label>
-		<label id = "street">Utca:
+		<label>Utca:
 			<input type="text" name="street" id="street" value="<%= location.street %>"></input>
 		</label>
-		<label id = "snumber">Házszám:
+		<label>Házszám:
 			<input type="text" name="streetnumber" id="streetnumber" value="<%= location.streetnumber %>"></input>
 		</label>
-		<label id = "other">Egyéb:
+		<label>Egyéb:
 			<input type="text" name="other" id="other" value="<%= location.other %>"></input>
 		</label>
 		<input type="submit" value="Submit" class="btn-sm btn-dark details"></input>
