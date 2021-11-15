@@ -18,7 +18,14 @@
 <div class="row row-cols-1 row-cols-md-3 g-4">
 
 <% if(foods[0]===undefined){
-%>	<p>Sajnos nincs jelenleg kínálata az étteremnek keress máshol ételt</p>
+%>	
+<div class="col">
+    <div class="card">
+		<div class="card-body">
+		<p>Sajnos nincs jelenleg kínálata az étteremnek keress máshol ételt</p>
+		</div>
+    </div>
+</div>
 <%}
 for(const food of foods){%>
     <div class="col">
