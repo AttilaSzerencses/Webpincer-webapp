@@ -9,11 +9,11 @@ INSERT INTO public.users (id, permission, name, email, password, phone) VALUES (
 INSERT INTO public.users (id, permission, name, email, password, phone) VALUES (17, 'a', 'Szerencsés Attila', 'szerencses.attila.06@gmail.com', '$2b$10$REzwMlKsQryGDAubhrqKMew8JUOFEdCcM2cpGl7.C/s10KjbY5mpS', '20201250112');
 INSERT INTO public.users (id, permission, name, email, password, phone) VALUES (28, 'a', 'Martincsek Levente', 'martincsekl@gmail.com', '$2b$10$ZI/PZOghv3HV9JFDk71O8ee4Dvt0cYIzRpHCghjY5IeDodBQp7WZa', '062045666665');
 INSERT INTO public.users (id, permission, name, email, password, phone) VALUES (29, 'a', 'Mitykó Norbert', 'norbert.mityko001@gmail.com', '$2b$10$GoZAsO/9ZS0N812V99jaH.YirgbwsIcT74ekkusqNfl8s0FH386RK', '062085446454');
-INSERT INTO public.users (id, permission, name, email, password, phone) VALUES (10, 'r', 'Hello Pizza', 'pizza@pizza.com', '$2b$10$BN9PZLg6C/12Qd1YCoC.e.goezQPLViO4Wb.Z5n1uqaOuDs1XxQpa', '06709876543');
 INSERT INTO public.users (id, permission, name, email, password, phone) VALUES (25, 'r', 'Subway', 'sb@gmail.com', '$2b$10$EbAn83nMev8lMi3N2tAaNexIsDwxObQEVD4i3kotiiUtq220mihUC', '+36567304322');
 INSERT INTO public.users (id, permission, name, email, password, phone) VALUES (20, 'r', 'Cirmi', 'crimi@freemail.com', '$2b$10$rIY4zzZEj6lVj51ROOLKW.OXDZSdd/N3pecyaoJhEzz.3s2ST6Lny', '+36704561263');
 INSERT INTO public.users (id, permission, name, email, password, phone) VALUES (21, 'r', 'Süti nem Süti', 'sutimuti01@freemail.com', '$2b$10$em5gjKCYC6U0fdxUoWdyCuD//wpnpUf0ExFcMqdsZX.BckDG9ndRS', '+36203547213');
 INSERT INTO public.users (id, permission, name, email, password, phone) VALUES (51, 'c', 'Futar', 'tesztfutar@gmail.com', '$2b$10$cU6hPhmhG8/xY6cFPJAA6eJkGBhrRvaHEBYZ7YFrsUf8cj09VXt6O', '1234567');
+INSERT INTO public.users (id, permission, name, email, password, phone) VALUES (10, 'r', 'KFC', 'kfc@kfc.com', '$2b$10$BN9PZLg6C/12Qd1YCoC.e.goezQPLViO4Wb.Z5n1uqaOuDs1XxQpa', '06709876543');
 INSERT INTO public.users (id, permission, name, email, password, phone) VALUES (38, 'r', 'Donut Box', 'donut@gmail.com', '$2b$10$L.tQkFKkBSaJT9BXdZgNt.5QSHzcmVnyxVpgxskdxvDvUmpAqUSNa', '205133225');
 INSERT INTO public.users (id, permission, name, email, password, phone) VALUES (35, 'r', 'Buddha Original', 'buddhi@freemail.hu', '$2b$10$O5jqDwdzDf7OKx4M3C3qCOZ.5su1KVFgdylvYx0r04lFkHUuSPTf.', '+36707700337');
 INSERT INTO public.users (id, permission, name, email, password, phone) VALUES (37, 'r', 'McDonald''s', 'meki@gmail.com', '$2b$10$aVHkhTdLIhWnFYudkPceY.5WroUGtuHDgpCX4YtovV2jnUWngQeFC', '203153476');
