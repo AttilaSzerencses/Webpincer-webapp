@@ -1,0 +1,15 @@
+INSERT INTO public.restaurants (id, u_id, opens, closes, cprice, restaurantpic, type) VALUES (11, 38, '10:00', '18:00', 260, '38.png', 'edesseg');
+INSERT INTO public.restaurants (id, u_id, opens, closes, cprice, restaurantpic, type) VALUES (12, 35, '11:00', '19:00', 450, '35.png', 'kinai');
+INSERT INTO public.restaurants (id, u_id, opens, closes, cprice, restaurantpic, type) VALUES (13, 37, '6:30', '23:00', 310, '37.png', 'gyorsetterem');
+INSERT INTO public.restaurants (id, u_id, opens, closes, cprice, restaurantpic, type) VALUES (14, 36, '8:00', '22:00', 250, '36.png', 'kavezo');
+INSERT INTO public.restaurants (id, u_id, opens, closes, cprice, restaurantpic, type) VALUES (15, 39, '10:00', '20:00', 450, '39.png', 'pizza');
+INSERT INTO public.restaurants (id, u_id, opens, closes, cprice, restaurantpic, type) VALUES (16, 40, '12:00', '23:00', 450, '40.png', 'közel-keleti');
+INSERT INTO public.restaurants (id, u_id, opens, closes, cprice, restaurantpic, type) VALUES (17, 41, '6:30', '23:30', 400, '41.png', 'hamburger');
+INSERT INTO public.restaurants (id, u_id, opens, closes, cprice, restaurantpic, type) VALUES (18, 42, '12:00', '19:00', 300, '42.png', 'kifozde');
+INSERT INTO public.restaurants (id, u_id, opens, closes, cprice, restaurantpic, type) VALUES (19, 43, '11:30', '20:30', 450, '43.png', 'sushi');
+INSERT INTO public.restaurants (id, u_id, opens, closes, cprice, restaurantpic, type) VALUES (20, 44, '8:00', '20:00', 250, '44.png', 'kavezo');
+INSERT INTO public.restaurants (id, u_id, opens, closes, cprice, restaurantpic, type) VALUES (3, 20, '12:00', '1:00', 500, '20.png', 'magyar');
+INSERT INTO public.restaurants (id, u_id, opens, closes, cprice, restaurantpic, type) VALUES (6, 10, '10:00', '22:00', 250, '10.png', 'pizza');
+INSERT INTO public.restaurants (id, u_id, opens, closes, cprice, restaurantpic, type) VALUES (4, 21, '9:00', '20:00', 300, '21.png', 'edesseg');
+INSERT INTO public.restaurants (id, u_id, opens, closes, cprice, restaurantpic, type) VALUES (7, 25, '8:30', '20:00', 350, '25.png', 'szendvicsezo');
+INSERT INTO public.restaurants (id, u_id, opens, closes, cprice, restaurantpic, type) VALUES (21, 46, '9:00', '18:00', 350, '46.png', 'edesseg');

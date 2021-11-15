@@ -1,0 +1,3 @@
+INSERT INTO public.orders (id, u_id, fid, ordertime, sumprice, cdone, rdone, date) VALUES (39, 17, 3, 60, 1000, 'process', 'process', '2021-11-15 20:05:18');
+INSERT INTO public.orders (id, u_id, fid, ordertime, sumprice, cdone, rdone, date) VALUES (40, 17, 4, 60, 2650, 'process', 'process', '2021-11-15 20:05:32');
+INSERT INTO public.orders (id, u_id, fid, ordertime, sumprice, cdone, rdone, date) VALUES (41, 50, 98, 60, 1570, 'done', 'done', '2021-11-15 23:01:54');
