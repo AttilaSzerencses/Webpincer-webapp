@@ -67,7 +67,7 @@ router.get("/editprofil",checkNotAuthenticated, async(req, res) => {
 router.post("/restaurant", checkNotAuthenticated ,async(req,res)=>{
 	let foods = await new DAOfood().getAllFoodFromRestaurant(req.body.u_id);
 	if(foods[0]===undefined){
-		res.render("restaurant",{
+		return res.render("restaurant",{
 			authUser:req.user,
 			foods:[],
 			user:[]
@@ -76,7 +76,7 @@ router.post("/restaurant", checkNotAuthenticated ,async(req,res)=>{
 	let user = await new DAOuser().getOneUser(foods[0].u_id);
 	let restaurant = await new DAOrestaurant().getOneRestaurant(foods[0].u_id);
 	console.log(foods);
-	res.render("restaurant",{
+	return res.render("restaurant",{
 		authUser:req.user,
 		foods:foods,
 		user:user
@@ -91,7 +91,7 @@ router.post("/order",checkNotAuthenticated,async(req,res)=>{
 	let restaurantUser=await new DAOuser().getOneUser(order.u_id);
 	let location=await new DAOlocation().getLocationByUID(order.u_id);
 	let restaurant=await new DAOrestaurant().getRestaurantByUID(order.u_id);
-	res.render("order",{
+	return res.render("order",{
 		authUser:req.user,
 		order:order,
 		restaurant:restaurant,
@@ -110,7 +110,7 @@ router.post("/ordered",checkNotAuthenticated,async(req,res)=>{
 		price: parseInt(restaurant.cprice)+parseInt(food.price)
 	}
 	await new email().sendMailOrder(req.user.email,data);
-	res.render('index',{authUser:req.user});
+	return res.render('index',{authUser:req.user});
 });
 
 router.post("/sendEmailToUs", async(req,res)=>{
@@ -249,15 +249,15 @@ router.post("/courierDone" , checkNotAuthenticated, checkIfCourier, async (req,r
 });
 
 router.get("/register" , checkAuthenticated, (req,res) => {
-	res.render("register",{authUser:req.user});
+	return res.render("register",{authUser:req.user});
 });
 
 router.get("/login", checkAuthenticated, (req, res) => {
-	res.render("login",{authUser:req.user});
+	return res.render("login",{authUser:req.user});
 });
 
 router.get("/dashboard", checkNotAuthenticated, async (req, res) => {
-	res.render("dashboard", 
+	return res.render("dashboard", 
 	{authUser: req.user});
 });
 
@@ -284,7 +284,7 @@ router.get("/kereses", async (req,res) => {
 	for(const restaurant of restaurants){
 		locations.push(await new DAOlocation().getLocationByUID(restaurant.u_id));
 	}
-	res.render('kereses',
+	return res.render('kereses',
 	{
 		authUser:req.user,	
 		users:users,
@@ -295,17 +295,17 @@ router.get("/kereses", async (req,res) => {
 
 
 router.get("/kapcsolatok", (req,res) => {
-	res.render("kapcsolatok",{authUser:req.user});
+	return res.render("kapcsolatok",{authUser:req.user});
 });
 
 router.get("/aszf", (req,res) => {
-	res.render("aszf",{authUser:req.user});
+	return res.render("aszf",{authUser:req.user});
 });
 
 router.get("/logout",checkNotAuthenticated, (req,res)=>{
 	req.logOut();
 	req.flash("success_msg","Sikeresen kijelentkeztél!");
-	res.redirect("/");
+	return res.redirect("/");
 })
 
 router.post('/register', async (req,res)=> {
@@ -339,7 +339,7 @@ router.post('/register', async (req,res)=> {
 			user = await new DAOuser().getUserByEmail(email);
 			new DAOlocation().createLocation(user.rows[0].id,postcode,city,street,streetnumber,other);
 			req.flash("success_msg", "Sikeres regisztráció! Jelentkezz be!");
-			res.redirect("/login");
+			return res.redirect("/login");
 		}
 	}
 });
@@ -414,13 +414,13 @@ router.post("/editprofilUser",checkNotAuthenticated, async (req, res) => {
 	let {name} = req.body;
 	let {phone} = req.body;
     await new DAOuser().updateUser(id, name, email, req.user.permission, phone);
-    res.redirect("/editprofil");
+    return res.redirect("/editprofil");
 });
 router.post("/editprofilPassword",checkNotAuthenticated, async (req, res) => {
     let id = req.user.id;
 	let pw = await bcrypt.hash(req.body.password, 10);
     await new DAOuser().updateUserPassword(id, pw);
-    res.redirect("/editprofil");
+    return res.redirect("/editprofil");
 });
 
 router.post("/editprofilLocation",checkNotAuthenticated, async (req, res) => {
@@ -431,7 +431,7 @@ router.post("/editprofilLocation",checkNotAuthenticated, async (req, res) => {
 	let {streetnumber} = req.body;
 	let {other} = req.body;
     await new DAOlocation().updateLocationByUID(id,postcode,city,street,streetnumber,other);
-    res.redirect("/editprofil");
+    return res.redirect("/editprofil");
 });
 router.post("/editprofilRestaurant",checkNotAuthenticated, async (req, res) => {
     let id = req.user.id;
@@ -465,7 +465,7 @@ router.post("/editprofilRestaurant",checkNotAuthenticated, async (req, res) => {
 	}
 	let {type} = req.body;
     await new DAOrestaurant().updateRestaurantByUID(id,opens,closes,cprice,restaurantpic,type);
-    res.redirect("/editprofil");
+    return res.redirect("/editprofil");
 });
 
 router.post("/editprofilFood",checkNotAuthenticated, async (req, res) => {
@@ -532,14 +532,14 @@ router.post("/adduser",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
 router.get("/edituser/:id",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
     let id = req.params.id;
     let user = await new DAOuser().getOneUser(id);
-    res.render("update-user", { model: user });
+    return res.render("update-user", { model: user });
   });
 
 router.post("/UpdateUserPassword/:id",checkNotAuthenticated, checkIfAdmin, async (req, res) => {
 	let id = req.params.id;
 	let pw = await bcrypt.hash(req.body.password, 10);
 	await new DAOuser().updateUserPassword(id, pw);
-	res.redirect("/admin");
+	return res.redirect("/admin");
 });
   
 router.post("/updateuser/:id",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
@@ -549,7 +549,7 @@ router.post("/updateuser/:id",checkNotAuthenticated,checkIfAdmin, async (req, re
 	let {name} = req.body;
 	let {phone} = req.body;
     await new DAOuser().updateUser(id, name, email, permission, phone);
-    res.redirect("/admin");
+    return res.redirect("/admin");
 });
 
   
@@ -561,7 +561,7 @@ router.post("/deleteuser/:id",checkNotAuthenticated,checkIfAdmin, async (req, re
     await new DAOlocation().deleteUIDLocation(id);
 	await new DAOrestaurant().deleteUIDRestaurant(id);
     await new DAOuser().deleteUser(id);
-    res.redirect("/admin");
+    return res.redirect("/admin");
   });
 
 //LOCATION
@@ -585,7 +585,7 @@ router.post("/addlocation",checkNotAuthenticated,checkIfAdmin, async (req, res) 
 router.get("/editlocation/:id",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
     let id = req.params.id;
     let location = await new DAOlocation().getOneLocation(id);
-    res.render("update-location", { model: location });
+    return res.render("update-location", { model: location });
   });
   
 router.post("/updatelocation/:id",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
@@ -596,13 +596,13 @@ router.post("/updatelocation/:id",checkNotAuthenticated,checkIfAdmin, async (req
 	let {streetnumber} = req.body;
 	let {other} = req.body;
     await new DAOlocation().updateLocation(id,postcode,city,street,streetnumber,other);
-    res.redirect("/admin");
+    return res.redirect("/admin");
 });
   
 router.post("/deletelocation/:id",checkNotAuthenticated,checkIfAdmin, async (req, res) => {
     let id = req.params.id;
     await  new DAOlocation().deleteLocation(id);
-    res.redirect("/admin");
+    return res.redirect("/admin");
   });
 
 //RESTAURANTS
