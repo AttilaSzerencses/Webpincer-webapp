@@ -289,21 +289,14 @@ footer {
 	margin-right: 20px;
 }
 
-#secondsubmit {
+#submitblock {
 	width: 400px;
 	padding: 20px;
 	margin-left: 20px;
 	margin-right: 20px;
 }
 
-#thirdsubmit {
-	width: 400px;
-	padding: 20px;
-	margin-left: 20px;
-	margin-right: 20px;
-}
-
-#location {
+#changeh2 {
 	margin-left: 20px
 }
 
@@ -312,7 +305,7 @@ footer {
 }
 
 #phone {
-	width: 150px;
+	width: 175px;
 }
 
 #street {
