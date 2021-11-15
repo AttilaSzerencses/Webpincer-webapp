@@ -15,7 +15,7 @@
 <%if(messages.error){%><%=messages.error%><%}%>
 <form action="/editprofilPassword" method="post">
     <div class="form-horizontal">
-        <label>Password:
+        <label id = "passwd">Jelszó:
             <input type="password" name="password" id="password"></input>
         </label>
 		<input type="submit" value="Submit" class="btn-sm btn-dark details"></input>
@@ -23,14 +23,14 @@
 </form>
 
 <form action="/editprofilUser" method="post">
-    <div class="form-horizontal">
-        <label>Name:
+    <div class="form-horizontal" id = "secondsubmit">
+        <label id = "username">Felhasználónév:
             <input type="text" name="name" id="name" value="<%=user.name%>"></input>
         </label>
-        <label>Email:
+        <label id = "email">E-mail:
             <input type="text" name="email" id="email" value="<%=user.email%>"></input>
         </label>
-        <label>Phone:
+        <label id = "phone">Telefonszám:
             <input type="text" name="phone" id="phone" value="<%=user.phone%>"></input>
         </label>
 
@@ -39,24 +39,26 @@
     </div>
 </form>
 
-<h2>Edit Location</h2>
+<h2 id = "location">Lakcím változtatása</h2>
 <form action="/editprofilLocation" method="post">
-    <label>Postcode:
-        <input type="text" name="postcode" id="postcode" value="<%= location.postcode %>"></input>
-    </label>
-    <label>City:
-        <input type="text" name="city" id="city" value="<%= location.city %>"></input>
-    </label>
-    <label>Street:
-        <input type="text" name="street" id="street" value="<%= location.street %>"></input>
-    </label>
-    <label>Streetnumber:
-        <input type="text" name="streetnumber" id="streetnumber" value="<%= location.streetnumber %>"></input>
-    </label>
-    <label>Other:
-        <input type="text" name="other" id="other" value="<%= location.other %>"></input>
-    </label>
-    <input type="submit" value="Submit" class="btn-sm btn-dark details"></input>
+	<div class="form-horizontal" id = "thirdsubmit">
+		<label id = "postcode">Irányítószám:
+			<input type="text" name="postcode" id="postcode" value="<%= location.postcode %>"></input>
+		</label>
+		<label id = "city">Város:
+			<input type="text" name="city" id="city" value="<%= location.city %>"></input>
+		</label>
+		<label id = "street">Utca:
+			<input type="text" name="street" id="street" value="<%= location.street %>"></input>
+		</label>
+		<label id = "snumber">Házszám:
+			<input type="text" name="streetnumber" id="streetnumber" value="<%= location.streetnumber %>"></input>
+		</label>
+		<label id = "other">Egyéb:
+			<input type="text" name="other" id="other" value="<%= location.other %>"></input>
+		</label>
+		<input type="submit" value="Submit" class="btn-sm btn-dark details"></input>
+	</div>
 </form>
 
 <% if (authUser.permission === "r") {%>
