@@ -15,6 +15,7 @@ A Webpincér célja, hogy minél olcsóbban és minél gyorsabban tudjon az ügy
 | 1.1  | Simon Péter, Fehér Erik             | 2021-10-15 | Tervezet      | Személyes felelősségek átszervezése, Gantt chart módosítása |
 | 1.1  | Mitykó Norbert               | 2021-10-18 | Előterjesztés | 2. mérföldkő további módosításai                            |
 | 2.1  | Horváth-Czinger Bernadett, Fehér Erik             | 2021-10-25 | Elfogadott    | Leírások pontosítása a megjegyzések alapján                 |
+| 3.1  | Mindenki             | 2021-11-15 | Elfogadott    | 3. mérföldkő             |
 
 
 Státusz osztályozás:
