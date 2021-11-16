@@ -45,7 +45,7 @@ A rendszernek képesnek kell lennie arra, hogy a megrendelők bejelentkezhessene
 		- Határidők módosítása
 		- Nyitvatartási idő, akciók megjelenítése/módosítása.
 	- Felhasználó
-		- Éttermek, ételek, kuponok elérése
+		- Éttermek, ételek
 		- Rendelés leadása
 		- Fizetés, díjazási információk elérése(árak, szállítási díj)
 		- Kiszállítással kapcsolatos információk elérése
@@ -56,18 +56,14 @@ A rendszernek képesnek kell lennie arra, hogy a megrendelők bejelentkezhessene
  - Megrendelések kezelése(App feladatai)
 	- Megrendelések továbbítás az éttermek felé
 	- Elkészült megrendelések továbbítása a futárok felé
-	- Saját kérések továbbítása étterem/futár felé
- - Email-es kiértesítés új megrendelések, illetve kedvezmények esetén az adott megrendelőnek.
-	- Szezonális kuponok kiküldése
-	- Jelenlegi akciókról tájékoztatás küldés.
+ - Email küldés és fogadás.
+	- Email fogadása a kapcsolat felvevőktől.
+	- Email küldése a megrendelésekről.
  - Regisztrációs űrlap elkészítése
-	- Lehetőség van regisztráció nélküli rendelésre is, azonban regisztráció esetén eltárolódnak az adatok.
+	- Lehetőség van regisztráció után rendelésre.
 	- Megfelelő adatok eltárolása a megrendelőröl.
  - Login űrlap elkészítése
 	- Különböző felhasználoknak szóló login oldalak elkészítése.
- - Értékelés
-	- Étel megérkezése után automatikus üzenet küldés a megrendelő felé, hogy értékelje az ételt, kiszállítást.
-	- Éttermek értékelésének összesítése, megjelenítése
  - Biztonsági mentés automatikus létrehozása
  
 
@@ -91,7 +87,7 @@ A projekt megrendelője Dr. Pflanzner Tamás. A Étel projektet a projektcsapat 
  - Szerencsés Attila (<1 év tapasztalat)
  - Patai Zsolt (<1 év tapasztalat)
  - Martincsek Levente (<1 év tapasztalat)
- - Fehér Erik (>1 év tapasztalatő)
+ - Fehér Erik (>1 év tapasztalat)
  - Horváth-Czinger Bernadett (<1 év tapasztalat)
  - Mitykó Norbert (<1 év tapasztalat)
  - Simon Péter (<1 év tapasztalat)
@@ -128,10 +124,10 @@ A projekt a következő munkaállomásokat fogja használni a munka során:
 A projekt a következő technológiákat/szoftvereket fogja használni a munka során: 
  - Heroku platformszolgáltatás
  - Heroku által biztosított PostgreSQL adatbázisszerver
- - Spring Boot (backend)
- - React.js (frontend)
+ - NodeJS (backend)
+ - Bootstrap (frontend)
  - Maven szoftverprojekt menedzselő szoftver
- - Eclipse IDE
+ - Webstorm IDE
  - Git verziókövető (GitLab)
 
 
